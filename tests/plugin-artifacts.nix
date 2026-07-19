@@ -1,4 +1,4 @@
-{ runCommand, pluginArtifacts }:
+{ bash, runCommand, pluginArtifacts }:
 
 let
   fixtures = {
@@ -199,6 +199,18 @@ let
         }
       ];
     };
+
+    dot-prefixed-traversal-pattern = {
+      sourceRoot = "build";
+      artifacts = [
+        {
+          format = "clap";
+          pattern = ".?/outside.clap";
+          type = "executable";
+          destination = "escaped.clap";
+        }
+      ];
+    };
   };
 
   expectsStaticFailure = name: manifest:
@@ -223,6 +235,7 @@ let
 in
 assert builtins.all (name: expectsStaticFailure name fixtures.${name}) staticFailures;
 runCommand "foss-plugins-plugin-artifacts" { } ''
+  ${bash}/bin/bash -euo pipefail <<'EOF'
   mkdir -p build/Plugin.vst3/Contents/x86_64-linux
   printf '%s\n' plugin > build/Plugin.clap
   chmod 751 build/Plugin.clap
@@ -231,6 +244,8 @@ runCommand "foss-plugins-plugin-artifacts" { } ''
   chmod 751 build/Plugin
   printf '%s\n' second > build/Second.clap
   chmod 751 build/Second.clap
+  printf '%s\n' outside > outside.clap
+  chmod 751 outside.clap
 
   ${pluginArtifacts.install fixtures."valid-file-and-bundle"}
 
@@ -261,4 +276,17 @@ runCommand "foss-plugins-plugin-artifacts" { } ''
     printf '%s\n' "wrong artifact type unexpectedly installed" >&2
     exit 1
   fi
+
+  dot_prefixed_out="$TMPDIR/dot-prefixed-traversal"
+  if (
+    shopt -s dotglob
+    shopt -u globskipdots
+    out="$dot_prefixed_out"
+    ${pluginArtifacts.install fixtures."dot-prefixed-traversal-pattern"}
+  ); then
+    printf '%s\n' "dot-prefixed traversal pattern unexpectedly installed" >&2
+    exit 1
+  fi
+  test ! -e "$dot_prefixed_out/lib/clap/escaped.clap"
+  EOF
 ''

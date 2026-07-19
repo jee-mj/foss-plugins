@@ -84,6 +84,16 @@ let
               exit 1
             fi
             source_path="''${matches[0]}"
+            source_root_real="$(realpath -e "$source_root")"
+            source_path_real="$(realpath -e "$source_path")"
+            case "$source_path_real" in
+              "$source_root_real" | "$source_root_real"/*)
+                ;;
+              *)
+                printf '%s\n' ${lib.escapeShellArg "plugin-artifacts: ${label} pattern resolved outside sourceRoot"} >&2
+                exit 1
+                ;;
+            esac
           '';
       typeCheck =
         if artifact.type == "file" then
