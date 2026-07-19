@@ -52,7 +52,7 @@ let
         fail "each artifact must declare exactly one of source and pattern"
       else if !builtins.isString sourceValue then
         fail "each artifact source or pattern must be a string"
-      else if !isSafePath sourceValue then
+      else if !(if hasSource then isExactPath sourceValue else isSafePath sourceValue) then
         fail "each artifact source or pattern must be a safe relative path"
       else if hasPattern && lib.hasInfix "**" sourceValue then
         fail "artifact patterns must not contain **"

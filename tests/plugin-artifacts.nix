@@ -187,6 +187,18 @@ let
         }
       ];
     };
+
+    glob-bearing-source = {
+      sourceRoot = "build";
+      artifacts = [
+        {
+          format = "clap";
+          source = "Plugin*.clap";
+          type = "executable";
+          destination = "Plugin.clap";
+        }
+      ];
+    };
   };
 
   expectsStaticFailure = name: manifest:
@@ -206,6 +218,7 @@ let
     "empty-segment"
     "dot-segment"
     "globstar-pattern"
+    "glob-bearing-source"
   ];
 in
 assert builtins.all (name: expectsStaticFailure name fixtures.${name}) staticFailures;
