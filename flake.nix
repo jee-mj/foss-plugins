@@ -41,6 +41,7 @@
         let
           pkgs = import nixpkgs { inherit system; };
           packageSet = packageSetFor pkgs;
+          pluginArtifacts = pkgs.callPackage ./lib/plugin-artifacts.nix { };
           moduleConfig =
             (nixpkgs.lib.nixosSystem {
               inherit system;
@@ -70,6 +71,10 @@
             pkgs.runCommand "foss-plugins-module-default" { } ''
               touch "$out"
             '';
+
+          plugin-artifacts = pkgs.callPackage ./tests/plugin-artifacts.nix {
+            inherit pluginArtifacts;
+          };
         }
       );
     };
