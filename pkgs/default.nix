@@ -17,7 +17,7 @@ rec {
   };
 
   unfreePackages = {
-    mechanodd = callPackage ./mechanodd-spike.nix { };
+    mechanodd = callPackage ./mechanodd { inherit pluginArtifacts juceRuntime; };
     rdpiano = callPackage ./rdpiano { inherit pluginArtifacts projucer; };
   };
 
