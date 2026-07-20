@@ -13,12 +13,14 @@ env -u NIXPKGS_ALLOW_UNFREE \
 pure_package_names="$(env -u NIXPKGS_ALLOW_UNFREE \
   "${nix_cmd[@]}" eval --json --no-write-lock-file \
     "$repo_root#packages.$system" --apply 'builtins.attrNames')"
-case "$pure_package_names" in
-  *mechanodd*)
-    printf '%s\n' "MechanOdd must not appear in pure package output inspection." >&2
-    exit 1
-    ;;
-esac
+for conditional_name in mechanodd rdpiano; do
+  case "$pure_package_names" in
+    *"$conditional_name"*)
+      printf '%s\n' "$conditional_name must not appear in pure package output inspection." >&2
+      exit 1
+      ;;
+  esac
+done
 
 env -u NIXPKGS_ALLOW_UNFREE \
   "${nix_cmd[@]}" flake check --no-write-lock-file "$repo_root"
@@ -31,15 +33,15 @@ env -u NIXPKGS_ALLOW_UNFREE \
   "${nix_cmd[@]}" build --no-link --no-write-lock-file \
     "$repo_root#checks.$system.free-package-set"
 
-# MechanOdd becomes visible only when the caller explicitly opts in.
 impure_package_names="$(NIXPKGS_ALLOW_UNFREE=1 \
   "${nix_cmd[@]}" eval --impure --json --no-write-lock-file \
     "$repo_root#packages.$system" --apply 'builtins.attrNames')"
-case "$impure_package_names" in
-  *mechanodd*)
-    ;;
-  *)
-    printf '%s\n' "MechanOdd must appear in impure package output inspection." >&2
-    exit 1
-    ;;
-esac
+for conditional_name in mechanodd rdpiano; do
+  case "$impure_package_names" in
+    *"$conditional_name"*) ;;
+    *)
+      printf '%s\n' "$conditional_name must appear after explicit opt-in." >&2
+      exit 1
+      ;;
+  esac
+done

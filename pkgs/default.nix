@@ -3,6 +3,8 @@
 let
   pluginArtifacts = callPackage ../lib/plugin-artifacts.nix { };
   juceRuntime = callPackage ../lib/juce-runtime.nix { };
+
+  projucer = callPackage ./rdpiano/projucer.nix { };
 in
 rec {
   # The free package set intentionally excludes unknown-license packages.
@@ -16,6 +18,7 @@ rec {
 
   unfreePackages = {
     mechanodd = callPackage ./mechanodd-spike.nix { };
+    rdpiano = callPackage ./rdpiano { inherit pluginArtifacts projucer; };
   };
 
   freePackageNames = builtins.attrNames freePackages;
