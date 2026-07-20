@@ -1,9 +1,12 @@
 { callPackage }:
 
+let
+  pluginArtifacts = callPackage ../lib/plugin-artifacts.nix { };
+in
 rec {
   # The free package set intentionally excludes unknown-license packages.
   freePackages = {
-    "free-spike" = callPackage ./free-spike.nix { };
+    amsynth = callPackage ./amsynth { inherit pluginArtifacts; };
   };
 
   unfreePackages = {

@@ -18,7 +18,7 @@ let
 
   validSelection = builtins.tryEval (forceSystemPackages (evalModule {
     enable = true;
-    packages = [ "free-spike" ];
+    packages = [ "amsynth" ];
   }));
 
   invalidSelection = builtins.tryEval (forceSystemPackages (evalModule {
