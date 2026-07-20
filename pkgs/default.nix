@@ -10,6 +10,7 @@ rec {
     amsynth = callPackage ./amsynth { inherit pluginArtifacts; };
     modal-synth = callPackage ./modal-synth { inherit pluginArtifacts juceRuntime; };
     space-dust-synthesizer = callPackage ./space-dust-synthesizer { inherit pluginArtifacts juceRuntime; };
+    squelchbox = callPackage ./squelchbox { inherit pluginArtifacts; };
     ultramaster-kr106 = callPackage ./ultramaster-kr106 { inherit pluginArtifacts juceRuntime; };
   };
 
