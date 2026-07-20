@@ -41,6 +41,7 @@
         let
           pkgs = import nixpkgs { inherit system; };
           packageSet = packageSetFor pkgs;
+          packageMetadata = pkgs.callPackage ./lib/package-metadata.nix { };
           pluginArtifacts = pkgs.callPackage ./lib/plugin-artifacts.nix { };
           moduleConfig =
             (nixpkgs.lib.nixosSystem {
@@ -71,6 +72,38 @@
             pkgs.runCommand "foss-plugins-module-default" { } ''
               touch "$out"
             '';
+
+          package-metadata =
+            let
+              forceFreePackageAssertions = packages:
+                builtins.all (package: builtins.seq package true) (
+                  builtins.attrValues (packageMetadata.assertFreePackages packages)
+                );
+
+              assertRejected = license:
+                !(builtins.tryEval (
+                  forceFreePackageAssertions {
+                    fixture = { meta.license = license; };
+                  }
+                )).success;
+            in
+            assert builtins.length (packageMetadata.normalizeLicenses pkgs.lib.licenses.mit) == 1;
+            assert packageMetadata.isFreeLicense pkgs.lib.licenses.mit;
+            assert assertRejected pkgs.lib.licenses.unfree;
+            assert assertRejected { free = true; };
+            assert assertRejected [ pkgs.lib.licenses.mit pkgs.lib.licenses.unfree ];
+            assert forceFreePackageAssertions packageSet.freePackages;
+            assert !(builtins.elem "mechanodd" packageSet.freePackageNames);
+            assert !(builtins.elem "rdpiano" packageSet.freePackageNames);
+            pkgs.runCommand "foss-plugins-package-metadata" { } ''
+              touch "$out"
+            '';
+
+          module-options = pkgs.callPackage ./tests/module-options.nix {
+            inherit system;
+            nixosSystem = nixpkgs.lib.nixosSystem;
+            fossPluginsModule = self.nixosModules.default;
+          };
 
           plugin-artifacts = pkgs.callPackage ./tests/plugin-artifacts.nix {
             inherit pluginArtifacts;
