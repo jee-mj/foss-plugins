@@ -17,12 +17,12 @@ The flake packages these canonical upstream projects:
 
 | Package attribute | Upstream | Expected license status |
 | --- | --- | --- |
-| `amsynth` | [amsynth/amsynth](https://github.com/amsynth/amsynth) | Free: GPL-2.0-or-later |
-| `modal-synth` | [crispinha/modal-synth](https://github.com/crispinha/modal-synth) | Free: GPL-3.0-or-later |
-| `rdpiano` | [giulioz/rdpiano](https://github.com/giulioz/rdpiano) | Free: GPL-3.0 |
-| `space-dust-synthesizer` | [gadalleore/Space_Dust_Synthesizer](https://github.com/gadalleore/Space_Dust_Synthesizer) | Free: MIT at the selected tag |
+| `amsynth` | [amsynth/amsynth](https://github.com/amsynth/amsynth) | Free: GPL-3.0-only combined output |
+| `modal-synth` | [crispinha/modal-synth](https://github.com/crispinha/modal-synth) | Free: GPL-3.0-or-later and AGPL-3.0-only combined output |
+| `rdpiano` | [giulioz/rdpiano](https://github.com/giulioz/rdpiano) | Unknown ROM provenance; explicitly opt-in only |
+| `space-dust-synthesizer` | [gadalleore/Space_Dust_Synthesizer](https://github.com/gadalleore/Space_Dust_Synthesizer) | Free: GPL-3.0-only and AGPL-3.0-only combined output |
 | `squelchbox` | [Hornfisk/squelchbox](https://github.com/Hornfisk/squelchbox) | Free: GPL-3.0-or-later |
-| `ultramaster-kr106` | [kayrockscreenprinting/ultramaster_kr106](https://github.com/kayrockscreenprinting/ultramaster_kr106) | Free: GPL-3.0 |
+| `ultramaster-kr106` | [kayrockscreenprinting/ultramaster_kr106](https://github.com/kayrockscreenprinting/ultramaster_kr106) | Free: GPL-3.0-only and AGPL-3.0-only combined output |
 | `mechanodd` | [odoare/Mechanodd](https://github.com/odoare/Mechanodd) | Unknown; explicitly opt-in only |
 
 `vaporizer2`, `string-machine`, and `tunefish` are deliberately not duplicated
@@ -120,7 +120,7 @@ Before copying an entry, it validates all of the following:
 Any missing artifact, ambiguous pattern, wrong artifact type, duplicate
 destination, traversal attempt, or mode loss is a hard build failure.
 
-## Licensing and MechanOdd policy
+## Licensing and conditional-package policy
 
 The repository is licensed GPL-3.0-or-later.  It does not alter or relicense
 upstream projects.
@@ -132,8 +132,9 @@ license object to have both:
 - `free = true`; and
 - a non-empty SPDX identifier.
 
-MechanOdd has no upstream license declaration.  Its derivation therefore uses
-an unfree/unknown-license metadata classification and is excluded from:
+MechanOdd has no upstream license declaration.  RDPiano embeds ROM binary
+assets with no identified redistribution license.  Their derivations therefore
+use an unfree/unknown-license metadata classification and are excluded from:
 
 - default selections;
 - free-package lists;
@@ -141,15 +142,16 @@ an unfree/unknown-license metadata classification and is excluded from:
 - aggregate checks; and
 - all module defaults.
 
-MechanOdd remains lazy throughout the flake.  Constructing normal flake
-outputs, applying the overlay, evaluating the module with defaults, and
-running checks must not evaluate it or require unfree permission.  It is
-resolved only after explicit selection.  The flake never changes
+MechanOdd and RDPiano remain lazy throughout the flake.  Constructing normal
+flake outputs, applying the overlay, evaluating the module with defaults, and
+running checks must not evaluate either package or require unfree permission.
+They are resolved only after explicit selection.  The flake never changes
 `allowUnfree`, an unfree predicate, or any caller configuration.  Direct
 builds require an explicit caller opt-in, for example:
 
 ```bash
 NIXPKGS_ALLOW_UNFREE=1 nix build --impure .#mechanodd
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure .#rdpiano
 ```
 
 NixOS consumers choose their own equivalent unfree policy before explicitly
@@ -164,7 +166,7 @@ programs.foss-plugins.enable = false;
 ```
 
 It provides validated free-package selections using an enum derived from the
-free package names.  MechanOdd is exposed only through a separate
+free package names.  MechanOdd and RDPiano are exposed only through a separate
 empty-by-default unfree selection option, so default module evaluation remains
 fully lazy.  Invalid names fail module evaluation.
 
@@ -180,7 +182,7 @@ small test derivations; it is not described as evaluation-only.
 The check set covers:
 
 - license normalization and explicit free/SPDX assertions for free packages;
-- absence of MechanOdd from free and aggregate paths;
+- absence of MechanOdd and RDPiano from free and aggregate paths;
 - package-manifest schema validation;
 - valid NixOS module evaluation and package-name validation; and
 - focused fixture tests for the artifact helper.
@@ -200,7 +202,8 @@ layout without requiring a costly build-all aggregate check.
 The README must:
 
 - link and describe every verified-FOSS upstream centralised by this flake;
-- separately document MechanOdd's unknown-license status and opt-in command;
+- separately document the MechanOdd and RDPiano license restrictions and
+  opt-in commands;
 - show direct package-output use in NixOS and Home Manager;
 - show optional overlay and NixOS-module use;
 - state that real-time tuning is deliberately outside the module's scope; and
