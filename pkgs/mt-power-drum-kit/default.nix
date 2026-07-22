@@ -1,10 +1,15 @@
 {
   autoPatchelfHook,
+  cairo,
+  glib,
   juceRuntime,
   lib,
+  libxkbcommon,
+  pango,
   pluginArtifacts,
   stdenv,
   unzip,
+  xorg,
 }:
 
 stdenv.mkDerivation rec {
@@ -17,7 +22,15 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ autoPatchelfHook unzip ];
 
-  buildInputs = juceRuntime.runtimeLibs;
+  buildInputs = juceRuntime.runtimeLibs ++ [
+    cairo
+    glib
+    libxkbcommon
+    pango
+    stdenv.cc.cc.lib
+    xorg.xcbutil
+    xorg.xcbutilcursor
+  ];
 
   # Binary distribution — no build needed
   dontBuild = true;
