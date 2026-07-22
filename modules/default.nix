@@ -8,12 +8,18 @@ let
     map (name: packageSet.freePackages.${name}) cfg.packages
     ++ map (name: packageSet.unfreePackages.${name}) cfg.unfreePackages;
 
-  # Build colon-separated search paths for each plugin format.
-  pluginPath = format: dir:
-    let
-      dirs = map (p: "${p}/${dir}") installedPackages;
-    in
-    if dirs == [ ] then null else builtins.concatStringsSep ":" dirs;
+  # Generate shell snippet to symlink all bundles from a given lib/
+  # subdirectory into the matching per-user dot-directory.
+  linkFormat = libDir: dotDir:
+    lib.concatMapStrings (pkg: ''
+      if [ -d "${pkg}/${libDir}" ]; then
+        for bundle in "${pkg}/${libDir}"/*; do
+          [ -e "$bundle" ] || continue
+          name=$(basename "$bundle")
+          ln -sfn "$bundle" "$user_home/${dotDir}/$name"
+        done
+      fi
+    '') installedPackages;
 in
 {
   options.programs."foss-plugins" = {
@@ -33,47 +39,20 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # Install plugins into system closure.
+    # Install plugins into the system closure.
+    # NixOS merges lib/ trees into /run/current-system/sw/lib/,
+    # which is already in VST3_PATH / LV2_PATH / CLAP_PATH.
     environment.systemPackages = installedPackages;
 
-    # Set DAW search paths so hosts (Ardour, Carla, Reaper, etc.) can find them.
-    environment.variables = lib.mkMerge [
-      (lib.mkIf (pluginPath "vst3" "lib/vst3" != null) {
-        VST3_PATH = pluginPath "vst3" "lib/vst3";
-      })
-      (lib.mkIf (pluginPath "lv2" "lib/lv2" != null) {
-        LV2_PATH = pluginPath "lv2" "lib/lv2";
-      })
-      (lib.mkIf (pluginPath "clap" "lib/clap" != null) {
-        CLAP_PATH = pluginPath "clap" "lib/clap";
-      })
-    ];
-
-    # Symlink plugins into standard per-user directories so hosts that
-    # don't honour VST3_PATH/LV2_PATH/CLAP_PATH can still find them.
+    # Symlink plugins into per-user standard directories as a backstop
+    # for hosts that don't scan the merged system profile.
     system.activationScripts.fossPlugins = lib.mkIf (installedPackages != [ ]) ''
-      echo "Linking foss-plugins into standard plugin directories..."
-
-      link_plugins() {
-        local fmt="$1" dir="$2" target="$3"
-        if [ -d "$target" ]; then
-          for pkg in ${lib.concatStringsSep " " (map (p: "${p}/${dir}") installedPackages)}; do
-            if [ -d "$pkg" ]; then
-              for bundle in "$pkg"/*; do
-                name=$(basename "$bundle")
-                ln -sfn "$bundle" "$target/$name"
-              done
-            fi
-          done
-        fi
-      }
-
-      # Per-user directories
+      echo "Linking foss-plugins into per-user plugin directories..."
       for user_home in /home/*; do
-        user=$(basename "$user_home")
-        link_plugins "vst3" "lib/vst3" "$user_home/.vst3"
-        link_plugins "lv2"  "lib/lv2"  "$user_home/.lv2"
-        link_plugins "clap" "lib/clap" "$user_home/.clap"
+        mkdir -p "$user_home/.vst3" "$user_home/.lv2" "$user_home/.clap"
+        ${linkFormat "lib/vst3" ".vst3"}
+        ${linkFormat "lib/lv2"  ".lv2"}
+        ${linkFormat "lib/clap" ".clap"}
       done
     '';
   };
