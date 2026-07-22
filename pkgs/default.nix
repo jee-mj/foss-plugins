@@ -36,7 +36,7 @@ rec {
     lumen = callPackage ./lumen { inherit pluginArtifacts juceRuntime; };
 
     # binary-only-manual-approval: proprietary EULA-governed freeware.
-    mt-power-drum-kit = callPackage ./mt-power-drum-kit { inherit pluginArtifacts; };
+    mt-power-drum-kit = callPackage ./mt-power-drum-kit { inherit pluginArtifacts juceRuntime; };
   };
 
   freePackageNames = builtins.attrNames freePackages;

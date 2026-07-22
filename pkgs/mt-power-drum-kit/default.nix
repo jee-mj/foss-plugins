@@ -1,4 +1,6 @@
 {
+  autoPatchelfHook,
+  juceRuntime,
   lib,
   pluginArtifacts,
   stdenv,
@@ -13,7 +15,9 @@ stdenv.mkDerivation rec {
   # Place it at the path below or override.
   src = builtins.path { path = /home/kalki/Downloads/MTPDK-2.1.5.0-VST3-64bit-Linux-FULL.zip; };
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [ autoPatchelfHook unzip ];
+
+  buildInputs = juceRuntime.runtimeLibs;
 
   # Binary distribution — no build needed
   dontBuild = true;
