@@ -14,24 +14,41 @@ All packages are built for `x86_64-linux`.
 | `space-dust-synthesizer` | Polyphonic JUCE synthesizer | VST3, standalone | [gadalleore/Space_Dust_Synthesizer](https://github.com/gadalleore/Space_Dust_Synthesizer) |
 | `squelchbox` | TB-303-style acid bassline synthesizer | VST3, CLAP, standalone | [Hornfisk/squelchbox](https://github.com/Hornfisk/squelchbox) |
 | `ultramaster-kr106` | Juno-6/60/106 emulation | VST3, LV2, CLAP, standalone | [kayrockscreenprinting/ultramaster_kr106](https://github.com/kayrockscreenprinting/ultramaster_kr106) |
+| `setekh` | Minimalistic multi-format distortion | VST3, LV2, CLAP | [fullfxmedia/setekh](https://github.com/fullfxmedia/setekh) |
+| `ripplerx` | Physical modelling synthesis (modal/waveguide/Karplus-Strong) | VST3, LV2 | [tiagolr/ripplerx](https://github.com/tiagolr/ripplerx) |
+| `neuralnote` | Audio-to-MIDI transcription using deep learning | VST3, standalone | [DamRsn/NeuralNote](https://github.com/DamRsn/NeuralNote) |
 
-### Conditional packages
+### Conditional and unfree packages
 
-Two packages are excluded from pure evaluation and require explicit opt-in
-because of upstream licensing uncertainty.  They are not part of any default
-or aggregate selection.
+Packages excluded from pure evaluation that require explicit opt-in.  They are
+not part of any default or aggregate selection.  Each package is classified by
+the reason it is gated:
 
-| Package attribute | Description | Plugin formats | Upstream | Restriction |
+| Category | Meaning |
+| --- | --- |
+| `licensing-uncertainty` | Missing or ambiguous upstream license |
+| `experimental` | Runtime dependencies (e.g. local LLM) that require consumer review |
+| `blocked-pending-upstream` | Source available but license file missing or unverified |
+| `binary-only-manual-approval` | Proprietary freeware, must be downloaded manually |
+
+| Package attribute | Description | Plugin formats | Upstream | Category |
 | --- | --- | --- | --- | --- |
-| `mechanodd` | Physical-modelling synthesizer | VST3, standalone | [odoare/Mechanodd](https://github.com/odoare/Mechanodd) | No declared upstream license |
-| `rdpiano` | Physical modeling piano | VST3, LV2, standalone | [giulioz/rdpiano](https://github.com/giulioz/rdpiano) | Embeds ROM assets without identified redistribution license |
+| `mechanodd` | Physical-modelling synthesizer | VST3, standalone | [odoare/Mechanodd](https://github.com/odoare/Mechanodd) | `licensing-uncertainty` |
+| `rdpiano` | Physical modeling piano | VST3, LV2, standalone | [giulioz/rdpiano](https://github.com/giulioz/rdpiano) | `licensing-uncertainty` |
+| `cavey` | AI-powered audio effect generator using local LLM (Ollama) | VST3, standalone | [TarcanGul/cavey](https://github.com/TarcanGul/cavey) | `experimental` |
+| `openkick` | Lightweight sidechain volume-ducking utility | VST3, standalone | [navidsatarmaker/OpenKick](https://github.com/navidsatarmaker/OpenKick) | `blocked-pending-upstream` |
+| `lumen` | Wavetable synthesizer with image-to-tone Lens engine | VST3, standalone | [pixelsncodes/lumen](https://github.com/pixelsncodes/lumen) | `blocked-pending-upstream` |
+| `mt-power-drum-kit` | Acoustic drum sampler (MT Power Drum Kit 2) | VST3 | [MT Power Drum Kit](https://www.powerdrumkit.com) | `binary-only-manual-approval` |
 
-Build either conditional package with an explicit unfree opt-in:
+Build any conditional package with an explicit unfree opt-in:
 
 ```bash
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure .#cavey
 NIXPKGS_ALLOW_UNFREE=1 nix build --impure .#mechanodd
-NIXPKGS_ALLOW_UNFREE=1 nix build --impure .#rdpiano
 ```
+
+`mt-power-drum-kit` additionally requires the vendor binary to be placed at
+`repackaged/mt-power-drum-kit/pdk2_vst3_linux_2.1.5.0.zip` before building.
 
 NixOS consumers choose their own equivalent unfree policy before selecting
 either package.  No package in this flake changes caller unfree settings.
@@ -109,10 +126,11 @@ The flake exports an opt-in NixOS module that is **disabled by default**:
 }
 ```
 
-When enabled, the module only adds `environment.systemPackages`.  It does not
-import, enable, configure, or tune an audio stack, real-time scheduling,
-plugin search paths, or any audio service.  Real-time tuning and plugin-path
-policy remain consumer-owned.
+When enabled, the module adds `environment.systemPackages` and an activation
+script that symlinks built plugins into each user's `~/.vst3`, `~/.lv2`, and
+`~/.clap` directories.  It does not import, enable, configure, or tune an
+audio stack, real-time scheduling, plugin search paths, or any audio service.
+Real-time tuning and plugin-path policy remain consumer-owned.
 
 [musnix](https://github.com/musnix/musnix) is compatible with these packages
 but is neither imported nor configured by this module.
@@ -127,9 +145,9 @@ GPL-3.0-only, GPL-3.0-or-later, and AGPL-3.0-only in various combinations
 across the combined build outputs.  Refer to the per-package source
 repository, derivation metadata, and `flake.nix` checks for details.
 
-MechanOdd has no declared upstream license.  RDPiano embeds ROM binary assets
-without an identified redistribution license.  Both are classified as unfree
-for metadata purposes and require explicit opt-in.
+Unfree packages (mechanodd, rdpiano, cavey, openkick, lumen, mt-power-drum-kit)
+are gated behind explicit opt-in; see the conditional packages section for
+details on each.
 
 ## Development
 
@@ -151,6 +169,17 @@ Build a free package:
 ```bash
 nix build --no-link .#amsynth
 ```
+
+### Plugin discovery
+
+After building, symlink plugins into standard DAW directories:
+
+```bash
+./link-plugins.sh
+```
+
+The NixOS module also provides an activation script that links plugins into
+each user's `~/.vst3`, `~/.lv2`, and `~/.clap` directories on activation.
 
 ### Lock file
 
