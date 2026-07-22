@@ -1,0 +1,221 @@
+{
+  "audit": {
+    "date": "2026-07-22",
+    "conductor": "foss-plugins security review",
+    "scope": "Third-party audio plugin intake for NixOS workstation",
+    "total_candidates": 9
+  },
+  "candidates": [
+    {
+      "name": "cavey",
+      "canonical": "Cavey",
+      "source_url": "https://github.com/TarcanGul/cavey",
+      "homepage": "https://github.com/TarcanGul/cavey",
+      "revision": "master",
+      "version": "unversioned",
+      "license_spdx": "AGPL-3.0-or-later",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "JUCE": { "version": "8.0.12", "license": "AGPL-3.0-or-commercial", "fetch": "FetchContent" },
+        "Boost.Beast": { "version": "1.89+", "license": "BSL-1.0", "fetch": "vcpkg" },
+        "Boost.Asio": { "version": "1.89+", "license": "BSL-1.0", "fetch": "vcpkg" },
+        "Boost.JSON": { "version": "1.89+", "license": "BSL-1.0", "fetch": "vcpkg" },
+        "Boost.Algorithm": { "version": "1.89+", "license": "BSL-1.0", "fetch": "vcpkg" },
+        "Boost.System": { "version": "1.89+", "license": "BSL-1.0", "fetch": "vcpkg" }
+      },
+      "submodules": [],
+      "expected_outputs": ["VST3", "Standalone"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin", "x86_64-windows"],
+      "permitted_redistribution": true,
+      "proposed_nix_attr": "cavey",
+      "classification": "accept-experimental",
+      "risk": "low",
+      "notes": "Requires Ollama (localhost:11434). LLM output is sanitized JSON coefficients only. No code execution from LLM. Network surface limited to localhost."
+    },
+    {
+      "name": "pedalkernel",
+      "canonical": "PedalKernel",
+      "source_url": "https://github.com/ajmwagar/pedalkernel",
+      "homepage": "https://docs.pedalkernel.com",
+      "revision": "main",
+      "version": "unversioned",
+      "license_spdx": "AGPL-3.0-only",
+      "license_note": "Includes AGPLv3 Section 7 additional condition: incorporation into hardware products with annual revenue >$1M requires commercial license from Future Present Labs LLC. CLA requires copyright assignment to Avery Wagar.",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "rust": { "version": "1.80+", "license": "MIT/Apache-2.0", "fetch": "system" },
+        "nih_plug_xtask": { "version": "28b149ec", "license": "ISC", "fetch": "git" }
+      },
+      "submodules": [],
+      "expected_outputs": ["CLI binary", "JACK binary"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin"],
+      "permitted_redistribution": true,
+      "proposed_nix_attr": "pedalkernel",
+      "classification": "blocked-pending-upstream",
+      "risk": "medium",
+      "notes": "Production VST3 bindings are commercial (not in public repo). CLI/compiler only. 853MB repo (395 .npy golden files). VsPtr unsafe in audio path. Cargo.lock gitignored."
+    },
+    {
+      "name": "mt-power-drum-kit",
+      "canonical": "MT Power Drum Kit 2",
+      "source_url": "https://www.powerdrumkit.com/linux.php",
+      "homepage": "https://www.powerdrumkit.com",
+      "revision": "v2.1.5.0",
+      "version": "2.1.5.0",
+      "license_spdx": "Proprietary",
+      "license_note": "EULA-governed freeware. No public source repository. Linux port by volunteer Steffen Langenfeld. Donation-supported model.",
+      "source_hash": null,
+      "dependencies": {},
+      "submodules": [],
+      "expected_outputs": ["VST3", "Standalone"],
+      "supported_systems": ["x86_64-linux"],
+      "permitted_redistribution": false,
+      "proposed_nix_attr": "mt-power-drum-kit",
+      "classification": "binary-only-manual-approval",
+      "risk": "high",
+      "notes": "Proprietary binary. EULA must be reviewed before any local wrapping. Must not enter public caches unless EULA explicitly permits redistribution. Binary inspection required: network, telemetry, filesystem, process behavior."
+    },
+    {
+      "name": "partialstring",
+      "canonical": "PartialString",
+      "source_url": null,
+      "homepage": "https://differentinstruments.com",
+      "revision": "v1.0.3",
+      "version": "1.0.3",
+      "license_spdx": "Proprietary",
+      "license_note": "Free/PWYW but not open source. No public source repository. Author: Christian Baker (crnbaker on GitHub). Predecessor gostringsynth is MIT-licensed Go code but PartialString is a separate proprietary product.",
+      "source_hash": null,
+      "dependencies": {},
+      "submodules": [],
+      "expected_outputs": ["VST3"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin", "x86_64-windows"],
+      "permitted_redistribution": false,
+      "proposed_nix_attr": "partialstring",
+      "classification": "blocked-pending-upstream",
+      "risk": "high",
+      "notes": "Proprietary. Contact author for source availability or licensing terms. FDTD solver safety and RT behavior unknown without source."
+    },
+    {
+      "name": "openkick",
+      "canonical": "OpenKick",
+      "source_url": "https://github.com/navidsatarmaker/OpenKick",
+      "homepage": "https://github.com/navidsatarmaker/OpenKick",
+      "revision": "main",
+      "version": "unversioned",
+      "license_spdx": "UNKNOWN",
+      "license_note": "README.md claims MIT but no LICENSE file exists in repository. Legal status ambiguous.",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "JUCE": { "version": "master (unpinned)", "license": "GPL-3.0-or-commercial", "fetch": "FetchContent" }
+      },
+      "submodules": [],
+      "expected_outputs": ["VST3", "Standalone"],
+      "supported_systems": ["x86_64-windows"],
+      "permitted_redistribution": false,
+      "proposed_nix_attr": "openkick",
+      "classification": "blocked-pending-upstream",
+      "risk": "medium",
+      "notes": "MISSING LICENSE file. JUCE fetched at GIT_TAG master (non-deterministic). Clean code: no network, no telemetry, RT-safe. 16 ducking algorithms. Windows-only CI. Blocked until LICENSE file added and JUCE pinned."
+    },
+    {
+      "name": "lumen",
+      "canonical": "Lumen",
+      "source_url": "https://github.com/pixelsncodes/lumen",
+      "homepage": "https://github.com/pixelsncodes/lumen",
+      "revision": "main",
+      "version": "unversioned",
+      "license_spdx": "MIT",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "JUCE": { "version": "8.0.14", "license": "GPL-3.0-or-commercial", "fetch": "FetchContent" },
+        "lumena": { "version": "git submodule", "license": "unknown", "fetch": "submodule" }
+      },
+      "submodules": ["external/lumena"],
+      "expected_outputs": ["VST3", "Standalone"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin", "x86_64-windows"],
+      "permitted_redistribution": true,
+      "proposed_nix_attr": "lumen",
+      "classification": "blocked-pending-upstream",
+      "risk": "medium",
+      "notes": "Missing lumena submodule content (empty directory). Image parsing via JUCE only (max 512x512). No network, RT-safe. Blocked until submodule dependency is clarified by upstream."
+    },
+    {
+      "name": "setekh",
+      "canonical": "Setekh",
+      "source_url": "https://github.com/fullfxmedia/setekh",
+      "homepage": "https://fullfxmedia.com/plugins/setekh/",
+      "revision": "main",
+      "version": "unversioned",
+      "license_spdx": "GPL-3.0-only",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "JUCE": { "version": "8.0.8", "license": "GPL-3.0-or-commercial", "fetch": "CPM.cmake" },
+        "clap-juce-extensions": { "version": "02f91b7", "license": "MIT", "fetch": "CPM.cmake" },
+        "CPM.cmake": { "version": "0.42.0", "license": "MIT", "fetch": "Downloaded at build" }
+      },
+      "submodules": [],
+      "expected_outputs": ["VST3", "AU", "CLAP", "LV2"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin", "x86_64-windows"],
+      "permitted_redistribution": true,
+      "proposed_nix_attr": "setekh",
+      "classification": "accept-source",
+      "risk": "low",
+      "notes": "Clear GPL-3.0. Multi-format (VST3+CLAP+LV2+AU). Simple DSP (tanh distortion). Missing ScopedNoDenormals (minor fix). No CI. Hyperlink widgets only (user-initiated)."
+    },
+    {
+      "name": "neuralnote",
+      "canonical": "NeuralNote",
+      "source_url": "https://github.com/DamRsn/NeuralNote",
+      "homepage": "https://github.com/DamRsn/NeuralNote",
+      "revision": "v1.1.0",
+      "revision_sha": "113f0586bcb0c55202e005a989d50858728e78fb",
+      "version": "1.1.0",
+      "license_spdx": "Apache-2.0",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "JUCE": { "version": "git submodule", "license": "JUCE Starter", "fetch": "submodule" },
+        "RTNeural": { "version": "git submodule", "license": "BSD-3-Clause", "fetch": "submodule" },
+        "ONNX Runtime": { "version": "1.14.1-neuralnote.0", "license": "MIT", "fetch": "Pre-built download in build.sh" },
+        "minimp3": { "version": "vendored", "license": "CC0-1.0", "fetch": "vendored" },
+        "basic-pitch": { "version": "n/a (weights)", "license": "Apache-2.0", "fetch": "committed in Lib/ModelData" }
+      },
+      "submodules": [
+        { "path": "ThirdParty/JUCE", "url": "https://github.com/juce-framework/JUCE.git" },
+        { "path": "ThirdParty/RTNeural", "url": "https://github.com/jatinchowdhury18/RTNeural.git" }
+      ],
+      "expected_outputs": ["VST3", "Standalone"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin", "x86_64-windows"],
+      "permitted_redistribution": true,
+      "proposed_nix_attr": "neuralnote",
+      "classification": "accept-source",
+      "risk": "low",
+      "notes": "Detailed review in docs/neuralnote-review.md. Apache-2.0. ONNX Runtime requires FOD. Update notification mechanism needs audit. Model weights committed in repo (good for supply chain)."
+    },
+    {
+      "name": "ripplerx",
+      "canonical": "RipplerX",
+      "source_url": "https://github.com/tiagolr/ripplerx",
+      "homepage": "https://github.com/tiagolr/ripplerx",
+      "revision": "v1.5.19",
+      "revision_sha": "7da35e4",
+      "version": "1.5.19",
+      "license_spdx": "GPL-3.0-only",
+      "source_hash": "not-yet-pinned",
+      "dependencies": {
+        "JUCE": { "version": "git submodule", "license": "GPL-3.0-or-commercial", "fetch": "submodule" },
+        "MTS-ESP": { "version": "git submodule", "license": "ODDSound permissive", "fetch": "submodule" }
+      },
+      "submodules": [
+        { "path": "libs/JUCE", "url": "https://github.com/juce-framework/JUCE.git" },
+        { "path": "libs/MTS-ESP", "url": "https://github.com/ODDSound/MTS-ESP.git" }
+      ],
+      "expected_outputs": ["VST3", "LV2", "AU"],
+      "supported_systems": ["x86_64-linux", "x86_64-darwin", "aarch64-darwin", "x86_64-windows"],
+      "permitted_redistribution": true,
+      "proposed_nix_attr": "ripplerx",
+      "classification": "accept-source",
+      "risk": "low",
+      "notes": "GPL-3.0 confirmed. Active CI with tagged releases. MTS-ESP vendored as submodule. Modal resonators numerically stable with bounds-checking. ScopedNoDenormals present. JUCE submodule needs pinning to explicit commit."
+    }
+  ]
+}
