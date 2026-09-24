@@ -1,0 +1,96 @@
+--- a/plugins/campione/src/dpf/CampioneUI.cpp
++++ b/plugins/campione/src/dpf/CampioneUI.cpp
+@@ -473,49 +473,7 @@
+             filePickerThread_ = std::thread([this]() {
+                 std::vector<std::string> paths;
+-                bool needFallback = false;
+-
+-#ifdef __linux__
+-                // zenity is the standard GTK multi-file picker on Linux desktops.
+-                // Check availability first so we can fall back immediately if absent.
+-                FILE* check = ::popen("which zenity >/dev/null 2>&1", "r");
+-                if (check) {
+-                    needFallback = (::pclose(check) != 0);
+-                } else {
+-                    needFallback = true;
+-                }
+-
+-                if (!needFallback) {
+-                    FILE* pipe = ::popen(
+-                        "zenity --file-selection --multiple"
+-                        " --title='Load Audio Files'"
+-#ifdef CAMPIONE_HAS_VELOCILOOPS
+-                        " --file-filter='Audio files | *.wav *.WAV *.rx2 *.RX2'"
+-#else
+-                        " --file-filter='WAV files | *.wav *.WAV'"
+-#endif
+-                        " 2>/dev/null", "r");
+-                    if (pipe) {
+-                        char buf[4096];
+-                        std::string all;
+-                        while (std::fgets(buf, sizeof(buf), pipe))
+-                            all += buf;
+-                        ::pclose(pipe);
+-                        // zenity separates multiple paths with '|'; strip trailing newline
+-                        while (!all.empty() && (all.back() == '\n' || all.back() == '\r'))
+-                            all.pop_back();
+-                        std::size_t pos = 0;
+-                        while (pos <= all.size()) {
+-                            const std::size_t sep = all.find('|', pos);
+-                            const std::string p = all.substr(pos, sep == std::string::npos
+-                                                                  ? std::string::npos : sep - pos);
+-                            if (!p.empty()) paths.push_back(p);
+-                            if (sep == std::string::npos) break;
+-                            pos = sep + 1;
+-                        }
+-                    }
+-                }
+-#else
+-                needFallback = true;  // zenity is Linux-only; use DPF browser on macOS/Windows
+-#endif
++                // Use DPF's existing single-file browser on every platform;
++                // never launch an external zenity process from the plugin UI.
++                bool needFallback = true;
+
+                 {
+@@ -2227,37 +2185,7 @@
+         filePickerThread_ = std::thread([this, stateKeyStr = std::string(stateKey)]() {
+             std::vector<std::string> paths;
+-            bool needFallback = false;
+-#ifdef __linux__
+-            FILE* check = ::popen("which zenity >/dev/null 2>&1", "r");
+-            if (check) {
+-                needFallback = (::pclose(check) != 0);
+-            } else {
+-                needFallback = true;
+-            }
+-            if (!needFallback) {
+-                FILE* pipe = ::popen(
+-                    "zenity --file-selection --multiple"
+-                    " --title='Load Audio Files'"
+-#ifdef CAMPIONE_HAS_VELOCILOOPS
+-                    " --file-filter='Audio files | *.wav *.WAV *.rx2 *.RX2'"
+-#else
+-                    " --file-filter='WAV files | *.wav *.WAV'"
+-#endif
+-                    " --separator='\\n' 2>/dev/null", "r");
+-                if (pipe) {
+-                    char buf[4096];
+-                    while (std::fgets(buf, sizeof(buf), pipe)) {
+-                        std::string s(buf);
+-                        while (!s.empty() && (s.back() == '\n' || s.back() == '\r')) s.pop_back();
+-                        if (!s.empty()) paths.push_back(s);
+-                    }
+-                    ::pclose(pipe);
+-                } else {
+-                    needFallback = true;
+-                }
+-            }
+-#else
+-            needFallback = true;
+-#endif
++            // Context-menu loading uses the same DPF single-file fallback.
++            // Preserve stateKeyStr for the existing completion path.
++            bool needFallback = true;
+             {
+                 std::lock_guard<std::mutex> lk(filePickerMtx_);

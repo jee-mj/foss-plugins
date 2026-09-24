@@ -108,6 +108,10 @@
           plugin-artifacts = pkgs.callPackage ./tests/plugin-artifacts.nix {
             inherit pluginArtifacts;
           };
+
+          downspout = pkgs.callPackage ./tests/downspout.nix {
+            inherit packageSet;
+          };
         }
       );
     };

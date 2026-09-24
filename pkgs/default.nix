@@ -13,6 +13,7 @@ rec {
     modal-synth = callPackage ./modal-synth { inherit pluginArtifacts juceRuntime; };
     space-dust-synthesizer = callPackage ./space-dust-synthesizer { inherit pluginArtifacts juceRuntime; };
     squelchbox = callPackage ./squelchbox { inherit pluginArtifacts; };
+    downspout = callPackage ./downspout { inherit pluginArtifacts; };
     ultramaster-kr106 = callPackage ./ultramaster-kr106 { inherit pluginArtifacts juceRuntime; };
 
     # Phase 1 accept-source: GPL-3.0 / Apache-2.0, complete source, reviewed.

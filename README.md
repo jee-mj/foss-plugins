@@ -10,6 +10,7 @@ All packages are built for `x86_64-linux`.
 | Package attribute | Description | Plugin formats | Upstream |
 | --- | --- | --- | --- |
 | `amsynth` | Analog modelling synthesizer | LV2, standalone | [amsynth/amsynth](https://github.com/amsynth/amsynth) |
+| `downspout` | Algorithmic composition, MIDI generation, synthesis and effects (46 bundles) | VST3 | [danja/downspout](https://github.com/danja/downspout) |
 | `modal-synth` | Modal synthesis instrument | VST3, standalone | [crispinha/modal-synth](https://github.com/crispinha/modal-synth) |
 | `space-dust-synthesizer` | Polyphonic JUCE synthesizer | VST3, standalone | [gadalleore/Space_Dust_Synthesizer](https://github.com/gadalleore/Space_Dust_Synthesizer) |
 | `squelchbox` | TB-303-style acid bassline synthesizer | VST3, CLAP, standalone | [Hornfisk/squelchbox](https://github.com/Hornfisk/squelchbox) |
@@ -17,6 +18,28 @@ All packages are built for `x86_64-linux`.
 | `setekh` | Minimalistic multi-format distortion | VST3, LV2, CLAP | [fullfxmedia/setekh](https://github.com/fullfxmedia/setekh) |
 | `ripplerx` | Physical modelling synthesis (modal/waveguide/Karplus-Strong) | VST3, LV2 | [tiagolr/ripplerx](https://github.com/tiagolr/ripplerx) |
 | `neuralnote` | Audio-to-MIDI transcription using deep learning | VST3, standalone | [DamRsn/NeuralNote](https://github.com/DamRsn/NeuralNote) |
+
+### Downspout capability notice
+
+`downspout` pins **v0.16.2**, builds from source with vendored DPF, and runs
+CTest fail-closed with assertions enabled. The AI coordinator is not built or
+installed. Third-party license notices accompany the output.
+
+**Review before activating Campione:** its MCP server defaults on at DSP
+activation, listens without authentication on `127.0.0.1:7220–7229`, and can
+overwrite source WAVs and write caller-selected patch paths. Sidecar defaults
+to local generation but retains an optional localhost coordinator client.
+Both plugins are included deliberately; packaging is not host-lifecycle or
+security certification. Campione uses DPF's single-file browser instead of
+launching `zenity`.
+
+See the [pinned-source audit and host acceptance checklist](docs/downspout.md)
+before DAW use. No coordinator, service, or plugin is activated by building this
+package.
+
+```bash
+nix build --no-link .#downspout
+```
 
 ### Conditional and unfree packages
 
