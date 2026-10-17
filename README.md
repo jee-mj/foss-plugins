@@ -5,6 +5,29 @@ available in [nixpkgs](https://github.com/NixOS/nixpkgs).
 
 All packages are built for `x86_64-linux`.
 
+## Discover the full audio catalog
+
+The [104-repository catalog](catalog/audio-104.json) also tracks Windows-only,
+source-only and not-yet-packaged plugins. Read the [catalog guide](docs/audio-catalog.md)
+and [Windows acquisition references](docs/windows-plugin-acquisition.md) for
+platform evidence, upstream downloads, usage routes and copyright-safety notes.
+Catalog inclusion is not a package export, a rights grant, or a compatibility claim.
+Missing license metadata does not block technical evaluation; consumers are
+encouraged to exercise their own judgement. AI-assisted development does not
+establish that code or bundled assets are copyright-free.
+
+Query the catalog without building plugins:
+
+```bash
+nix eval --json .#catalog
+python3 tests/audio-catalog.py
+```
+
+The catalog is metadata only: it does not install plugins, change existing
+free/conditional package classification, or require this workstation's private
+installer tooling. The package tables below describe actual package outputs,
+not every catalog entry.
+
 ## Upstream packages
 
 | Package attribute | Description | Plugin formats | Upstream |
@@ -18,6 +41,19 @@ All packages are built for `x86_64-linux`.
 | `setekh` | Minimalistic multi-format distortion | VST3, LV2, CLAP | [fullfxmedia/setekh](https://github.com/fullfxmedia/setekh) |
 | `ripplerx` | Physical modelling synthesis (modal/waveguide/Karplus-Strong) | VST3, LV2 | [tiagolr/ripplerx](https://github.com/tiagolr/ripplerx) |
 | `neuralnote` | Audio-to-MIDI transcription using deep learning | VST3, standalone | [DamRsn/NeuralNote](https://github.com/DamRsn/NeuralNote) |
+| `peakeater` | Waveshaping clipper ([build evidence](docs/peakeater.md)) | VST3, LV2, CLAP | [vvvar/PeakEater](https://github.com/vvvar/PeakEater) |
+| `toneshifteq` | Twelve-band EQ with spectrum analysis and IR matching ([build evidence](docs/toneshifteq.md)) | VST3, LV2, CLAP | [brummer10/ToneShiftEQ](https://github.com/brummer10/ToneShiftEQ) |
+| `intersect` | Slicing sampler, CPU-default optional stem inference ([build evidence](docs/acceleration/intersect-build.md)) | VST3 | [tucktuckg00se/INTERSECT](https://github.com/tucktuckg00se/INTERSECT) |
+| `audio-restoration-vst` | Vinyl restoration, CPU-default optional ONNX denoising ([build evidence](docs/acceleration/audio-restoration-vst-build.md)) | VST3 | [flarkflarkflark/AudioRestorationVST](https://github.com/flarkflarkflark/AudioRestorationVST) |
+
+The [full-set acceleration matrix](docs/acceleration-matrix.md) distinguishes
+assessed source capabilities, CPU build/load checks and experimental GPU routes.
+The two ONNX packages compile plugin source against explicitly pinned binary
+runtime dependencies; they do not include or automatically acquire models.
+Three experimental GPU aliases have linked build and scoped library-load evidence,
+not inference or hardware acceptance. AMD hardware execution is deliberately
+policy-skipped. Choose only one variant per product: their plugin identities and
+bundle names are shared, so they are alternatives, not additive installations.
 
 ### Downspout capability notice
 
@@ -62,6 +98,23 @@ the reason it is gated:
 | `openkick` | Lightweight sidechain volume-ducking utility | VST3, standalone | [navidsatarmaker/OpenKick](https://github.com/navidsatarmaker/OpenKick) | `blocked-pending-upstream` |
 | `lumen` | Wavetable synthesizer with image-to-tone Lens engine | VST3, standalone | [pixelsncodes/lumen](https://github.com/pixelsncodes/lumen) | `blocked-pending-upstream` |
 | `mt-power-drum-kit` | Acoustic drum sampler (MT Power Drum Kit 2) | VST3 | [MT Power Drum Kit](https://www.powerdrumkit.com) | `binary-only-manual-approval` |
+| `intersect-cuda12` | INTERSECT with ORT CUDA 12 runtime | VST3 | [INTERSECT evidence](docs/acceleration/intersect-build.md) | `experimental` |
+| `intersect-migraphx` | INTERSECT with experimental AMD MIGraphX runtime | VST3 | [INTERSECT evidence](docs/acceleration/intersect-build.md) | `experimental` |
+| `audio-restoration-vst-cuda` | Restoration with optional ORT CUDA runtime | VST3 | [Restoration evidence](docs/acceleration/audio-restoration-vst-build.md) | `experimental` |
+
+The GPU variants use the existing explicit conditional gate. MIGraphX's placement
+here is about validation maturity, **not** a claim that ROCm/MIGraphX is proprietary.
+CUDA/cuDNN dependencies retain their vendor terms. Example, without activation:
+
+```bash
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#intersect-cuda12
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#intersect-migraphx
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#audio-restoration-vst-cuda
+```
+
+Review the model-acquisition and cache-only dependency procedures in the linked
+build notes before reproducing GPU builds. Library relocation/loading is not GPU
+node execution; no models or GPU sessions were exercised in these checks.
 
 Build any conditional package with an explicit unfree opt-in:
 

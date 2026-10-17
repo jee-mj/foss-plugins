@@ -17,6 +17,9 @@
       packageSetFor = pkgs: pkgs.callPackage ./pkgs { };
     in
     {
+      # Discovery metadata is independent of package availability and unfree opt-in.
+      catalog = builtins.fromJSON (builtins.readFile ./catalog/audio-104.json);
+
       packages = forAllSystems (
         system:
         let
@@ -55,9 +58,29 @@
             }).config;
         in
         {
-          # These checks are intentionally small.  The full artifact-helper
-          # fixtures and real plugin derivations follow after this laziness
-          # preflight has established a safe MechanOdd public interface.
+          # Metadata validation does not build or execute upstream plugins.
+          audio-catalog = pkgs.runCommand "foss-plugins-audio-catalog" {
+            nativeBuildInputs = [ pkgs.python3 ];
+          } ''
+            mkdir -p lib tests/fixtures scripts catalog docs
+            cp ${./lib/catalog_acceleration.py} lib/catalog_acceleration.py
+            cp ${./tests/audio-catalog.py} tests/audio-catalog.py
+            cp ${./tests/test_catalog_acceleration.py} tests/test_catalog_acceleration.py
+            cp ${./tests/test_render_acceleration_matrix.py} tests/test_render_acceleration_matrix.py
+            cp ${./tests/audio-catalog-identities.json} tests/audio-catalog-identities.json
+            cp -R ${./tests/fixtures/acceleration} tests/fixtures/acceleration
+            cp ${./scripts/merge-acceleration.py} scripts/merge-acceleration.py
+            cp ${./scripts/render-acceleration-matrix.py} scripts/render-acceleration-matrix.py
+            cp ${./catalog/audio-104.json} catalog/audio-104.json
+            cp ${./docs/acceleration-matrix.md} docs/acceleration-matrix.md
+            python3 tests/audio-catalog.py --require-assessed
+            python3 -m unittest discover -s tests -p 'test_*acceleration*.py' -v
+            python3 scripts/render-acceleration-matrix.py --check
+            touch "$out"
+          '';
+
+          # This laziness preflight establishes a safe MechanOdd public interface
+          # before the artifact-helper fixtures and real plugin derivations.
           free-package-set =
             assert packageSet ? freePackageNames;
             assert packageSet ? unfreePackageNames;
@@ -111,6 +134,47 @@
 
           downspout = pkgs.callPackage ./tests/downspout.nix {
             inherit packageSet;
+          };
+
+          toneshifteq = pkgs.callPackage ./tests/toneshifteq.nix {
+            inherit packageSet;
+          };
+
+          peakeater = pkgs.callPackage ./tests/peakeater.nix {
+            peakeater = packageSet.freePackages.peakeater;
+          };
+
+          intersect = pkgs.callPackage ./tests/intersect.nix {
+            intersect = packageSet.freePackages.intersect;
+          };
+
+          intersect-provider = pkgs.callPackage ./tests/intersect-provider.nix {
+            intersect = packageSet.freePackages.intersect;
+          };
+
+          audio-restoration-vst = pkgs.callPackage ./tests/audio-restoration-vst.nix {
+            audio-restoration-vst = packageSet.freePackages.audio-restoration-vst;
+          };
+
+          audio-restoration-vst-provider = pkgs.callPackage ./tests/audio-restoration-vst-provider.nix {
+            audio-restoration-vst = packageSet.freePackages.audio-restoration-vst;
+          };
+        } // nixpkgs.lib.optionalAttrs unfreeOptIn {
+          intersect-cuda12 = pkgs.callPackage ./tests/intersect.nix {
+            intersect = packageSet.unfreePackages.intersect-cuda12;
+          };
+          intersect-cuda12-provider = pkgs.callPackage ./tests/intersect-provider.nix {
+            intersect = packageSet.unfreePackages.intersect-cuda12;
+          };
+          intersect-migraphx = pkgs.callPackage ./tests/intersect.nix {
+            intersect = packageSet.unfreePackages.intersect-migraphx;
+          };
+          intersect-migraphx-provider = pkgs.callPackage ./tests/intersect-provider.nix {
+            intersect = packageSet.unfreePackages.intersect-migraphx;
+          };
+          audio-restoration-vst-cuda = pkgs.callPackage ./tests/audio-restoration-vst-provider.nix {
+            audio-restoration-vst = packageSet.freePackages.audio-restoration-vst;
+            cudaLoad = true;
           };
         }
       );

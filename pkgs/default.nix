@@ -20,10 +20,20 @@ rec {
     setekh = callPackage ./setekh { inherit pluginArtifacts juceRuntime; };
     neuralnote = callPackage ./neuralnote { inherit pluginArtifacts juceRuntime; };
     ripplerx = callPackage ./ripplerx { inherit pluginArtifacts juceRuntime; };
+    peakeater = callPackage ./peakeater { inherit pluginArtifacts juceRuntime; };
+    toneshifteq = callPackage ./toneshifteq { inherit pluginArtifacts; };
+    intersect = callPackage ./intersect { inherit pluginArtifacts juceRuntime; };
+    audio-restoration-vst = callPackage ./audio-restoration-vst { inherit pluginArtifacts juceRuntime; };
   };
 
   # The unfree/impure gate: experimental, missing-license, or binary-only.
   unfreePackages = {
+    # Experimental GPU variants share the existing explicit conditional gate.
+    # MIGraphX is gated for validation maturity, not a non-free license claim.
+    intersect-cuda12 = freePackages.intersect.override { provider = "cuda12"; };
+    intersect-migraphx = freePackages.intersect.override { provider = "migraphx"; };
+    audio-restoration-vst-cuda = freePackages.audio-restoration-vst.override { provider = "cuda"; };
+
     mechanodd = callPackage ./mechanodd { inherit pluginArtifacts juceRuntime; };
     rdpiano = callPackage ./rdpiano { inherit pluginArtifacts projucer; };
 

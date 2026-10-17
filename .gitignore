@@ -11,3 +11,7 @@ result-*
 *~
 .idea/
 .vscode/
+
+# Python catalog tooling
+__pycache__/
+*.py[cod]

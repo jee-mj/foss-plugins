@@ -1,0 +1,8 @@
+[
+  {"name": "upstream-only", "base": "cpu-build", "changes": {"evidence.0.kind": "upstream"}},
+  {"name": "wrong-stage", "base": "cpu-build", "changes": {"evidence.0.stage": "load"}},
+  {"name": "wrong-source", "base": "cpu-build", "changes": {"evidence.0.subject.source_revision": "2222222222222222222222222222222222222222"}},
+  {"name": "wrong-runtime", "base": "cpu-build", "changes": {"evidence.0.subject.runtime_id": "other-runtime"}},
+  {"name": "model-without-acquired-hash", "base": "cpu-build", "changes": {"validation.build": "not-run", "validation.model_execution": "passed", "evidence.0.stage": "model_execution", "evidence.0.subject.model_id": "unacquired", "evidence.0.subject.model_sha256": null, "model_refs": [{"id": "unacquired", "source_kind": "manual", "source_url": null, "revision": null, "sha256": null, "bytes": null, "license_evidence": "Unresolved synthetic model terms.", "acquisition": "not-requested"}]}},
+  {"name": "native-windows-used-for-wine", "base": "cpu-build", "changes": {"platform": "wine", "evidence.0.subject.environment.os": "windows", "evidence.0.subject.environment.execution_context": "windows"}}
+]

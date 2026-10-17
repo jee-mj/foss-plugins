@@ -1,0 +1,40 @@
+{
+  "id": "AUDIO-065",
+  "acceleration": {
+    "assessment": "complete",
+    "ai_role": "inference",
+    "execution_mode": "background-job",
+    "components": [{"id": "stem-separation", "summary": "Background stem separation", "kind": "neural-inference"}],
+    "backends": [{
+      "component": "stem-separation",
+      "platform": "linux",
+      "architecture": "x86_64",
+      "vendor": "amd",
+      "provider": "onnxruntime-migraphx",
+      "upstream_status": "experimental",
+      "integration_status": "not-packaged",
+      "runtime_pins": [],
+      "model_refs": [],
+      "cpu_fallback": "supported",
+      "package_attribute": null,
+      "source_revision": null,
+      "runtime_id": null,
+      "validation": {
+        "evaluation": "not-run", "build": "not-run", "load": "not-run",
+        "model_execution": "not-run-policy", "provider_execution": "not-run-policy", "host": "not-run-policy",
+        "reason": "AMD hardware execution is deliberately outside this campaign."
+      },
+      "evidence": [],
+      "next_action": "Verify pinned upstream MIGraphX bundle and runtime ABI."
+    }],
+    "evidence": [{
+      "kind": "upstream",
+      "reference": "https://github.com/tucktuckg00se/intersect-ort-providers/releases/tag/ort-1.24.2",
+      "revision": null,
+      "stage": "assessment",
+      "summary": "Upstream publishes an experimental MIGraphX bundle; this is not campaign hardware verification."
+    }],
+    "blocked_reason": null,
+    "next_action": "Verify pinned upstream MIGraphX bundle and runtime ABI."
+  }
+}

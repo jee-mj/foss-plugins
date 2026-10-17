@@ -1,0 +1,23 @@
+{
+  "id": "AUDIO-065",
+  "acceleration": {
+    "assessment": "complete", "ai_role": "inference", "execution_mode": "background-job",
+    "components": [{"id": "stem-separation", "summary": "Synthetic CPU inference fixture", "kind": "neural-inference"}],
+    "backends": [{
+      "component": "stem-separation", "platform": "linux", "architecture": "x86_64", "vendor": "cpu",
+      "provider": "onnxruntime-cpu", "upstream_status": "implemented", "integration_status": "packaged",
+      "runtime_pins": [{"name": "onnxruntime", "version": "1.24.2", "revision": null, "hash": "sha256-synthetic-fixture", "source_url": "https://github.com/microsoft/onnxruntime", "note": "Synthetic test identity only; no package was built."}],
+      "model_refs": [], "cpu_fallback": "supported", "package_attribute": "synthetic-cpu",
+      "source_revision": "1111111111111111111111111111111111111111", "runtime_id": "synthetic-ort-cpu-1.24.2",
+      "validation": {"evaluation": "not-run", "build": "passed", "load": "not-run", "model_execution": "not-run", "provider_execution": "not-run", "host": "not-run", "reason": null},
+      "evidence": [{
+        "kind": "verification", "reference": "tests/fixtures/acceleration/cpu-build.json", "revision": "1111111111111111111111111111111111111111", "stage": "build", "summary": "Synthetic build evidence for validator tests, not a campaign result.",
+        "subject": {"package_attribute": "synthetic-cpu", "source_revision": "1111111111111111111111111111111111111111", "artifact": "sha256:2222222222222222222222222222222222222222222222222222222222222222", "attempt": null, "runtime_id": "synthetic-ort-cpu-1.24.2", "model_id": null, "model_sha256": null,
+          "environment": {"os": "linux", "architecture": "x86_64", "execution_context": "linux", "gpu_vendor": null, "gpu_model": null, "driver": null}}
+      }],
+      "next_action": "Synthetic fixture only."
+    }],
+    "evidence": [{"kind": "upstream", "reference": "https://github.com/microsoft/onnxruntime", "revision": null, "stage": "assessment", "summary": "Synthetic CPU test conclusion."}],
+    "blocked_reason": null, "next_action": "Synthetic fixture only."
+  }
+}
