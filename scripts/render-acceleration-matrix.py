@@ -43,12 +43,19 @@ def render(catalog, identities):
     if catalog.get("schema_version") != 2:
         raise ValueError("schema_version must be 2")
     for entry in entries:
+        distribution = entry["distribution"]
+        if (distribution["status"] == "packaged"
+                and distribution.get("delivery_scope") not in ("native-plugin", "windows-artifacts")):
+            raise ValueError(entry["id"] + ": distribution.delivery_scope must be "
+                             "native-plugin or windows-artifacts for packaged entries")
         errors = validation_errors(entry, require_assessed=True)
         if errors:
             raise ValueError(entry["id"] + ": " + "; ".join(errors))
     assessments = Counter(e["acceleration"]["assessment"] for e in entries)
     roles = Counter(e["acceleration"]["ai_role"] for e in entries)
     distributions = Counter(e["distribution"]["status"] for e in entries)
+    scopes = Counter(e["distribution"].get("delivery_scope") for e in entries
+                     if e["distribution"]["status"] == "packaged")
     backends = [(e, b) for e in entries for b in e["acceleration"]["backends"]]
     lines = [
         "# Full-catalog acceleration matrix", "",
@@ -60,6 +67,11 @@ def render(catalog, identities):
         f"**{assessments['blocked-evidence']}** blocked-evidence; **{assessments['pending']}** pending; "
         f"**{len(backends)}** backend records; **{distributions['packaged']}** packaged and "
         f"**{distributions['catalog-only']}** catalog-only repositories.", "",
+        f"Packaged delivery scopes: **{scopes['native-plugin']}** native-plugin; "
+        f"**{scopes['windows-artifacts']}** windows-artifacts. Windows ZIP/NSIS delivery does not "
+        "establish native Linux installability. Additional attributes do not add repository rows. "
+        "Source builds and cache realization are distinguished in the linked delivery evidence; "
+        "older backend source assessments retain their own revision and proof boundaries.", "",
         "AI roles (computed from the authoritative catalog, not inferred from product names): "
         + "; ".join(f"`{role}`: {count}" for role, count in sorted(roles.items())) + ".", "",
         "Backend records are component/platform/architecture/vendor/provider assessments, not delivered "
@@ -72,17 +84,22 @@ def render(catalog, identities):
         "placement or host/audio acceptance. AMD hardware stages are policy-skipped. See "
         "[validation and limitations](acceleration-validation.md).", "",
         "## Canonical repository rows", "",
-        "| ID | Repository | Assessment | AI role / execution | Distribution | Published package attribute | Build / runtime | Source note |",
+        "| ID | Repository | Assessment | AI role / execution | Distribution / delivery scope | Package attributes (working-tree exports) | Build / runtime | Source note |",
         "| --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for entry in entries:
         a, d = entry["acceleration"], entry["distribution"]
         lines.append("| " + " | ".join([
             entry["id"], "`" + cell(entry["repository"]) + "`", a["assessment"],
-            cell(a["ai_role"] + " / " + a["execution_mode"]), d["status"],
-            attribute(d["nix_attribute"], local=d["status"] == "packaged"),
+            cell(a["ai_role"] + " / " + a["execution_mode"]),
+            cell(d["status"] + (" / " + d["delivery_scope"] if d.get("delivery_scope") else "")),
+            "; ".join(attribute(value, local=d["status"] == "packaged") for value in
+                      [d["nix_attribute"], *d.get("additional_attributes", [])]),
             cell(entry["verification"]["build"] + " / " + entry["verification"]["runtime"]),
-            f"[source assessment](acceleration/{entry['id']}.md)",
+            f"[source assessment](acceleration/{entry['id']}.md)"
+            + (f"; [delivery evidence]({cell(entry['verification']['evidence'])[5:]})"
+               if isinstance(entry["verification"].get("evidence"), str)
+               and entry["verification"]["evidence"].startswith("docs/") else ""),
         ]) + " |")
     lines += ["", "## Per-component backend stages", "",
               "Stage columns preserve catalog values in this order: evaluation / build / load and "

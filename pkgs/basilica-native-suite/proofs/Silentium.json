@@ -1,0 +1,70 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/nifzaa7v9gyc03bagafnjjg3xjqvr6ay-basilica-Silentium-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/s60bhdzc0lr0wd0fr4cwad5ajzffhyc5-basilica-Silentium-native-artifacts",
+    "audio": "AUDIO-058",
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-004",
+    "modification": null,
+    "name": "Silentium",
+    "packageDrv": "/nix/store/i7vslaid9sgkflmiv6s8njxx2kysrdcn-basilica-silentium-0.5.0.drv",
+    "packageOutput": "/nix/store/qrnw292zc1z3ixghp0qi12anni69w6q6-basilica-silentium-0.5.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-hmCWAxA13OMI0LeXD3ys+M0OTe44WW9MthAa4IMa2G0=",
+      "repo": "basilica-audio/Silentium",
+      "revision": "574fd36431d26c1f572f7c7f9955b82293b669f3",
+      "sourceDrv": "/nix/store/8ri7dj1y2pss2shsv9hz08ikz0r9gjg5-source.drv",
+      "sourceOut": "/nix/store/9dq849ib7crc2d3f6pmizbihv8lrk8iz-source",
+      "version": "0.5.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {
+      "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+      "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+    },
+    "format": "VST3",
+    "name": "Silentium",
+    "noticeFiles": 3232,
+    "noticeManifestSha256": "add13120c74e8daea691dfd7b5dc4872df6e40d6ddc369c725f957fb70c02d85",
+    "plugin": "/nix/store/qrnw292zc1z3ixghp0qi12anni69w6q6-basilica-silentium-0.5.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "c1d27a600a6f2ce3cb34de3747c68abab81a53a175ecd267e53480dce8743de1"
+  },
+  "verificationSha256": "35f3bf8b45f4de7f006e89779471e6f5ead421a8201d1de052af4232734a7827"
+}

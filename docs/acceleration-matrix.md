@@ -4,7 +4,9 @@
 
 Source: [schema-2 catalog](../catalog/audio-104.json); identity/order checked against the [independent fixture](../tests/audio-catalog-identities.json). No network, Nix evaluation, model acquisition or hardware probing occurs during rendering.
 
-**104** canonical repositories; **99** complete assessments; **5** blocked-evidence; **0** pending; **98** backend records; **4** packaged and **100** catalog-only repositories.
+**104** canonical repositories; **99** complete assessments; **5** blocked-evidence; **0** pending; **98** backend records; **16** packaged and **88** catalog-only repositories.
+
+Packaged delivery scopes: **12** native-plugin; **4** windows-artifacts. Windows ZIP/NSIS delivery does not establish native Linux installability. Additional attributes do not add repository rows. Source builds and cache realization are distinguished in the linked delivery evidence; older backend source assessments retain their own revision and proof boundaries.
 
 AI roles (computed from the authoritative catalog, not inferred from product names): `external-service`: 2; `inference`: 6; `mixed`: 5; `none`: 86; `unknown`: 5.
 
@@ -14,28 +16,28 @@ Published package attributes and backend package attributes are separate. A `nul
 
 ## Canonical repository rows
 
-| ID | Repository | Assessment | AI role / execution | Distribution | Published package attribute | Build / runtime | Source note |
+| ID | Repository | Assessment | AI role / execution | Distribution / delivery scope | Package attributes (working-tree exports) | Build / runtime | Source note |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| AUDIO-001 | `Chmod666music/Fuimadane-DrumCloud` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-001.md) |
+| AUDIO-001 | `Chmod666music/Fuimadane-DrumCloud` | complete | none / not-applicable | packaged / windows-artifacts | `packages.x86_64-linux.drumcloud-windows` | passed / not-tested | [source assessment](acceleration/AUDIO-001.md); [delivery evidence](drumcloud-windows.md) |
 | AUDIO-002 | `kanxshk/SmoothieVST` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-002.md) |
-| AUDIO-003 | `basilica-audio/Miserere` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-003.md) |
+| AUDIO-003 | `basilica-audio/Miserere` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.basilica-miserere` | passed / not-tested | [source assessment](acceleration/AUDIO-003.md); [delivery evidence](basilica-miserere.md) |
 | AUDIO-004 | `jonnygucci1/Giannitune` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-004.md) |
 | AUDIO-005 | `spacebabies/klinker` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-005.md) |
 | AUDIO-006 | `zenoxart/CleanVoice` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-006.md) |
-| AUDIO-007 | `basilica-audio/Seraph` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-007.md) |
+| AUDIO-007 | `basilica-audio/Seraph` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.basilica-seraph` | passed / not-tested | [source assessment](acceleration/AUDIO-007.md); [delivery evidence](basilica-native-suite.md) |
 | AUDIO-008 | `ayanumich/crispy` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-008.md) |
 | AUDIO-009 | `rithulkamesh/chorale` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-009.md) |
 | AUDIO-010 | `frankknebeljanssen-create/SmartComp` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-010.md) |
 | AUDIO-011 | `sammythayermusic-ship-it/Mahogany` | complete | inference / worker-thread | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-011.md) |
 | AUDIO-012 | `dan-k-k/vocal-gate` | complete | mixed / mixed | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-012.md) |
-| AUDIO-013 | `flarkflarkflark/AudioRestorationVST` | complete | inference / audio-callback | packaged | `packages.x86_64-linux.audio-restoration-vst` | passed / not-tested | [source assessment](acceleration/AUDIO-013.md) |
+| AUDIO-013 | `flarkflarkflark/AudioRestorationVST` | complete | inference / audio-callback | packaged / native-plugin | `packages.x86_64-linux.audio-restoration-vst` | passed / not-tested | [source assessment](acceleration/AUDIO-013.md) |
 | AUDIO-014 | `chalkwalk/arps-euclidya` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-014.md) |
 | AUDIO-015 | `Emmet-Hayes/HayesPlugins` | blocked-evidence | unknown / unknown | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-015.md) |
 | AUDIO-016 | `masseyis/plaits-vst` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-016.md) |
 | AUDIO-017 | `tparker48/sherpa-synthesizer` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-017.md) |
 | AUDIO-018 | `ClyntiaAikaHanaa/Dihtortion` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-018.md) |
 | AUDIO-019 | `conjius-dp/tiptoe` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-019.md) |
-| AUDIO-020 | `cemkod/gunk` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-020.md) |
+| AUDIO-020 | `cemkod/gunk` | complete | none / not-applicable | packaged / windows-artifacts | `packages.x86_64-linux.gunk-windows` | passed / not-tested | [source assessment](acceleration/AUDIO-020.md); [delivery evidence](gunk-windows.md) |
 | AUDIO-021 | `natelaferney/Waveletizer` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-021.md) |
 | AUDIO-022 | `Blackshield-Company/open-synth` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-022.md) |
 | AUDIO-023 | `audiohacking/polez-vst` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-023.md) |
@@ -55,17 +57,17 @@ Published package attributes and backend package attributes are separate. A `nul
 | AUDIO-037 | `ajsprojects/DirtyBoy` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-037.md) |
 | AUDIO-038 | `Jaybee18/Garbage` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-038.md) |
 | AUDIO-039 | `allenloves/GuitarStrumSequencer` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-039.md) |
-| AUDIO-040 | `averagenative/0xFX` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-040.md) |
+| AUDIO-040 | `averagenative/0xFX` | complete | none / not-applicable | packaged / windows-artifacts | `packages.x86_64-linux.0xfx-windows` | passed / not-tested | [source assessment](acceleration/AUDIO-040.md); [delivery evidence](0xfx-windows.md) |
 | AUDIO-041 | `backpain22/8x8` | blocked-evidence | unknown / unknown | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-041.md) |
 | AUDIO-042 | `sauraen/timelagfilter` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-042.md) |
 | AUDIO-043 | `wheatBread1306/Dispenser` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-043.md) |
 | AUDIO-044 | `GareBear99/Therum_JUCE-Plugin` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-044.md) |
 | AUDIO-045 | `GareBear99/FreeVox8` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-045.md) |
 | AUDIO-046 | `affinedsp/suppressor` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-046.md) |
-| AUDIO-047 | `hariel1985/InstaWidth` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-047.md) |
+| AUDIO-047 | `hariel1985/InstaWidth` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.instawidth` | passed / not-tested | [source assessment](acceleration/AUDIO-047.md); [delivery evidence](instawidth.md) |
 | AUDIO-048 | `EiffelBS/OpenVoxTuner` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-048.md) |
 | AUDIO-049 | `conjius-dp/wet-diaper` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-049.md) |
-| AUDIO-050 | `echoeslabmusic/Sub-Orbit` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-050.md) |
+| AUDIO-050 | `echoeslabmusic/Sub-Orbit` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.sub-orbit` | passed / not-tested | [source assessment](acceleration/AUDIO-050.md); [delivery evidence](sub-orbit.md) |
 | AUDIO-051 | `melinteflxrin/DISTROAR-Distortion-Plugin` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-051.md) |
 | AUDIO-052 | `biferdou/Caravan` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-052.md) |
 | AUDIO-053 | `DatanoiseTV/jove` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-053.md) |
@@ -73,21 +75,21 @@ Published package attributes and backend package attributes are separate. A `nul
 | AUDIO-055 | `AlexSabaka/purrification` | complete | inference / background-job | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-055.md) |
 | AUDIO-056 | `iLucaH/AudioVisualiser` | complete | external-service / external-service | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-056.md) |
 | AUDIO-057 | `SungamMagnus/snida` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-057.md) |
-| AUDIO-058 | `basilica-audio/Silentium` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-058.md) |
+| AUDIO-058 | `basilica-audio/Silentium` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.basilica-silentium` | passed / not-tested | [source assessment](acceleration/AUDIO-058.md); [delivery evidence](basilica-native-suite.md) |
 | AUDIO-059 | `masarray/vst-enhancer` | blocked-evidence | unknown / unknown | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-059.md) |
 | AUDIO-060 | `yumasansansan/ADLplug-Next` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-060.md) |
 | AUDIO-061 | `sneed-and-feed/braun_rb-26` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-061.md) |
 | AUDIO-062 | `sneed-and-feed/braun_as-42` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-062.md) |
 | AUDIO-063 | `sneed-and-feed/braun_mr-16` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-063.md) |
-| AUDIO-064 | `vvvar/PeakEater` | complete | none / not-applicable | packaged | `packages.x86_64-linux.peakeater` | passed / not-tested | [source assessment](acceleration/AUDIO-064.md) |
-| AUDIO-065 | `tucktuckg00se/INTERSECT` | complete | inference / background-job | packaged | `packages.x86_64-linux.intersect` | passed / not-tested | [source assessment](acceleration/AUDIO-065.md) |
-| AUDIO-066 | `tiagolr/reevr` | complete | none / not-applicable | catalog-only | `reevr` | not-tested / not-tested | [source assessment](acceleration/AUDIO-066.md) |
-| AUDIO-067 | `wolf-plugins/wolf-shaper` | complete | none / not-applicable | catalog-only | `wolf-shaper` | not-tested / not-tested | [source assessment](acceleration/AUDIO-067.md) |
-| AUDIO-068 | `VASTDynamics/Vaporizer2` | complete | none / not-applicable | catalog-only | `vaporizer2` | not-tested / not-tested | [source assessment](acceleration/AUDIO-068.md) |
+| AUDIO-064 | `vvvar/PeakEater` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.peakeater` | passed / not-tested | [source assessment](acceleration/AUDIO-064.md) |
+| AUDIO-065 | `tucktuckg00se/INTERSECT` | complete | inference / background-job | packaged / native-plugin | `packages.x86_64-linux.intersect` | passed / not-tested | [source assessment](acceleration/AUDIO-065.md) |
+| AUDIO-066 | `tiagolr/reevr` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.reevr` | not-tested / not-tested | [source assessment](acceleration/AUDIO-066.md); [delivery evidence](nixpkgs-audio.md) |
+| AUDIO-067 | `wolf-plugins/wolf-shaper` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.wolf-shaper`; `packages.x86_64-linux.wolf-shaper-windows` | not-tested / not-tested | [source assessment](acceleration/AUDIO-067.md); [delivery evidence](nixpkgs-audio.md) |
+| AUDIO-068 | `VASTDynamics/Vaporizer2` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.vaporizer2` | not-tested / not-tested | [source assessment](acceleration/AUDIO-068.md); [delivery evidence](nixpkgs-audio.md) |
 | AUDIO-069 | `sjoerdvankreel/firefly-synth-2` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-069.md) |
 | AUDIO-070 | `igorski/fogpad` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-070.md) |
 | AUDIO-071 | `Dimethoxy/Plasma` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-071.md) |
-| AUDIO-072 | `brummer10/ToneTwistPlugs` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-072.md) |
+| AUDIO-072 | `brummer10/ToneTwistPlugs` | complete | none / not-applicable | packaged / windows-artifacts | `packages.x86_64-linux.tonetwist-windows` | passed / not-tested | [source assessment](acceleration/AUDIO-072.md); [delivery evidence](tonetwist-windows.md) |
 | AUDIO-073 | `hyperfocusdsp/niner` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-073.md) |
 | AUDIO-074 | `p-o-l-e/spiro` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-074.md) |
 | AUDIO-075 | `niflheimmer/badhumors` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-075.md) |
@@ -112,7 +114,7 @@ Published package attributes and backend package attributes are separate. A `nul
 | AUDIO-094 | `yonie/WetEQ` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-094.md) |
 | AUDIO-095 | `yonie/WetCompressor` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-095.md) |
 | AUDIO-096 | `PyDevices/mpvst` | blocked-evidence | unknown / unknown | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-096.md) |
-| AUDIO-097 | `brummer10/ToneShiftEQ` | complete | none / not-applicable | packaged | `packages.x86_64-linux.toneshifteq` | passed / not-tested | [source assessment](acceleration/AUDIO-097.md) |
+| AUDIO-097 | `brummer10/ToneShiftEQ` | complete | none / not-applicable | packaged / native-plugin | `packages.x86_64-linux.toneshifteq`; `packages.x86_64-linux.toneshifteq-windows` | passed / not-tested | [source assessment](acceleration/AUDIO-097.md) |
 | AUDIO-098 | `neglectware/ax330g` | complete | none / not-applicable | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-098.md) |
 | AUDIO-099 | `zephvibez-lab/AfroVocal-Presets` | complete | external-service / external-service | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-099.md) |
 | AUDIO-100 | `bogggare567/abcTrain` | complete | mixed / mixed | catalog-only | `null` | not-tested / not-tested | [source assessment](acceleration/AUDIO-100.md) |
@@ -255,7 +257,7 @@ Next action: Retain public-scaffold disposition; obtain published cleanup DSP be
 
 ### AUDIO-003 — basilica-audio/Miserere
 
-[Pinned source assessment](acceleration/AUDIO-003.md). License evidence: AGPL-3.0 repository evidence. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-003.md). License evidence: Miserere project AGPLv3; pinned JUCE 8.0.14 AGPLv3 or commercial, using its AGPLv3 path; embedded EB Garamond fonts SIL OFL 1.1. Notices retained; informational evidence, not a rights audit. See docs/basilica-miserere.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Next action: Reconcile current source with selected release, then assess CPU native portability or Windows/Wine packaging; no inference acceleration indicated.
 
@@ -296,7 +298,7 @@ Next action: Establish native Linux JUCE CPU baseline; AI-assisted authorship su
 
 ### AUDIO-007 — basilica-audio/Seraph
 
-[Pinned source assessment](acceleration/AUDIO-007.md). License evidence: AGPL-3.0 repository evidence. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-007.md). License evidence: Project AGPLv3; pinned JUCE 8.0.14 AGPLv3/commercial using AGPL path; Signalsmith MIT; EB Garamond OFL-1.1. Complete original notices retained; informational, not a legal audit. See docs/basilica-native-suite.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Next action: Reconcile source and selected release before CPU portability or Windows/Wine packaging work; no inference acceleration indicated.
 
@@ -613,7 +615,7 @@ Next action: Investigate Windows CPU plugin packaging and separate Wine host com
 
 ### AUDIO-020 — cemkod/gunk
 
-[Pinned source assessment](acceleration/AUDIO-020.md). License evidence: GPL-3.0 metadata; README specifies GPL-3.0-or-later and third-party notices. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-020.md). License evidence: Project GPL-3.0 metadata/README GPL-3.0-or-later; Windows package retains JUCE 7 GPL-route, aubio GPL, Q/Infra MIT, Surge attribution and GNU/MinGW/MCF runtime notices. Full raw-byte JUCE component notices and corresponding source are recorded in docs/gunk-windows.md; informational, not a legal audit. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Concerns: Surge wavetable attribution and dependency terms require review.
 
@@ -896,7 +898,7 @@ Next action: Establish CPU artifact/build contract and separate Windows/Wine MID
 
 ### AUDIO-040 — averagenative/0xFX
 
-[Pinned source assessment](acceleration/AUDIO-040.md). License evidence: MIT repository evidence. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-040.md). License evidence: Project MIT; operator Windows build retains complete vendored/dependency notices, source-built SDL2 license, supplemental KissFFT/Shine provenance, GPLv3 and GCC/MinGW/MCF runtime terms/exceptions, and upstream public-domain IR attribution. See docs/0xfx-windows.md and pkgs/0xfx-windows/NOTICE-PROVENANCE.md; no suite-wide permissive payload grant inferred. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Next action: Retain CPU processing; separately establish build and host acceptance for selected release. Native Windows/macOS source targets and Wine smoke scripts do not validate Wine audio or GPU execution.
 
@@ -1020,7 +1022,7 @@ Next action: Pin full dependency closure and establish Linux CPU artifact and GU
 
 ### AUDIO-047 — hariel1985/InstaWidth
 
-[Pinned source assessment](acceleration/AUDIO-047.md). License evidence: GPL-3.0-or-later stated in README. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-047.md). License evidence: Project README: GPL-3.0-or-later; pinned JUCE 8.0.12: AGPLv3 or commercial; embedded Rajdhani font: SIL OFL. See docs/instawidth.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Next action: Preserve CPU processing and validate latency/state/GUI independently; no NN/GPU acceleration integration found in the inspected paths.
 
@@ -1083,7 +1085,7 @@ Next action: Resolve JUCE/dependency revision and release architecture, then pac
 
 ### AUDIO-050 — echoeslabmusic/Sub-Orbit
 
-[Pinned source assessment](acceleration/AUDIO-050.md). License evidence: MIT repository evidence. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-050.md). License evidence: Project code MIT; PxPlus IBM VGA font CC BY-SA 4.0; pinned JUCE 8.0.12 LICENSE.md is AGPLv3 or commercial despite upstream NOTICE calling JUCE GPLv3. See docs/sub-orbit.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Next action: Keep CPU baseline; separately verify mono-safety, latency and host acceptance. No NVIDIA or AMD inference provider integration indicated.
 
@@ -1203,7 +1205,7 @@ Next action: Assess desktop platform port/build feasibility separately from embe
 
 ### AUDIO-058 — basilica-audio/Silentium
 
-[Pinned source assessment](acceleration/AUDIO-058.md). License evidence: AGPL-3.0 repository evidence. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-058.md). License evidence: Project AGPLv3; pinned JUCE 8.0.14 AGPLv3/commercial using AGPL path; original EB Garamond OFL-1.1 notices retained. Informational, not a legal audit. See docs/basilica-native-suite.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Next action: Investigate platform packaging and separately assess Windows/Wine host behavior.
 
@@ -1531,9 +1533,9 @@ Next action: Resolve Projucer/JUCE module paths and the chosen release before na
 
 ### AUDIO-072 — brummer10/ToneTwistPlugs
 
-[Pinned source assessment](acceleration/AUDIO-072.md). License evidence: Unknown at suite level: API null and no root license in inspected contents. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-072.md). License evidence: No suite-wide root grant; scoped Windows review records mixed per-file/source notices in pkgs/tonetwist-windows/LICENSE-REVIEW.md and docs/tonetwist-windows.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
-Concerns: Per-plugin license notices remain uninspected.
+Concerns: Mixed per-file and per-plugin grants; no suite-wide license invented. Preserve dependency, font, generated DSP and compiler/runtime notices; see pkgs/tonetwist-windows/LICENSE-REVIEW.md.
 
 Next action: Keep six product-level CPU assessments; verify each product after dependency pinning. Suite-level missing license metadata is informational; inspect per-file grants and preserve notices without blocking technical work.
 
@@ -2089,7 +2091,7 @@ Next action: Obtain official textual release provenance (pydevices-build.json) a
 
 ### AUDIO-097 — brummer10/ToneShiftEQ
 
-[Pinned source assessment](acceleration/AUDIO-097.md). License evidence: Root LICENSE BSD-3-Clause; vendored libxputty 0BSD, AudioFFT MIT, travesty ISC, NanoSVG zlib, Roboto Apache-2.0, xdgmime AFL-2.0 OR LGPL-2.0-or-later with package selecting AFL-2.0. Notices installed under share/licenses/toneshifteq. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
+[Pinned source assessment](acceleration/AUDIO-097.md). License evidence: Root LICENSE BSD-3-Clause; vendored libxputty 0BSD, AudioFFT MIT, travesty ISC, NanoSVG zlib, Roboto Apache-2.0, xdgmime AFL-2.0 OR LGPL-2.0-or-later with package selecting AFL-2.0. Native notices under share/licenses/toneshifteq. Windows build additionally preserves LGPL libsndfile source/relink inputs and complete static-library/compiler/runtime notices; see docs/toneshifteq-windows.md. Review: `not-audited`; implementation gate: `false`; consumer judgement required: `true`.
 
 Concerns: libxputty b64_encode.c has Frank4DD/source provenance but no file-local grant; package relies on enclosing libxputty 0BSD declaration.; Recorded notices and package metadata are evidence, not a legal audit.
 

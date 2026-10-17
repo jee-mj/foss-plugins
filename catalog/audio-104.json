@@ -51,9 +51,10 @@
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Investigate Linux download or DPF source build; beta, submodules and host behavior unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "windows-artifacts",
+        "nix_attribute": "drumcloud-windows",
+        "route": "Source-built Windows x86-64 VST3/CLAP manual-copy ZIP and operator NSIS installer; technical checks passed, final review pending. Conditional opt-in reflects custom copyright terms and maturity, not a technical build prohibition. No native Linux package asserted. See docs/drumcloud-windows.md.",
+        "status": "packaged"
       },
       "formats": [
         "CLAP",
@@ -77,7 +78,8 @@
       "summary": "Granular sample-cloud instrument.",
       "upstream_url": "https://github.com/Chmod666music/Fuimadane-DrumCloud",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/drumcloud-windows.md",
         "runtime": "not-tested"
       }
     },
@@ -190,13 +192,14 @@
         "concerns": [],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "AGPL-3.0 repository evidence.",
+        "license_evidence": "Miserere project AGPLv3; pinned JUCE 8.0.14 AGPLv3 or commercial, using its AGPLv3 path; embedded EB Garamond fonts SIL OFL 1.1. Notices retained; informational evidence, not a rights audit. See docs/basilica-miserere.md.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Candidate Windows VST3 manual installation in a Windows DAW under Wine; pre-1.0, payload and compatibility unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "native-plugin",
+        "nix_attribute": "basilica-miserere",
+        "route": "Experimental native x86_64-linux VST3 source build of v0.7.0 at 6ce6cc2deb616f337622e36c747a292f505ea0b7 with JUCE 8.0.14 at 2cdfca8feb300fb424002ba2c2751569e5bacb64 passed artifact, RTLD_NOW/factory-symbol, embedded-asset and notice checks. No factory call; automatic manifest generation disabled. Full pins and test: docs/basilica-miserere.md and tests/basilica-miserere.nix. This is not upstream Linux support or DAW/audio/GUI acceptance. The separate MinGW Windows attempt failed at JUCE's unsupported-compiler guard; no Windows artifacts or exports. See docs/basilica-miserere-windows.md.",
+        "status": "packaged"
       },
       "formats": [
         "VST3",
@@ -206,10 +209,11 @@
       "initial_proposed_target": "wine",
       "kind": "effect",
       "platform_evidence": {
-        "documented_source": "Windows/macOS JUCE 8 C++20 builds; VST3/AU; Linux not established.",
+        "documented_source": "Upstream Windows/macOS JUCE 8 C++20 builds, VST3/AU. Separately reviewed experimental native Linux VST3 release-source build passed scoped checks; no upstream Linux-support claim.",
         "released": "v0.7.0: Windows and macOS ZIPs; no Linux asset."
       },
-      "proposed_target": "wine",
+      "proposed_target": "both",
+      "target_change_reason": "Experimental native Linux VST3 source build passed scoped artifact/library checks at v0.7.0; retain the independent Windows investigation route. The tested MinGW Windows profile failed JUCE's compiler guard, not a universal Linux-hosted Windows-build impossibility. Neither route establishes host/audio acceptance.",
       "references": [
         "https://github.com/basilica-audio/Miserere/blob/main/README.md",
         "https://github.com/basilica-audio/Miserere/releases/tag/v0.7.0",
@@ -219,7 +223,8 @@
       "summary": "Parallel vocal chain with opto, FET and slap buses.",
       "upstream_url": "https://github.com/basilica-audio/Miserere",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/basilica-miserere.md",
         "runtime": "not-tested"
       }
     },
@@ -492,13 +497,14 @@
         "concerns": [],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "AGPL-3.0 repository evidence.",
+        "license_evidence": "Project AGPLv3; pinned JUCE 8.0.14 AGPLv3/commercial using AGPL path; Signalsmith MIT; EB Garamond OFL-1.1. Complete original notices retained; informational, not a legal audit. See docs/basilica-native-suite.md.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Candidate Windows VST3 installation in a Windows DAW under Wine; pre-1.0, payload and compatibility unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "native-plugin",
+        "nix_attribute": "basilica-seraph",
+        "route": "Experimental native Linux VST3 Seraph 0.4.0 release source d851142d0b64a0a70970dc6f628956b03a3973af, NAR sha256-JGDZgRVdngUn6w+VehMvRGDZyJB1TUioMPP8RSlbO1s=; source build and bounded loader/assets/notices checks passed on captured nixpkgs fd1462031fdee08f65fd0b4c6b64e22239a77870. Release pin differs from captured assessment HEAD. Full JUCE/Signalsmith pins and receipts: docs/basilica-native-suite.md and pkgs/basilica-native-suite/pins.json. Alternate-profile definitions are source-audited but stale, not build-verified. No factory/audio/GUI acceptance or upstream Linux-support claim. Windows builder still needed; no operator Windows artifact/export.",
+        "status": "packaged"
       },
       "formats": [
         "VST3",
@@ -508,10 +514,11 @@
       "initial_proposed_target": "wine",
       "kind": "effect",
       "platform_evidence": {
-        "documented_source": "Windows/macOS builds; VST3, AU and standalone; Linux not established.",
+        "documented_source": "Upstream Windows/macOS VST3/AU/standalone; separately reviewed experimental native Linux VST3 release-source build, not upstream Linux support.",
         "released": "v0.4.0: Windows/macOS ZIPs; no Linux asset."
       },
-      "proposed_target": "wine",
+      "proposed_target": "both",
+      "target_change_reason": "Reviewed experimental native Linux VST3 release-source build and scoped checks passed; preserve initial Wine route and separate unverified Windows builder/host investigation.",
       "references": [
         "https://github.com/basilica-audio/Seraph/blob/main/README.md",
         "https://github.com/basilica-audio/Seraph/releases/tag/v0.4.0",
@@ -521,7 +528,8 @@
       "summary": "Choir/vocal air, de-essing, compression and doubling.",
       "upstream_url": "https://github.com/basilica-audio/Seraph",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/basilica-native-suite.md",
         "runtime": "not-tested"
       }
     },
@@ -2183,6 +2191,7 @@
       },
       "distribution": {
         "nix_attribute": "audio-restoration-vst",
+        "delivery_scope": "native-plugin",
         "route": "Source-built Linux CPU-default VST3 via audio-restoration-vst; optional experimental audio-restoration-vst-cuda has linked build/load evidence. Official model-free ORT binary dependencies; models supplied separately. Choose one variant; neither implies GPU graph or DAW acceptance.",
         "status": "packaged"
       },
@@ -2770,13 +2779,14 @@
         ],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "GPL-3.0 metadata; README specifies GPL-3.0-or-later and third-party notices.",
+        "license_evidence": "Project GPL-3.0 metadata/README GPL-3.0-or-later; Windows package retains JUCE 7 GPL-route, aubio GPL, Q/Infra MIT, Surge attribution and GNU/MinGW/MCF runtime notices. Full raw-byte JUCE component notices and corresponding source are recorded in docs/gunk-windows.md; informational, not a legal audit.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Investigate Linux package extraction or native build; Aubio/Cycfi/JUCE dependencies and layout unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "windows-artifacts",
+        "nix_attribute": "gunk-windows",
+        "route": "Reviewed source-built JQ Gunk 0.2.2 Windows x86-64 VST3 manual/source ZIPs and operator NSIS installer at captured source 9cb7995ec4dbb982bf1c034f4499104422f1b0a9. Source compilation, PE/import, exact payload/notices and independent repeat checks passed; native VST3 manifest prerequisite is not a local native package export or Windows runtime acceptance. Full dependency pins and receipt: docs/gunk-windows.md. No DAW/audio/GUI/installer execution or collection of this new delivery asserted.",
+        "status": "packaged"
       },
       "formats": [
         "VST3"
@@ -2797,7 +2807,8 @@
       "summary": "Pitch-tracked bass-synthesis effect/instrument hybrid.",
       "upstream_url": "https://github.com/cemkod/gunk",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/gunk-windows.md",
         "runtime": "not-tested"
       }
     },
@@ -4730,13 +4741,14 @@
         "concerns": [],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "MIT repository evidence.",
+        "license_evidence": "Project MIT; operator Windows build retains complete vendored/dependency notices, source-built SDL2 license, supplemental KissFFT/Shine provenance, GPLv3 and GCC/MinGW/MCF runtime terms/exceptions, and upstream public-domain IR attribution. See docs/0xfx-windows.md and pkgs/0xfx-windows/NOTICE-PROVENANCE.md; no suite-wide permissive payload grant inferred.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Investigate native Linux source build; latest Linux artifact missing and audio/host behavior unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "windows-artifacts",
+        "nix_attribute": "0xfx-windows",
+        "route": "Reviewed Windows x86-64 source build at 5b248779c96dce6e64d0ed29cfa598014dc4d3c4: CLAP/VST3 effect plus distinct GUI and console applications, source-built SDL2 replacing vendored binaries. Manual/source ZIPs and operator NSIS exact-payload/repack/recompile checks passed. GUI and console are application delivery leads, not plugin products. ARM64 remains source-only; no native Linux package or Windows runtime/installer/collection acceptance. Full pins and receipts: docs/0xfx-windows.md.",
+        "status": "packaged"
       },
       "formats": [
         "CLAP",
@@ -4758,7 +4770,8 @@
       "summary": "Guitar amplifier/pedalboard processor.",
       "upstream_url": "https://github.com/averagenative/0xFX",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/0xfx-windows.md",
         "runtime": "not-tested"
       }
     },
@@ -5458,13 +5471,14 @@
         "concerns": [],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "GPL-3.0-or-later stated in README.",
+        "license_evidence": "Project README: GPL-3.0-or-later; pinned JUCE 8.0.12: AGPLv3 or commercial; embedded Rajdhani font: SIL OFL. See docs/instawidth.md.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Investigate Linux VST3/LV2 downloads or native build; binary ABI and host behavior unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "native-plugin",
+        "nix_attribute": "instawidth",
+        "route": "Native VST3/LV2 built from fcefc76077b7ec8f03d1a52deef475146cf67fd1 with pinned JUCE 8.0.12; artifact/library checks passed. Full pins and checks: docs/instawidth.md. Host/audio acceptance untested.",
+        "status": "packaged"
       },
       "formats": [
         "VST3",
@@ -5487,7 +5501,8 @@
       "summary": "Multiband mid/side stereo width.",
       "upstream_url": "https://github.com/hariel1985/InstaWidth",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/instawidth.md",
         "runtime": "not-tested"
       }
     },
@@ -5829,13 +5844,14 @@
         "concerns": [],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "MIT repository evidence.",
+        "license_evidence": "Project code MIT; PxPlus IBM VGA font CC BY-SA 4.0; pinned JUCE 8.0.12 LICENSE.md is AGPLv3 or commercial despite upstream NOTICE calling JUCE GPLv3. See docs/sub-orbit.md.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Investigate canonical Linux tarball or native build; dependencies and host behavior unverified.",
-        "status": "catalog-only"
+        "nix_attribute": "sub-orbit",
+        "route": "Native VST3 built from 768bb5b65fd5da637c481f42c002041da24e4d22 with pinned JUCE 8.0.12 and Catch2 3.7.1; 47 upstream tests and installed-artifact/library checks passed. Full pins: docs/sub-orbit.md. Host acceptance untested.",
+        "delivery_scope": "native-plugin",
+        "status": "packaged"
       },
       "formats": [
         "VST3",
@@ -5857,7 +5873,8 @@
       "summary": "Mono-safe low-end stereoizer.",
       "upstream_url": "https://github.com/echoeslabmusic/Sub-Orbit",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/sub-orbit.md",
         "runtime": "not-tested"
       }
     },
@@ -6611,13 +6628,14 @@
         "concerns": [],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "AGPL-3.0 repository evidence.",
+        "license_evidence": "Project AGPLv3; pinned JUCE 8.0.14 AGPLv3/commercial using AGPL path; original EB Garamond OFL-1.1 notices retained. Informational, not a legal audit. See docs/basilica-native-suite.md.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Candidate Windows VST3 installation in a Windows DAW under Wine; payload and compatibility unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "native-plugin",
+        "nix_attribute": "basilica-silentium",
+        "route": "Experimental native Linux VST3 Silentium 0.5.0 release source 574fd36431d26c1f572f7c7f9955b82293b669f3, NAR sha256-hmCWAxA13OMI0LeXD3ys+M0OTe44WW9MthAa4IMa2G0=; source build and bounded loader/assets/notices checks passed on captured nixpkgs fd1462031fdee08f65fd0b4c6b64e22239a77870. Release pin differs from captured assessment HEAD. Full JUCE pins and receipts: docs/basilica-native-suite.md and pkgs/basilica-native-suite/pins.json. Alternate-profile definitions are source-audited but stale, not verified builds. No factory/audio/GUI acceptance or upstream Linux-support claim. Windows builder still needed; no operator Windows artifact/export.",
+        "status": "packaged"
       },
       "formats": [
         "VST3",
@@ -6627,10 +6645,11 @@
       "initial_proposed_target": "wine",
       "kind": "effect",
       "platform_evidence": {
-        "documented_source": "Windows/macOS VST3/AU builds; no Linux support established; pre-1.0 breaking changes noted.",
+        "documented_source": "Upstream Windows/macOS VST3/AU; reviewed experimental native Linux VST3 release-source package is separate from upstream Linux support; pre-1.0 breaking changes noted.",
         "released": "v0.5.0: Windows/macOS ZIPs; no Linux asset."
       },
-      "proposed_target": "wine",
+      "proposed_target": "both",
+      "target_change_reason": "Reviewed experimental native Linux VST3 release-source build and scoped checks passed; preserve initial Wine route and separate unverified Windows builder/host investigation.",
       "references": [
         "https://github.com/basilica-audio/Silentium/blob/main/README.md",
         "https://github.com/basilica-audio/Silentium/releases/tag/v0.5.0",
@@ -6640,7 +6659,8 @@
       "summary": "Tight lookahead/hysteresis noise gate.",
       "upstream_url": "https://github.com/basilica-audio/Silentium",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/basilica-native-suite.md",
         "runtime": "not-tested"
       }
     },
@@ -7057,6 +7077,7 @@
       "distribution": {
         "exact_foss_plugins_source_match": true,
         "nix_attribute": "peakeater",
+        "delivery_scope": "native-plugin",
         "route": "Matching-source native x86_64-linux package peakeater 0.8.2 builds VST3/CLAP/LV2; source build and scoped artifact/dynamic-loading tests passed. Public export commands are for parent integration; DAW/audio/GUI behavior unverified.",
         "status": "packaged"
       },
@@ -8359,6 +8380,7 @@
       },
       "distribution": {
         "nix_attribute": "intersect",
+        "delivery_scope": "native-plugin",
         "route": "Source-built Linux VST3 via intersect, with experimental intersect-cuda12 and intersect-migraphx alternatives. Linked builds and VST3/core ORT loading passed; provider-DSO relocation is not initialization or GPU execution. Automatic model/runtime downloads are disabled; manual models and documented cache-only dependency realization remain required.",
         "status": "packaged"
       },
@@ -8469,8 +8491,9 @@
       },
       "distribution": {
         "nix_attribute": "reevr",
-        "route": "Existing nixpkgs reuse candidate, independently found as 1.4.0; no new foss-plugins package. Alternatively investigate Linux download/build; packaged formats and IR content unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "native-plugin",
+        "route": "Direct local export of supplied nixpkgs reevr. Locked 1.4.0, refs/tags/v1.4.0: VST3/LV2; cache realization and static ELF/entrypoint/metadata checks passed, not fresh compilation of captured HEAD e4d553a72c960ad163a34fab574a81102c52ce4e. Source equivalence is not assumed; overlay follows consumer nixpkgs. See docs/nixpkgs-audio.md.",
+        "status": "packaged"
       },
       "formats": [
         "VST3",
@@ -8494,6 +8517,7 @@
       "upstream_url": "https://github.com/tiagolr/reevr",
       "verification": {
         "build": "not-tested",
+        "evidence": "docs/nixpkgs-audio.md",
         "runtime": "not-tested"
       }
     },
@@ -8576,8 +8600,10 @@
       },
       "distribution": {
         "nix_attribute": "wolf-shaper",
-        "route": "Existing nixpkgs reuse candidate, independently found as 1.0.2; no new foss-plugins package. Alternatively investigate Linux download/build and DPF pins; packaged formats unverified.",
-        "status": "catalog-only"
+        "delivery_scope": "native-plugin",
+        "additional_attributes": ["wolf-shaper-windows"],
+        "route": "Direct local export of supplied nixpkgs wolf-shaper. Locked 1.0.2, refs/tags/v1.0.2: VST2/LV2/DSSI and standalone, no native VST3/CLAP. Cache realization and static ELF checks passed, not fresh compilation of captured HEAD d38cc33d482de21ecc76d9b817ec5f8dea1fb5fb; overlay follows consumer nixpkgs. Additional wolf-shaper-windows builds release source 4d7b6a1805d774fad553323bc9325c508428ac9e as Windows VST3/CLAP ZIP and operator NSIS, not another repository or native Linux delivery. See docs/nixpkgs-audio.md and docs/wolf-shaper-windows.md.",
+        "status": "packaged"
       },
       "formats": [
         "LV2",
@@ -8603,6 +8629,7 @@
       "upstream_url": "https://github.com/wolf-plugins/wolf-shaper",
       "verification": {
         "build": "not-tested",
+        "evidence": "docs/nixpkgs-audio.md",
         "runtime": "not-tested"
       }
     },
@@ -8694,9 +8721,10 @@
         "exact_foss_plugins_source_match": false,
         "existing_selection": true,
         "nix_attribute": "vaporizer2",
-        "route": "Existing consumer selection of nixpkgs vaporizer2, not a new foss-plugins package; reconcile that selection first. Live package metadata: 3.5.0-unstable-2024-09-14. Locked/deployed revision and formats unverified.",
+        "delivery_scope": "native-plugin",
+        "route": "Direct local export of supplied nixpkgs vaporizer2; existing consumer selection remains independent of deployment. Locked 3.5.0-unstable-2024-09-14 source 1c56c4be304255f1c397dad725ea784f15a55ef5: VST3/LV2/CLAP. Cache realization and static ELF checks passed, not fresh source compilation or promotion of the captured-source backend assessment. Overlay follows consumer nixpkgs; downstream activation unverified. See docs/nixpkgs-audio.md.",
         "selection_provider": "nixpkgs",
-        "status": "catalog-only"
+        "status": "packaged"
       },
       "formats": [
         "VST2",
@@ -8723,6 +8751,7 @@
       "upstream_url": "https://github.com/VASTDynamics/Vaporizer2",
       "verification": {
         "build": "not-tested",
+        "evidence": "docs/nixpkgs-audio.md",
         "runtime": "not-tested"
       }
     },
@@ -9356,17 +9385,18 @@
       "aliases": [],
       "copyright": {
         "concerns": [
-          "Per-plugin license notices remain uninspected."
+          "Mixed per-file and per-plugin grants; no suite-wide license invented. Preserve dependency, font, generated DSP and compiler/runtime notices; see pkgs/tonetwist-windows/LICENSE-REVIEW.md."
         ],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "Unknown at suite level: API null and no root license in inspected contents.",
+        "license_evidence": "No suite-wide root grant; scoped Windows review records mixed per-file/source notices in pkgs/tonetwist-windows/LICENSE-REVIEW.md and docs/tonetwist-windows.md.",
         "review_status": "not-audited"
       },
       "distribution": {
-        "nix_attribute": null,
-        "route": "Investigate Linux downloads/build; expand per-plugin identities and inspect exact formats; suite license uncertainty does not block technical work.",
-        "status": "catalog-only"
+        "delivery_scope": "windows-artifacts",
+        "nix_attribute": "tonetwist-windows",
+        "route": "Six source-built Windows x86-64 VST3/CLAP effects in manual-copy ZIP and operator NSIS installer; artifact/source/docs tests passed, final review pending. Conditional copyright/maturity opt-in is not a technical build prohibition. No native Linux package asserted. See docs/tonetwist-windows.md.",
+        "status": "packaged"
       },
       "formats": [
         "LV2",
@@ -9391,7 +9421,8 @@
       "summary": "Pedal/drive effect suite, beginning with MetalTone in README.",
       "upstream_url": "https://github.com/brummer10/ToneTwistPlugs",
       "verification": {
-        "build": "not-tested",
+        "build": "passed",
+        "evidence": "docs/tonetwist-windows.md",
         "runtime": "not-tested"
       }
     },
@@ -12840,13 +12871,15 @@
         ],
         "consumer_judgement_required": true,
         "implementation_gate": false,
-        "license_evidence": "Root LICENSE BSD-3-Clause; vendored libxputty 0BSD, AudioFFT MIT, travesty ISC, NanoSVG zlib, Roboto Apache-2.0, xdgmime AFL-2.0 OR LGPL-2.0-or-later with package selecting AFL-2.0. Notices installed under share/licenses/toneshifteq.",
+        "license_evidence": "Root LICENSE BSD-3-Clause; vendored libxputty 0BSD, AudioFFT MIT, travesty ISC, NanoSVG zlib, Roboto Apache-2.0, xdgmime AFL-2.0 OR LGPL-2.0-or-later with package selecting AFL-2.0. Native notices under share/licenses/toneshifteq. Windows build additionally preserves LGPL libsndfile source/relink inputs and complete static-library/compiler/runtime notices; see docs/toneshifteq-windows.md.",
         "review_status": "not-audited"
       },
       "distribution": {
         "exact_foss_plugins_source_match": true,
         "nix_attribute": "toneshifteq",
-        "route": "Matching-source native x86_64-linux package toneshifteq 1.3.0 builds CLAP/VST3/LV2 via native Make, not DPF; source build and scoped artifact tests passed. Public export commands are for parent integration; GUI/audio/host behavior unverified.",
+        "delivery_scope": "native-plugin",
+        "additional_attributes": ["toneshifteq-windows"],
+        "route": "Primary native toneshifteq 1.3.0 retains source-built CLAP/VST3/LV2 via native Make, not DPF. Additional toneshifteq-windows builds the same source as Windows CLAP/VST3, each carrying Master and Live identities, with reviewed manual-copy ZIP, corresponding source and operator NSIS checks. No Windows LV2/standalone or duplicate repository count. Artifact/library builds do not establish host/audio/GUI/installer runtime or collection. Windows pins and receipt: docs/toneshifteq-windows.md.",
         "status": "packaged"
       },
       "formats": [
@@ -12873,6 +12906,7 @@
         "build": "passed",
         "evidence": [
           "docs/toneshifteq.md",
+          "docs/toneshifteq-windows.md",
           "Source build and scoped artifact test passed as reported by parent integration; documented test checks nonempty plugin binaries and LV2 metadata without launching a GUI. No host/audio acceptance asserted.",
           "Public package command after export integration: nix build --no-link .#toneshifteq",
           "Public check command after export integration: nix build --no-link .#checks.x86_64-linux.toneshifteq"
@@ -14094,7 +14128,11 @@
   "notes": [
     "104 repository records in captured order; suites are not expanded into product records. Targets describe investigation routes, not installation availability or compatibility.",
     "Release names and platform claims are captured upstream metadata/documentation; archives were not inspected. Standalone applications and hosted formats are not plugin delivery formats. Format lists may include documented or configured source targets, not necessarily shipped binaries; see platform_evidence.",
-    "Four entries are source-built local packages: AUDIO-013 audio-restoration-vst, AUDIO-064 peakeater, AUDIO-065 intersect and AUDIO-097 toneshifteq; 100 remain catalog-only. The ONNX packages explicitly use pinned binary runtime dependencies without models. Other recorded nixpkgs attributes are independent reuse candidates or an existing consumer selection, not new foss-plugins outputs or deployment proof.",
+    "16 packaged and 88 catalog-only repository records: twelve native-plugin deliveries (nine local source packages plus three direct nixpkgs re-exports) and four windows-artifacts-only deliveries (AUDIO-001 drumcloud-windows, AUDIO-020 gunk-windows, AUDIO-040 0xfx-windows, AUDIO-072 tonetwist-windows). AUDIO-067 primarily exports native wolf-shaper plus wolf-shaper-windows; AUDIO-097 primarily exports native toneshifteq plus toneshifteq-windows, without duplicate repositories. Windows ZIP/NSIS builders are not native Linux plugins. Current exports are 32 free and 14 conditional, 46 total; package, product and repository totals differ. Working-tree source recipes are unpublished and do not establish downstream activation.",
+    "All thirteen Basilica native VST3 release-source members have reviewed source-build and bounded loader/assets/notices evidence on captured nixpkgs fd1462031fdee08f65fd0b4c6b64e22239a77870 only. The f5c082a40f7571c266e74e80ae2e68aadd8a9fc7 profile exposes thirteen source-audited candidate definitions/checks but has stale unverified builds. Nave includes the disclosed two-call scalar minimum compatibility patch, with 14 scalar and 6 clamp cases; full pins/source modifications/receipts in docs/basilica-native-suite.md. Only AUDIO-003/007/058 occur in the root 104; the ten other BA identities remain outside it. Across 114 primary inputs, 22 repositories have native package routes and 26 have any package route, not all source-built or installed. Aggregate remains a helper-only recipe, not a top-level default or co-install recommendation.",
+    "Six reviewed Windows builder projects cover fourteen source/delivery leads (twelve plugin products plus 0xFX GUI and console applications), not fourteen installed products or format files. Source compilation and data-only packaging checks are distinct from runtime. Collection currently contains only three manual ZIPs, three NSIS installers and three source capsules for eight plugin products/sixteen DLLs; the three newly available builders do not establish six collected projects. All 104 top-level runtime fields remain not-tested.",
+    "AUDIO-003 basilica-miserere v0.7.0 is a reviewed experimental native Linux VST3 source build at 6ce6cc2deb616f337622e36c747a292f505ea0b7 with JUCE 8.0.14 at 2cdfca8feb300fb424002ba2c2751569e5bacb64. Build, RTLD_NOW/factory-symbol, 16 embedded-asset and font/notice checks passed without factory calls or automatic manifest generation. This is not upstream Linux support or runtime acceptance. Initial Wine routing is preserved; current route is both. The separate Windows MinGW profile failed JUCE's guard and produced no artifact/export; MSVC-compatible ABI/compiler/SDK alternatives remain untested. AGPL/JUCE/OFL terms are informational with consumer judgement required. Evidence: docs/basilica-miserere.md and docs/basilica-miserere-windows.md.",
+    "InstaWidth and Sub-Orbit source builds and scoped checks passed; JUCE 8.0.12 carries AGPLv3 or commercial terms, with project/font terms recorded separately. The three nixpkgs native re-exports passed cache realization and static ELF/metadata checks, not fresh compilation of captured HEAD. The overlay follows consumer nixpkgs; locked versions/formats and provenance are in docs/nixpkgs-audio.md. All existing 98 acceleration backend records retain their source/proof boundaries. Windows source builds and ZIP/NSIS artifact checks passed; ToneTwist and DrumCloud final review remains pending. Their conditional gates reflect copyright/maturity, not technical build prohibition. The ONNX packages retain pinned binary runtime dependencies without models.",
     "Copyright evidence is not audited. Missing or unclear licenses do not gate technical implementation; consumers must exercise their own judgement about use, modification and distribution. Explicit restrictions remain facts; catalog inclusion does not grant rights or override terms.",
     "AI-assisted development, AI processing and generated content never imply copyright-free code, models, samples or outputs. Model, firmware, sample and dependency terms may differ from repository terms.",
     "All 104 acceleration assessments have explicit outcomes: 99 complete and 5 blocked-evidence, zero pending. Four local product packages and three conditional experimental GPU variants have source-build and scoped library evidence; no model inference, GPU graph, DAW/audio or GUI acceptance is claimed. All top-level runtime fields remain not-tested. Five backend tuples are packaged; validation records their evaluation/build/load evidence and policy-skipped AMD hardware stages. INTERSECT provider relocation is distinct from initialized EP loading; protected dependency sources were avoided using cached substitutes, not an unrestricted cold-source guarantee."

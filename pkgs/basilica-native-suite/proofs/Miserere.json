@@ -1,0 +1,101 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/l2pbrx0mpcfj8bgmrai8yczihh3gj0iq-basilica-miserere-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/wr5a031mivlq14zl7irc86zrdjnq6chx-basilica-miserere-native-artifacts",
+    "audio": "AUDIO-003",
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-013",
+    "modification": null,
+    "name": "Miserere",
+    "packageDrv": "/nix/store/silh3y3aal8ylrrz858zcpwxl61l9i5c-basilica-miserere-0.7.0.drv",
+    "packageOutput": "/nix/store/415izqbh7cjcaki676h2nh33kygn5pn3-basilica-miserere-0.7.0",
+    "recipe": {
+      "adapter": "3f2268729e4c9ccc965c4f7436cb074fc3742ca3118d4e56434bbf1e2fd90543",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "5b1b4b4adf98ba74d051427d520fa4bd9a129712bc1dde0da195b37c7f615925",
+      "package": "ad31310d42525b4a36c382c8d0cdeaf10148ed1f10c5a6ffc184ba533119f737",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "5b1b4b4adf98ba74d051427d520fa4bd9a129712bc1dde0da195b37c7f615925"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-gzAKD2fO8DzPaFRBVOYq7Apj7haEBgrTl0qsUzTJXME=",
+      "repo": "basilica-audio/Miserere",
+      "revision": "6ce6cc2deb616f337622e36c747a292f505ea0b7",
+      "sourceDrv": "/nix/store/niw3yk6kxr7rha2c5w1szy364wxrg434-source.drv",
+      "sourceOut": "/nix/store/gbz56bw5v93ilp692zcgdvpmq8x13crm-source",
+      "version": "0.7.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "binary": "lib/vst3/Miserere.vst3/Contents/x86_64-linux/Miserere.so",
+    "checks": [
+      "ELF",
+      "exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {
+      "presets/factory/aggressiveRockVocal.json": "338623cff5efeff0e9b4572c7fd48dac6a7d9c3f550190c6738a62d8db6e5d04",
+      "presets/factory/bvMode.json": "38a43258b4dea6d71909b30b6d58dea65d43ed12dc86a7c902b1d534c0a7d206",
+      "presets/factory/classicParallelBlend.json": "4578ec42fa5f228f60fb74f6bdaa3457e60944a9452cfeb00f831173d9f8431c",
+      "presets/factory/crushForward.json": "db03faec02c496cf935846b3cb0947e3c913100544f3cfd5b25a526f4e123a48",
+      "presets/factory/default.json": "6aaa7295a2e6977a28788e8b65eb155d37925ebd6d9cb7fe918797d1514a34e5",
+      "presets/factory/directChannelOnly.json": "93aa42f24eac36480f4b7b504ac47019ae588d623c1a88ca3a80dcf90d157947",
+      "presets/factory/gentleBus.json": "0326750cf510de79bb6feb44b1664bc6ac27c3bdd1b99413f42b267f5048a4c6",
+      "presets/factory/roughMixGlue.json": "74f434968c227222b6c471f40e54c6e8032108247b35366b9da20bc680a6c722",
+      "presets/factory/silkSandwich.json": "1b92fe1f74fb26abf463f5dd48345a02e2e8349568e8b2968b192488a6d3d0a7",
+      "presets/factory/tapeSlap75.json": "269c0895d000ba02137de157289e78cc372a4b83a077fe2044846d62c59fd10c",
+      "presets/factory/whisperThicken.json": "3d1f1d5404448cbd40831afa2308369051b732626650a413f944787f56dcebfb",
+      "presets/factory/wideAndWet.json": "6864d6248b2a92d050d8839f61fb68ddabf4a1a1d269746153e6ff80814b61b4",
+      "presets/factory/wornSlap.json": "7e402ed544727714a31e4b264ef9b1d2b74019f9a0d083235fbd591bb060ffd7",
+      "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+      "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053",
+      "resources/i18n/de.txt": "fede5f164db5400b2446435475492d61b9c825542a5a638b31a88723a51a043c"
+    },
+    "format": "VST3",
+    "needed": [
+      "libasound.so.2",
+      "libfontconfig.so.1",
+      "libfreetype.so.6",
+      "librt.so.1",
+      "libdl.so.2",
+      "libpthread.so.0",
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6",
+      "ld-linux-x86-64.so.2"
+    ],
+    "plugin": "/nix/store/415izqbh7cjcaki676h2nh33kygn5pn3-basilica-miserere-0.7.0",
+    "runtime": {
+      "libGL.so.1": "/nix/store/37pxc9k6cjg51gb6jskhb067nybrq75q-libglvnd-1.7.0/lib/libGL.so.1",
+      "libX11.so.6": "/nix/store/sf0bhkr1wb32273b2hx4m4mpypclicc6-libx11-1.8.13/lib/libX11.so.6",
+      "libXcursor.so.1": "/nix/store/vgnm1dw5prwp5x2i0jkkqzcwp34jwqgj-libxcursor-1.2.3/lib/libXcursor.so.1",
+      "libXinerama.so.1": "/nix/store/2mkp04ykvb2xclrmdkx9b9v8chx3a9g8-libxinerama-1.1.6/lib/libXinerama.so.1",
+      "libXrandr.so.2": "/nix/store/w7r9sq030rcs0d9n309dif6yl8ygg4yd-libxrandr-1.5.5/lib/libXrandr.so.2"
+    },
+    "scope": "experimental local native build; no GUI/audio instance or host acceptance test",
+    "sha256": "95e8b38155dbdc02933f112883771fcb169169edb857ec2e0ea1663a480894b6"
+  },
+  "verificationSha256": "fab922f6fb95353fbb22bb49078cd98849be267ff86fafff5fe61ec7c99b5495"
+}

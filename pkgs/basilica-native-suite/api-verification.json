@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "aggregate": true,
+    "aggregateDrv": "/nix/store/qp6887iginlpf9sq1a099q1571prl2xr-basilica-native-suite-experimental.drv",
+    "aggregateMetadata": {
+      "description": "Experimental locally verified thirteen-product Basilica Linux VST3 suite",
+      "licenses": [
+        {
+          "free": true,
+          "spdxId": "AGPL-3.0-only"
+        },
+        {
+          "free": true,
+          "spdxId": "OFL-1.1"
+        },
+        {
+          "free": true,
+          "spdxId": "CC0-1.0"
+        },
+        {
+          "free": true,
+          "spdxId": "MIT"
+        }
+      ],
+      "platforms": [
+        "x86_64-linux"
+      ]
+    },
+    "aggregateOutput": "/nix/store/15a39z9b6qz4vwmqgf11215kcwk4sp1f-basilica-native-suite-experimental",
+    "artifactChecks": {
+      "basilica-apotheosis": "/nix/store/k32jxzksg8ciy7yjhkj5xmrp7vj3z4h8-basilica-Apotheosis-native-artifacts",
+      "basilica-aureate": "/nix/store/r5dxwzaakmdj64ypzfh8l6dn4kil50jq-basilica-Aureate-native-artifacts",
+      "basilica-crypta": "/nix/store/ssdzzjcrybkqybcz9jfsmjl6rlrrxl3f-basilica-Crypta-native-artifacts",
+      "basilica-firmament": "/nix/store/vfphj7mn7ns2mpp6vbhx5f1npim4vy53-basilica-Firmament-native-artifacts",
+      "basilica-lancet": "/nix/store/vkvb305f4ssdhw3xgiq5nya3f520q9wk-basilica-Lancet-native-artifacts",
+      "basilica-miserere": "/nix/store/wr5a031mivlq14zl7irc86zrdjnq6chx-basilica-miserere-native-artifacts",
+      "basilica-nave": "/nix/store/7vryayi6jjdi80h6z1l1nb9m8v9k6z4p-basilica-Nave-native-artifacts",
+      "basilica-overture": "/nix/store/qgpjacs4kph9cj6dsmr7a4vrv9044d7m-basilica-Overture-native-artifacts",
+      "basilica-requiem": "/nix/store/iw1wg7z0nzjvp7jkrdn8jjsq2bg4792m-basilica-Requiem-native-artifacts",
+      "basilica-seraph": "/nix/store/axhq0n8zvij5sq3w0gzgqjdywr6kfh4j-basilica-Seraph-native-artifacts",
+      "basilica-silentium": "/nix/store/s60bhdzc0lr0wd0fr4cwad5ajzffhyc5-basilica-Silentium-native-artifacts",
+      "basilica-tenebrae": "/nix/store/w546wz00y9l8g0xl3chvbh5zng73nn3g-basilica-Tenebrae-native-artifacts",
+      "basilica-triptych": "/nix/store/vi3x058x86zfzzv55mnjzjcgrkd2irgq-basilica-Triptych-native-artifacts"
+    },
+    "checkDrvs": {
+      "basilica-apotheosis": "/nix/store/xs1vwx2578rrln96fyfnix9wcxnsnrkb-basilica-Apotheosis-current-proof.drv",
+      "basilica-aureate": "/nix/store/6l3nv1h01gdzzqn4ivy7sxd2mlyf7g5x-basilica-Aureate-current-proof.drv",
+      "basilica-crypta": "/nix/store/kvyls6hzhi9lqbayrvzcafh4rq31sdj3-basilica-Crypta-current-proof.drv",
+      "basilica-firmament": "/nix/store/w100baypfv9w0aav3g4600a57nyrr70d-basilica-Firmament-current-proof.drv",
+      "basilica-lancet": "/nix/store/11bwl3hk8asajmpcfh6xd1cnqdzw7rsj-basilica-Lancet-current-proof.drv",
+      "basilica-miserere": "/nix/store/db4cd3b56mbpiydd7gvcvx7yi5lf2cs2-basilica-Miserere-current-proof.drv",
+      "basilica-nave": "/nix/store/vzbf5x0c3lk5x66cb66kg1sb1f45hmhr-basilica-Nave-current-proof.drv",
+      "basilica-overture": "/nix/store/6ridzj96ijg47m3pzg12l3mdp4sqzyhg-basilica-Overture-current-proof.drv",
+      "basilica-requiem": "/nix/store/fz22lx6dyya0phiyrv0ldnsy81dgppky-basilica-Requiem-current-proof.drv",
+      "basilica-seraph": "/nix/store/qmdb78wcaszf6176zv5w7qbx7ajlh5q6-basilica-Seraph-current-proof.drv",
+      "basilica-silentium": "/nix/store/r1c6nfkqm9gmg1mrshk21q732falgiaf-basilica-Silentium-current-proof.drv",
+      "basilica-tenebrae": "/nix/store/8wivks4pi39y2b3dgs9ii12plyjg9ifd-basilica-Tenebrae-current-proof.drv",
+      "basilica-triptych": "/nix/store/5gsficcvg6rglzqszbqadb8bx0g8vb9r-basilica-Triptych-current-proof.drv"
+    },
+    "checks": {
+      "basilica-apotheosis": "/nix/store/7wzwx92ji8xczm7z0h0s8ww4slhavl3r-basilica-Apotheosis-current-proof",
+      "basilica-aureate": "/nix/store/hkyz5ryzqpk7zjpm2qcplgg7gnph8rjm-basilica-Aureate-current-proof",
+      "basilica-crypta": "/nix/store/5c2gmd7ky7qydv7m413p4irvsrjadc1j-basilica-Crypta-current-proof",
+      "basilica-firmament": "/nix/store/gps0faizf4xx8a1izqzhj68fzrslr0ic-basilica-Firmament-current-proof",
+      "basilica-lancet": "/nix/store/4j5sxmyz21x5n6xgy0qnyqyh3llknj5r-basilica-Lancet-current-proof",
+      "basilica-miserere": "/nix/store/q00fysc5vx55nk12vmhf81xgna3mxc8f-basilica-Miserere-current-proof",
+      "basilica-nave": "/nix/store/mqm4hbrx1g871nv5sr00yrb8zgy0k9va-basilica-Nave-current-proof",
+      "basilica-overture": "/nix/store/0r1v4iy3vw5m504gw461ln31bsi5f39b-basilica-Overture-current-proof",
+      "basilica-requiem": "/nix/store/d6rn8vfq8mpxsk54bimp7p5ly1nsyb39-basilica-Requiem-current-proof",
+      "basilica-seraph": "/nix/store/510p49xhc2rj9i8r1ic0hc6bqnqzdj85-basilica-Seraph-current-proof",
+      "basilica-silentium": "/nix/store/g8rfq0v96n6qk5nl1pfkfnpwb5f7nb62-basilica-Silentium-current-proof",
+      "basilica-tenebrae": "/nix/store/nhkbfljlj4i6jw00nvjn4xl3a6jwh8y2-basilica-Tenebrae-current-proof",
+      "basilica-triptych": "/nix/store/sj2ww6i2r3mw045jf73hs7z1cn0sb3yv-basilica-Triptych-current-proof"
+    },
+    "packageDrvs": {
+      "basilica-apotheosis": "/nix/store/3vdh9a28mpxyk8f081z7956zp3chmmj3-basilica-apotheosis-0.6.1.drv",
+      "basilica-aureate": "/nix/store/11jqzy38mkpxxs0677xsqzm2wwmp8ggh-basilica-aureate-0.5.0.drv",
+      "basilica-crypta": "/nix/store/xl3rmg2jqib97zhj3g73blncvgwi2nhc-basilica-crypta-0.4.1.drv",
+      "basilica-firmament": "/nix/store/kdx1klqbp4nfvl84mcvvhkjqmig1hl02-basilica-firmament-0.4.0.drv",
+      "basilica-lancet": "/nix/store/bgl94ni0rcp00yphvng6l9i2hr85mfap-basilica-lancet-0.5.0.drv",
+      "basilica-miserere": "/nix/store/silh3y3aal8ylrrz858zcpwxl61l9i5c-basilica-miserere-0.7.0.drv",
+      "basilica-nave": "/nix/store/qbjvsbnlrxzvnaklsgs6qk5ypp6q0arz-basilica-nave-0.5.0.drv",
+      "basilica-overture": "/nix/store/lmw9f5j8xa13caqpmf5sp7cvsy2zjb5r-basilica-overture-0.5.0.drv",
+      "basilica-requiem": "/nix/store/f5ddpq67a4ckxbfv6lch88n1jrmli4gx-basilica-requiem-0.5.0.drv",
+      "basilica-seraph": "/nix/store/y0z1j3jqg23d7k2b0br42wahs8a973di-basilica-seraph-0.4.0.drv",
+      "basilica-silentium": "/nix/store/i7vslaid9sgkflmiv6s8njxx2kysrdcn-basilica-silentium-0.5.0.drv",
+      "basilica-tenebrae": "/nix/store/jsikbfqj1glyavj2r1an5kyhwnimdc3b-basilica-tenebrae-0.5.0.drv",
+      "basilica-triptych": "/nix/store/mghgkm3pbadsvv28p3h5imx91l0kqgaj-basilica-triptych-0.6.0.drv"
+    },
+    "packages": {
+      "basilica-apotheosis": "/nix/store/w0bsjwz0v2dwcs1xb9mz117c3qwwr9i9-basilica-apotheosis-0.6.1",
+      "basilica-aureate": "/nix/store/fxhwyj7w0zahhl5b5dq91c16a0bhskzy-basilica-aureate-0.5.0",
+      "basilica-crypta": "/nix/store/16x1mgd6a799pnkligvaiqa8k24l69rq-basilica-crypta-0.4.1",
+      "basilica-firmament": "/nix/store/8k37mfn7jj2b80hqdx4hggi9890vm5n2-basilica-firmament-0.4.0",
+      "basilica-lancet": "/nix/store/46rngsy9bwca6fxrp38bggi58fj88ilc-basilica-lancet-0.5.0",
+      "basilica-miserere": "/nix/store/415izqbh7cjcaki676h2nh33kygn5pn3-basilica-miserere-0.7.0",
+      "basilica-nave": "/nix/store/15lb99fi646gfh1sjwhcb709ly988naw-basilica-nave-0.5.0",
+      "basilica-overture": "/nix/store/27bkpp7g7np2ygrw1fm5rf0sdw3fcjjx-basilica-overture-0.5.0",
+      "basilica-requiem": "/nix/store/hc8ip73ymby9nq6hq6jq71f51131i91i-basilica-requiem-0.5.0",
+      "basilica-seraph": "/nix/store/f77453zw3v7d7zp7cdh2ibkglgh88p2m-basilica-seraph-0.4.0",
+      "basilica-silentium": "/nix/store/qrnw292zc1z3ixghp0qi12anni69w6q6-basilica-silentium-0.5.0",
+      "basilica-tenebrae": "/nix/store/8061ax65abj7s4grqk38rv36c3wc8qmg-basilica-tenebrae-0.5.0",
+      "basilica-triptych": "/nix/store/dsnwalpzppgk4xw25advjs59j1zs1f2f-basilica-triptych-0.6.0"
+    },
+    "profiles": {
+      "Apotheosis": "passed",
+      "Aureate": "passed",
+      "Crypta": "passed",
+      "Firmament": "passed",
+      "Lancet": "passed",
+      "Miserere": "reused-reviewed-source-build",
+      "Nave": "passed",
+      "Overture": "passed",
+      "Requiem": "passed",
+      "Seraph": "passed",
+      "Silentium": "passed",
+      "Tenebrae": "passed",
+      "Triptych": "passed"
+    }
+  },
+  "buildExitCode": 0,
+  "checksBuilt": [
+    {
+      "drvPath": "/nix/store/11bwl3hk8asajmpcfh6xd1cnqdzw7rsj-basilica-Lancet-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/4j5sxmyz21x5n6xgy0qnyqyh3llknj5r-basilica-Lancet-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/5gsficcvg6rglzqszbqadb8bx0g8vb9r-basilica-Triptych-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/sj2ww6i2r3mw045jf73hs7z1cn0sb3yv-basilica-Triptych-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/6l3nv1h01gdzzqn4ivy7sxd2mlyf7g5x-basilica-Aureate-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/hkyz5ryzqpk7zjpm2qcplgg7gnph8rjm-basilica-Aureate-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/6ridzj96ijg47m3pzg12l3mdp4sqzyhg-basilica-Overture-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/0r1v4iy3vw5m504gw461ln31bsi5f39b-basilica-Overture-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/8wivks4pi39y2b3dgs9ii12plyjg9ifd-basilica-Tenebrae-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/nhkbfljlj4i6jw00nvjn4xl3a6jwh8y2-basilica-Tenebrae-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/db4cd3b56mbpiydd7gvcvx7yi5lf2cs2-basilica-Miserere-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/q00fysc5vx55nk12vmhf81xgna3mxc8f-basilica-Miserere-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/fz22lx6dyya0phiyrv0ldnsy81dgppky-basilica-Requiem-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/d6rn8vfq8mpxsk54bimp7p5ly1nsyb39-basilica-Requiem-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/kvyls6hzhi9lqbayrvzcafh4rq31sdj3-basilica-Crypta-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/5c2gmd7ky7qydv7m413p4irvsrjadc1j-basilica-Crypta-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/qmdb78wcaszf6176zv5w7qbx7ajlh5q6-basilica-Seraph-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/510p49xhc2rj9i8r1ic0hc6bqnqzdj85-basilica-Seraph-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/qp6887iginlpf9sq1a099q1571prl2xr-basilica-native-suite-experimental.drv",
+      "outputs": {
+        "out": "/nix/store/15a39z9b6qz4vwmqgf11215kcwk4sp1f-basilica-native-suite-experimental"
+      }
+    },
+    {
+      "drvPath": "/nix/store/r1c6nfkqm9gmg1mrshk21q732falgiaf-basilica-Silentium-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/g8rfq0v96n6qk5nl1pfkfnpwb5f7nb62-basilica-Silentium-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/vzbf5x0c3lk5x66cb66kg1sb1f45hmhr-basilica-Nave-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/mqm4hbrx1g871nv5sr00yrb8zgy0k9va-basilica-Nave-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/w100baypfv9w0aav3g4600a57nyrr70d-basilica-Firmament-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/gps0faizf4xx8a1izqzhj68fzrslr0ic-basilica-Firmament-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/xs1vwx2578rrln96fyfnix9wcxnsnrkb-basilica-Apotheosis-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/7wzwx92ji8xczm7z0h0s8ww4slhavl3r-basilica-Apotheosis-current-proof"
+      }
+    }
+  ],
+  "command": [
+    "nix",
+    "build",
+    "--impure",
+    "--no-link",
+    "--no-write-lock-file",
+    "--json",
+    "--max-jobs",
+    "1",
+    "--cores",
+    "4",
+    "--expr",
+    "let f = builtins.getFlake \"git+file://REPOSITORY\";\n  p = import f.inputs.nixpkgs {system=\"x86_64-linux\";};\n  c = p.callPackage (f.outPath + \"/pkgs/basilica-native-suite/candidates.nix\") {};\n  s = p.callPackage (f.outPath + \"/pkgs/basilica-native-suite\") {};\nin builtins.attrValues s.checks ++ [ s.aggregate ]"
+  ],
+  "scope": "unsigned local evidence, current candidate identities, thirteen accepted profiles and checked aggregate"
+}

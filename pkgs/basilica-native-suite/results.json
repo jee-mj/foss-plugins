@@ -1,0 +1,1197 @@
+{
+  "Apotheosis": {
+    "schema": 2,
+    "name": "Apotheosis",
+    "identity": "BA-010",
+    "audio": null,
+    "version": "0.6.1",
+    "revision": "70470a0014c8bd6c920f40548d8041292ef94907",
+    "sourceHash": "sha256-Hi+FtSGgTqlwQFimkjy2OdRlC9ZmXuvGGB2RnOOyrbQ=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/3vdh9a28mpxyk8f081z7956zp3chmmj3-basilica-apotheosis-0.6.1.drv",
+    "packageOutput": "/nix/store/w0bsjwz0v2dwcs1xb9mz117c3qwwr9i9-basilica-apotheosis-0.6.1",
+    "checkDrv": "/nix/store/xs1vwx2578rrln96fyfnix9wcxnsnrkb-basilica-Apotheosis-current-proof.drv",
+    "checkOutput": "/nix/store/7wzwx92ji8xczm7z0h0s8ww4slhavl3r-basilica-Apotheosis-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/h54dbzdw04jkg0937118qxbhmf6c8b49-basilica-Apotheosis-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/k32jxzksg8ciy7yjhkj5xmrp7vj3z4h8-basilica-Apotheosis-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-010",
+      "modification": null,
+      "name": "Apotheosis",
+      "packageDrv": "/nix/store/3vdh9a28mpxyk8f081z7956zp3chmmj3-basilica-apotheosis-0.6.1.drv",
+      "packageOutput": "/nix/store/w0bsjwz0v2dwcs1xb9mz117c3qwwr9i9-basilica-apotheosis-0.6.1",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-Hi+FtSGgTqlwQFimkjy2OdRlC9ZmXuvGGB2RnOOyrbQ=",
+        "repo": "basilica-audio/Apotheosis",
+        "revision": "70470a0014c8bd6c920f40548d8041292ef94907",
+        "sourceDrv": "/nix/store/zr57rj8jry39lwy0jq6202w6p6kkq3mx-source.drv",
+        "sourceOut": "/nix/store/an6gcqzgbl66hsgmp55jl4xb1z0srwzc-source",
+        "version": "0.6.1"
+      }
+    },
+    "receiptSha256": "8b402353d83581f7838ad37149fceb725de944f2908cb3cb65132c73f483168c",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+      },
+      "format": "VST3",
+      "name": "Apotheosis",
+      "noticeFiles": 3234,
+      "noticeManifestSha256": "d247ff1b50cb2a8ad92a5d8b8fc1c37b0e03e7e4ede22789fa22263be27e243e",
+      "plugin": "/nix/store/w0bsjwz0v2dwcs1xb9mz117c3qwwr9i9-basilica-apotheosis-0.6.1",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "146af26b87b6feff05eed7fe5cbeb96d55a6a233d824cedd141fd99d778f8838"
+    },
+    "verificationSha256": "502591cf6a1482059e9507819123a6e9126da5fbe36b3bc35e86db46345a2f28",
+    "sourceModification": null,
+    "attempt": 1
+  },
+  "Aureate": {
+    "schema": 2,
+    "name": "Aureate",
+    "identity": "BA-007",
+    "audio": null,
+    "version": "0.5.0",
+    "revision": "8c510952ee785775bbfde58c653c89c7fe52d5d2",
+    "sourceHash": "sha256-mzWYOuyW6DY8Z3PdsMbcuaN0jAq0Q5oVfDAQA8tqjao=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/11jqzy38mkpxxs0677xsqzm2wwmp8ggh-basilica-aureate-0.5.0.drv",
+    "packageOutput": "/nix/store/fxhwyj7w0zahhl5b5dq91c16a0bhskzy-basilica-aureate-0.5.0",
+    "checkDrv": "/nix/store/6l3nv1h01gdzzqn4ivy7sxd2mlyf7g5x-basilica-Aureate-current-proof.drv",
+    "checkOutput": "/nix/store/hkyz5ryzqpk7zjpm2qcplgg7gnph8rjm-basilica-Aureate-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/a5c1hww55wnzpk81by0fzwbw9syl9m8w-basilica-Aureate-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/r5dxwzaakmdj64ypzfh8l6dn4kil50jq-basilica-Aureate-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-007",
+      "modification": null,
+      "name": "Aureate",
+      "packageDrv": "/nix/store/11jqzy38mkpxxs0677xsqzm2wwmp8ggh-basilica-aureate-0.5.0.drv",
+      "packageOutput": "/nix/store/fxhwyj7w0zahhl5b5dq91c16a0bhskzy-basilica-aureate-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-mzWYOuyW6DY8Z3PdsMbcuaN0jAq0Q5oVfDAQA8tqjao=",
+        "repo": "basilica-audio/Aureate",
+        "revision": "8c510952ee785775bbfde58c653c89c7fe52d5d2",
+        "sourceDrv": "/nix/store/7hlhc3bl8xcgmjll01z1in918csl3g7w-source.drv",
+        "sourceOut": "/nix/store/5j4kaamsqcs2g9534wq4cyzaknpwvlai-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "9cf8ada6dad78182a8f4a660f2db19efa2e447ac83448fac2bd0c6ece4350a12",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {},
+      "format": "VST3",
+      "name": "Aureate",
+      "noticeFiles": 3230,
+      "noticeManifestSha256": "898c14cc8e3742d1e759e5387c5e63b0111e2e1f56a5ce1dbc20c51ecd155e48",
+      "plugin": "/nix/store/fxhwyj7w0zahhl5b5dq91c16a0bhskzy-basilica-aureate-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "af4073ea0b7a7e05fd7e39a43b3d01a0e83eb3c8d7ce198e206a6d60c009b96e"
+    },
+    "verificationSha256": "167b7fea0cdb453c59c857a5faecf26feb0f99cf9657f9982847096c58b4c2b1",
+    "sourceModification": null,
+    "attempt": 1
+  },
+  "Crypta": {
+    "schema": 2,
+    "name": "Crypta",
+    "identity": "BA-011",
+    "audio": null,
+    "version": "0.4.1",
+    "revision": "d17901175287bd8cda5503bfbee9cd2e77b776d3",
+    "sourceHash": "sha256-yHdV9G0Vg9u4XpcApU8QUDvMQDCKKAtovycYWIwtiz0=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/xl3rmg2jqib97zhj3g73blncvgwi2nhc-basilica-crypta-0.4.1.drv",
+    "packageOutput": "/nix/store/16x1mgd6a799pnkligvaiqa8k24l69rq-basilica-crypta-0.4.1",
+    "checkDrv": "/nix/store/kvyls6hzhi9lqbayrvzcafh4rq31sdj3-basilica-Crypta-current-proof.drv",
+    "checkOutput": "/nix/store/5c2gmd7ky7qydv7m413p4irvsrjadc1j-basilica-Crypta-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/6s8crxnxl2cggssrskbnr3m8plqh9m7x-basilica-Crypta-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/ssdzzjcrybkqybcz9jfsmjl6rlrrxl3f-basilica-Crypta-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-011",
+      "modification": null,
+      "name": "Crypta",
+      "packageDrv": "/nix/store/xl3rmg2jqib97zhj3g73blncvgwi2nhc-basilica-crypta-0.4.1.drv",
+      "packageOutput": "/nix/store/16x1mgd6a799pnkligvaiqa8k24l69rq-basilica-crypta-0.4.1",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-yHdV9G0Vg9u4XpcApU8QUDvMQDCKKAtovycYWIwtiz0=",
+        "repo": "basilica-audio/Crypta",
+        "revision": "d17901175287bd8cda5503bfbee9cd2e77b776d3",
+        "sourceDrv": "/nix/store/sf76akisdxjqhahnx7sifgsx51a19jyz-source.drv",
+        "sourceOut": "/nix/store/rljb9fsfiri7lxvw519d3nylah9x2va8-source",
+        "version": "0.4.1"
+      }
+    },
+    "receiptSha256": "94fff6977aca19be7784df46939f00a8e088b6604347caba4fe77363b80441b9",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053",
+        "resources/irs/modelled_1x15_vintage.wav": "fd7de6a4fbe4e1fe6a820b657a2dc5e6693db74236ef668c23374d7eee8182e4",
+        "resources/irs/modelled_4x10_horn.wav": "b7e98317d45a340cff6853392a1fde3bcf4f446a6a7e5f7a0336dabeca1537f4",
+        "resources/irs/modelled_8x10_cone.wav": "67aa93d0e238e88b74b455c3b5322d455d61c007620ace2d2cb88b54c6a793e2",
+        "resources/irs/modelled_8x10_edge.wav": "551d27888c679e864342d70a76c0298a8dbbaf21cb33b81ed995f387bf63a1c3"
+      },
+      "format": "VST3",
+      "name": "Crypta",
+      "noticeFiles": 3236,
+      "noticeManifestSha256": "55038d8e75f3b74177e7717bffe19d1660dd9d4fcb9031ff7c109fee0150adeb",
+      "plugin": "/nix/store/16x1mgd6a799pnkligvaiqa8k24l69rq-basilica-crypta-0.4.1",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "8ae04842e70ef7fd95cc17a3beec3dc4becbaf7dbf2804ce232da266b22a8cf6"
+    },
+    "verificationSha256": "2e8533c981a4b185eecd6f437f8199e3da01553768eddc15419cc8d43d5d812e",
+    "sourceModification": null,
+    "attempt": 1
+  },
+  "Firmament": {
+    "schema": 2,
+    "name": "Firmament",
+    "identity": "BA-008",
+    "audio": null,
+    "version": "0.4.0",
+    "revision": "310296f9239462db33b8a1d4afd9cd77d7b3116a",
+    "sourceHash": "sha256-cwkZJTXjULsB66HQ3+yhVGBIr7xqBklcklNb+aWCofs=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/kdx1klqbp4nfvl84mcvvhkjqmig1hl02-basilica-firmament-0.4.0.drv",
+    "packageOutput": "/nix/store/8k37mfn7jj2b80hqdx4hggi9890vm5n2-basilica-firmament-0.4.0",
+    "checkDrv": "/nix/store/w100baypfv9w0aav3g4600a57nyrr70d-basilica-Firmament-current-proof.drv",
+    "checkOutput": "/nix/store/gps0faizf4xx8a1izqzhj68fzrslr0ic-basilica-Firmament-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/r0ffiirag0k8qz6ggq1aqsq0hj4iqa97-basilica-Firmament-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/vfphj7mn7ns2mpp6vbhx5f1npim4vy53-basilica-Firmament-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-008",
+      "modification": null,
+      "name": "Firmament",
+      "packageDrv": "/nix/store/kdx1klqbp4nfvl84mcvvhkjqmig1hl02-basilica-firmament-0.4.0.drv",
+      "packageOutput": "/nix/store/8k37mfn7jj2b80hqdx4hggi9890vm5n2-basilica-firmament-0.4.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-cwkZJTXjULsB66HQ3+yhVGBIr7xqBklcklNb+aWCofs=",
+        "repo": "basilica-audio/Firmament",
+        "revision": "310296f9239462db33b8a1d4afd9cd77d7b3116a",
+        "sourceDrv": "/nix/store/1hfqsl98r1kr08hrxzd15wnxjcngjx6w-source.drv",
+        "sourceOut": "/nix/store/w2hr1nv7kp3x2dqngk52jh3w89zab003-source",
+        "version": "0.4.0"
+      }
+    },
+    "receiptSha256": "c4257c0a972c204fc6006477ac40faaa8b4e5699911e3a5c442397032ec2abf7",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+      },
+      "format": "VST3",
+      "name": "Firmament",
+      "noticeFiles": 3231,
+      "noticeManifestSha256": "62589c76a7196f7a484a8f2744f55a5187e6af83fb93c9f3fd88a0a15b612400",
+      "plugin": "/nix/store/8k37mfn7jj2b80hqdx4hggi9890vm5n2-basilica-firmament-0.4.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "db955628638bee747ff36d5e68076e609032f9d8d1b3ec141aa0b3076bb48158"
+    },
+    "verificationSha256": "6ddf280a468ac5c27cbca5df9913bb629620a42ba5c7347747b1e4a2b7c824ac",
+    "sourceModification": null,
+    "attempt": 1
+  },
+  "Lancet": {
+    "schema": 2,
+    "name": "Lancet",
+    "identity": "BA-012",
+    "audio": null,
+    "version": "0.5.0",
+    "revision": "76c35f09e5e1e01e6fe0d5a78dc6aa803ecc5174",
+    "sourceHash": "sha256-Gvd1FuF2tDNPtrTMirBrc/8DdPYr/0F7dnEa/glaQn4=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/bgl94ni0rcp00yphvng6l9i2hr85mfap-basilica-lancet-0.5.0.drv",
+    "packageOutput": "/nix/store/46rngsy9bwca6fxrp38bggi58fj88ilc-basilica-lancet-0.5.0",
+    "checkDrv": "/nix/store/11bwl3hk8asajmpcfh6xd1cnqdzw7rsj-basilica-Lancet-current-proof.drv",
+    "checkOutput": "/nix/store/4j5sxmyz21x5n6xgy0qnyqyh3llknj5r-basilica-Lancet-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/f9gs7laxn7yy3iplkikggc5vl12qvvg9-basilica-Lancet-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/vkvb305f4ssdhw3xgiq5nya3f520q9wk-basilica-Lancet-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-012",
+      "modification": null,
+      "name": "Lancet",
+      "packageDrv": "/nix/store/bgl94ni0rcp00yphvng6l9i2hr85mfap-basilica-lancet-0.5.0.drv",
+      "packageOutput": "/nix/store/46rngsy9bwca6fxrp38bggi58fj88ilc-basilica-lancet-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-Gvd1FuF2tDNPtrTMirBrc/8DdPYr/0F7dnEa/glaQn4=",
+        "repo": "basilica-audio/Lancet",
+        "revision": "76c35f09e5e1e01e6fe0d5a78dc6aa803ecc5174",
+        "sourceDrv": "/nix/store/n5g0j6h4i14zvkj986w5wjzcpkdl94wf-source.drv",
+        "sourceOut": "/nix/store/vjk1p7xnjz1rbbkgpx44znksvyzh3n6y-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "e66336cdf95a694161b7d1fd8286f9502592b0ef276a5af790216de80cccf735",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {},
+      "format": "VST3",
+      "name": "Lancet",
+      "noticeFiles": 3230,
+      "noticeManifestSha256": "4ecfdf17b4223e9043120670ddaed887e86658e3d2075cb52259bec3af7b047a",
+      "plugin": "/nix/store/46rngsy9bwca6fxrp38bggi58fj88ilc-basilica-lancet-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "2e3c2ddae277bdc7af71880aebf1742a9cc76a028259c1c6c83b9dddfa8f006c"
+    },
+    "verificationSha256": "d049204fdaba1d4e1b9c4d42a434539f531df484e96a15f0954efcc7eaeacf7d",
+    "sourceModification": null,
+    "attempt": 1
+  },
+  "Miserere": {
+    "schema": 2,
+    "name": "Miserere",
+    "identity": "BA-013",
+    "audio": "AUDIO-003",
+    "version": "0.7.0",
+    "revision": "6ce6cc2deb616f337622e36c747a292f505ea0b7",
+    "sourceHash": "sha256-gzAKD2fO8DzPaFRBVOYq7Apj7haEBgrTl0qsUzTJXME=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/silh3y3aal8ylrrz858zcpwxl61l9i5c-basilica-miserere-0.7.0.drv",
+    "packageOutput": "/nix/store/415izqbh7cjcaki676h2nh33kygn5pn3-basilica-miserere-0.7.0",
+    "checkDrv": "/nix/store/db4cd3b56mbpiydd7gvcvx7yi5lf2cs2-basilica-Miserere-current-proof.drv",
+    "checkOutput": "/nix/store/q00fysc5vx55nk12vmhf81xgna3mxc8f-basilica-Miserere-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/l2pbrx0mpcfj8bgmrai8yczihh3gj0iq-basilica-miserere-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/wr5a031mivlq14zl7irc86zrdjnq6chx-basilica-miserere-native-artifacts",
+      "audio": "AUDIO-003",
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-013",
+      "modification": null,
+      "name": "Miserere",
+      "packageDrv": "/nix/store/silh3y3aal8ylrrz858zcpwxl61l9i5c-basilica-miserere-0.7.0.drv",
+      "packageOutput": "/nix/store/415izqbh7cjcaki676h2nh33kygn5pn3-basilica-miserere-0.7.0",
+      "recipe": {
+        "adapter": "3f2268729e4c9ccc965c4f7436cb074fc3742ca3118d4e56434bbf1e2fd90543",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "5b1b4b4adf98ba74d051427d520fa4bd9a129712bc1dde0da195b37c7f615925",
+        "package": "ad31310d42525b4a36c382c8d0cdeaf10148ed1f10c5a6ffc184ba533119f737",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "5b1b4b4adf98ba74d051427d520fa4bd9a129712bc1dde0da195b37c7f615925"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-gzAKD2fO8DzPaFRBVOYq7Apj7haEBgrTl0qsUzTJXME=",
+        "repo": "basilica-audio/Miserere",
+        "revision": "6ce6cc2deb616f337622e36c747a292f505ea0b7",
+        "sourceDrv": "/nix/store/niw3yk6kxr7rha2c5w1szy364wxrg434-source.drv",
+        "sourceOut": "/nix/store/gbz56bw5v93ilp692zcgdvpmq8x13crm-source",
+        "version": "0.7.0"
+      }
+    },
+    "receiptSha256": "629e1bb22c31eb33b0bfef7a696c9d2870c746e5e834e023246fb8a5d149e1af",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "binary": "lib/vst3/Miserere.vst3/Contents/x86_64-linux/Miserere.so",
+      "checks": [
+        "ELF",
+        "exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "presets/factory/aggressiveRockVocal.json": "338623cff5efeff0e9b4572c7fd48dac6a7d9c3f550190c6738a62d8db6e5d04",
+        "presets/factory/bvMode.json": "38a43258b4dea6d71909b30b6d58dea65d43ed12dc86a7c902b1d534c0a7d206",
+        "presets/factory/classicParallelBlend.json": "4578ec42fa5f228f60fb74f6bdaa3457e60944a9452cfeb00f831173d9f8431c",
+        "presets/factory/crushForward.json": "db03faec02c496cf935846b3cb0947e3c913100544f3cfd5b25a526f4e123a48",
+        "presets/factory/default.json": "6aaa7295a2e6977a28788e8b65eb155d37925ebd6d9cb7fe918797d1514a34e5",
+        "presets/factory/directChannelOnly.json": "93aa42f24eac36480f4b7b504ac47019ae588d623c1a88ca3a80dcf90d157947",
+        "presets/factory/gentleBus.json": "0326750cf510de79bb6feb44b1664bc6ac27c3bdd1b99413f42b267f5048a4c6",
+        "presets/factory/roughMixGlue.json": "74f434968c227222b6c471f40e54c6e8032108247b35366b9da20bc680a6c722",
+        "presets/factory/silkSandwich.json": "1b92fe1f74fb26abf463f5dd48345a02e2e8349568e8b2968b192488a6d3d0a7",
+        "presets/factory/tapeSlap75.json": "269c0895d000ba02137de157289e78cc372a4b83a077fe2044846d62c59fd10c",
+        "presets/factory/whisperThicken.json": "3d1f1d5404448cbd40831afa2308369051b732626650a413f944787f56dcebfb",
+        "presets/factory/wideAndWet.json": "6864d6248b2a92d050d8839f61fb68ddabf4a1a1d269746153e6ff80814b61b4",
+        "presets/factory/wornSlap.json": "7e402ed544727714a31e4b264ef9b1d2b74019f9a0d083235fbd591bb060ffd7",
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053",
+        "resources/i18n/de.txt": "fede5f164db5400b2446435475492d61b9c825542a5a638b31a88723a51a043c"
+      },
+      "format": "VST3",
+      "needed": [
+        "libasound.so.2",
+        "libfontconfig.so.1",
+        "libfreetype.so.6",
+        "librt.so.1",
+        "libdl.so.2",
+        "libpthread.so.0",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ],
+      "plugin": "/nix/store/415izqbh7cjcaki676h2nh33kygn5pn3-basilica-miserere-0.7.0",
+      "runtime": {
+        "libGL.so.1": "/nix/store/37pxc9k6cjg51gb6jskhb067nybrq75q-libglvnd-1.7.0/lib/libGL.so.1",
+        "libX11.so.6": "/nix/store/sf0bhkr1wb32273b2hx4m4mpypclicc6-libx11-1.8.13/lib/libX11.so.6",
+        "libXcursor.so.1": "/nix/store/vgnm1dw5prwp5x2i0jkkqzcwp34jwqgj-libxcursor-1.2.3/lib/libXcursor.so.1",
+        "libXinerama.so.1": "/nix/store/2mkp04ykvb2xclrmdkx9b9v8chx3a9g8-libxinerama-1.1.6/lib/libXinerama.so.1",
+        "libXrandr.so.2": "/nix/store/w7r9sq030rcs0d9n309dif6yl8ygg4yd-libxrandr-1.5.5/lib/libXrandr.so.2"
+      },
+      "scope": "experimental local native build; no GUI/audio instance or host acceptance test",
+      "sha256": "95e8b38155dbdc02933f112883771fcb169169edb857ec2e0ea1663a480894b6"
+    },
+    "verificationSha256": "fab922f6fb95353fbb22bb49078cd98849be267ff86fafff5fe61ec7c99b5495",
+    "sourceModification": null
+  },
+  "Nave": {
+    "schema": 2,
+    "name": "Nave",
+    "identity": "BA-003",
+    "audio": null,
+    "version": "0.5.0",
+    "revision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1",
+    "sourceHash": "sha256-nsqu2xgoP6WhUWRzaL3CV7N6izq0dDnrzB7tkj+lCok=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/qbjvsbnlrxzvnaklsgs6qk5ypp6q0arz-basilica-nave-0.5.0.drv",
+    "packageOutput": "/nix/store/15lb99fi646gfh1sjwhcb709ly988naw-basilica-nave-0.5.0",
+    "checkDrv": "/nix/store/vzbf5x0c3lk5x66cb66kg1sb1f45hmhr-basilica-Nave-current-proof.drv",
+    "checkOutput": "/nix/store/mqm4hbrx1g871nv5sr00yrb8zgy0k9va-basilica-Nave-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/w727cch7fm4s2h1mqxp8n1iaz9pzf66s-basilica-Nave-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/7vryayi6jjdi80h6z1l1nb9m8v9k6z4p-basilica-Nave-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-003",
+      "modification": {
+        "compatibilityDrv": "/nix/store/ijibyafsksld77kn3wy29fb77kdw9hwf-basilica-nave-scalar-compatibility.drv",
+        "compatibilityOutput": "/nix/store/64wcr7lhzcrqm7zh90x59czf61k4vi00-basilica-nave-scalar-compatibility",
+        "noticeSha256": "91c7a2ddc6da5887b0e41bf537511409a2628c9edbe4b3ad5521c10656ac5e0f",
+        "patchSha256": "734ec2e76fbbeddca476115e2bb8945b72287e78002b58b68e19264bb7203cca"
+      },
+      "name": "Nave",
+      "packageDrv": "/nix/store/qbjvsbnlrxzvnaklsgs6qk5ypp6q0arz-basilica-nave-0.5.0.drv",
+      "packageOutput": "/nix/store/15lb99fi646gfh1sjwhcb709ly988naw-basilica-nave-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-nsqu2xgoP6WhUWRzaL3CV7N6izq0dDnrzB7tkj+lCok=",
+        "repo": "basilica-audio/Nave",
+        "revision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1",
+        "sourceDrv": "/nix/store/cdahxn844x0fd8d3j31xxzh71llij54p-source.drv",
+        "sourceOut": "/nix/store/k331d2avhp8qkh2aibsh7fj5yys1h1c6-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "ddba5a5ebb3fc5531342dbf9b8585aacf85feb881d93526e04bac38f9a9d9c73",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {},
+      "format": "VST3",
+      "name": "Nave",
+      "noticeFiles": 3233,
+      "noticeManifestSha256": "bfa518210604a86f816ff180230710c9d7964e33359e394e9cd146fa03dccc38",
+      "plugin": "/nix/store/15lb99fi646gfh1sjwhcb709ly988naw-basilica-nave-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "0ed78253f744febd294fda5e1f656fdb5d4a9db9f901d4bebf253f557a20c898"
+    },
+    "verificationSha256": "e2901361ae840beb8413e1534c70cab1580ed1319efa52d2eaaee4a6905e79dc",
+    "sourceModification": {
+      "assets": {
+        "docs/assets/icon-256.png": "46e544c14e509274058c621eef91cb0e69a5884a6b3cf54b998bc70c274139ee",
+        "presets/factory/darkVintage.json": "a29698878d7aacbded78f429d3ed3b70085b63048644e584518e529d7770f2cd",
+        "presets/factory/default.json": "280df889f9ced330264b0feddfd2a6af1de8d5ecd3f272ee38c4f7ec71c1ff0c",
+        "presets/factory/evenBlend.json": "eaed37fb8e6f70e61db0ec10bee17c5d2c26d7df01a0d98396dff1a85e794614",
+        "presets/factory/liveStage.json": "814ada1741961a92a0b810ebbd9318af7f318c4cfff0542fecdcabd8013eec3e",
+        "presets/factory/micMorph.json": "91afd44cc8d9938b1b9f8ad71bbfb7b6278aebd1917c2b59119955b245414932",
+        "presets/factory/parallelCabBlendedDry.json": "6140e845ae9470702d38b7ea48fd813c19bd90aa584f1b32f5a7bb747dc7ee63",
+        "presets/factory/pushedBackInTheRoom.json": "3551764ce5e8283cac41588facc11b6ddeafa3c347639dcd621e5e1b34fb02a7",
+        "presets/factory/tameTheFizz.json": "4c3ddf6e3a9b91f9cad7e985bb52d5de50c25c6f4c48d70ae2400c92a2d2ec3d",
+        "presets/factory/tightStack.json": "b225c6929fb65160e660f610f31d8561646efe9e4ebc83b7524589ffc2d14f97",
+        "presets/factory/touchOfRoomMic.json": "c6dbcdb28ef53e736f9639dd656876f2440dace3a5091dde4bd90da14a52a0ce",
+        "resources/gui/faceplate_nave_1800x1200.png": "bcd0e5ae9d26c6e888e16c6bed1b9a15929695dc0ec18bbe9189997d5dd877ed",
+        "resources/gui/faceplate_nave_900x600.png": "8f26b0e2974904b8e22ef668fe9a0c81522040d11f0d2c4e2db2bd0cd207945c",
+        "resources/gui/knob_brass_strip_160px_128f.png": "e00a2647b6dbb5bef0d4a843b253f62f5eab9c56e9e019cafa0cf2f0f7817046",
+        "resources/gui/knob_brass_strip_320px_128f.png": "49e522e7ab9c2f74ffae9b563c0b8931ff6d22a2f64d90f9f73c45cd7e1565f6",
+        "resources/i18n/de.txt": "fede5f164db5400b2446435475492d61b9c825542a5a638b31a88723a51a043c"
+      },
+      "compatibility": {
+        "checks": [
+          "zero-fuzz patch application",
+          "exact minimal source delta",
+          "both actual source calls",
+          "signed minimum/zero/maximum/negative/ties",
+          "deduced JUCE scalar equivalence"
+        ],
+        "compileExitCode": 0,
+        "modifiedSha256": "b71cb561da8b012925f2d77826d49f85e33329af02583dc4ed49b893571ac3e1",
+        "operandType": "juce::int64 (signed long long)",
+        "originalSha256": "cf7aa55061e70fab47d7f8d2b7c9e88cfdb8e0f552c7a931d58a148c0f8513f0",
+        "patchSha256": "734ec2e76fbbeddca476115e2bb8945b72287e78002b58b68e19264bb7203cca",
+        "patchedCalls": 2,
+        "runtimeExitCode": 0,
+        "scalarBoundaryCases": 14,
+        "simdEnabled": true,
+        "sourceClampCases": 6,
+        "sourceRevision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1"
+      },
+      "noticeSha256": "91c7a2ddc6da5887b0e41bf537511409a2628c9edbe4b3ad5521c10656ac5e0f",
+      "patchSha256": "734ec2e76fbbeddca476115e2bb8945b72287e78002b58b68e19264bb7203cca"
+    },
+    "previousAttempt": {
+      "status": "failed",
+      "exitCode": 1,
+      "diagnostic": "warning: Git tree 'REPOSITORY' is dirty\nwarning: ignoring the client-specified setting 'sandbox', because it is a restricted setting and you are not a trusted user\nthese 3 derivations will be built:\n  /nix/store/cdahxn844x0fd8d3j31xxzh71llij54p-source.drv\n  /nix/store/xi2lpr77kgpry7v0rabrxvxfq6igamks-basilica-nave-0.5.0.drv\n  /nix/store/fi2pfpadhbxjqw9wnbay74vdbjwd0d1q-basilica-Nave-native-artifacts.drv\nbuilding '/nix/store/cdahxn844x0fd8d3j31xxzh71llij54p-source.drv'...\nbuilding '/nix/store/xi2lpr77kgpry7v0rabrxvxfq6igamks-basilica-nave-0.5.0.drv'...\nerror: Cannot build '/nix/store/xi2lpr77kgpry7v0rabrxvxfq6igamks-basilica-nave-0.5.0.drv'.\n       Reason: builder failed with exit code 2.\n       Output paths:\n         /nix/store/ii3j5bfrf5m10wmjxppp77rbbj27y0jr-basilica-nave-0.5.0\n       Last 25 log lines:\n       >   292 |     virtual void processBlock (AudioBuffer<double>& buffer,\n       >       |                  ^~~~~~~~~~~~\n       > /build/source/src/PluginProcessor.h:39:10: note:   by 'virtual void NaveAudioProcessor::processBlock(juce::AudioBuffer<float>&, juce::MidiBuffer&)'\n       >    39 |     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;\n       >       |          ^~~~~~~~~~~~\n       > In file included from /nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source/modules/juce_dsp/juce_dsp.h:262,\n       >                  from /build/source/src/PluginProcessor.h:4:\n       > /nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source/modules/juce_dsp/containers/juce_SIMDRegister.h: In instantiation of 'struct juce::dsp::SIMDRegister<long long int>':\n       > /build/source/src/PluginProcessor.cpp:390:71:   required from here\n       >   390 |     const auto numSamples = static_cast<int> (juce::jmin<juce::int64> (reader->lengthInSamples,\n       >       |                                               ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\n       >   391 |                                                                         static_cast<juce::int64> (std::numeric_limits<int>::max())));\n       >       |                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n       > /nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source/modules/juce_dsp/containers/juce_SIMDRegister.h:92:11: error: invalid use of incomplete type 'using juce::dsp::SIMDRegister<long long int>::NativeOps = struct juce::dsp::SIMDNativeOps<long long int>' {aka 'struct juce::dsp::SIMDNativeOps<long long int>'}\n       >    92 |     using vSIMDType = typename NativeOps::vSIMDType;\n       >       |           ^~~~~~~~~\n       > In file included from /nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source/modules/juce_dsp/juce_dsp.h:254:\n       > /nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source/modules/juce_dsp/native/juce_SIMDNativeOps_sse.h:58:8: note: declaration of 'using juce::dsp::SIMDRegister<long long int>::NativeOps = struct juce::dsp::SIMDNativeOps<long long int>' {aka 'struct juce::dsp::SIMDNativeOps<long long int>'}\n       >    58 | struct SIMDNativeOps;\n       >       |        ^~~~~~~~~~~~~\n       > make[3]: *** [CMakeFiles/Nave.dir/build.make:345: CMakeFiles/Nave.dir/src/PluginProcessor.cpp.o] Error 1\n       > make[3]: *** Waiting for unfinished jobs....\n       > make[2]: *** [CMakeFiles/Makefile2:175: CMakeFiles/Nave.dir/all] Error 2\n       > make[1]: *** [CMakeFiles/Makefile2:247: CMakeFiles/Nave_VST3.dir/rule] Error 2\n       > make: *** [Makefile:196: Nave_VST3] Error 2\n       For full logs, run:\n         nix log /nix/store/xi2lpr77kgpry7v0rabrxvxfq6igamks-basilica-nave-0.5.0.drv\nerror: Cannot build '/nix/store/fi2pfpadhbxjqw9wnbay74vdbjwd0d1q-basilica-Nave-native-artifacts.drv'.\n       Reason: 1 dependency failed.\n       Output paths:\n         /nix/store/3iz2yb8c46klm1vb6yclhf7dck0dxdd6-basilica-Nave-native-artifacts\n"
+    },
+    "attempt": 2
+  },
+  "Overture": {
+    "schema": 2,
+    "name": "Overture",
+    "identity": "BA-001",
+    "audio": null,
+    "version": "0.5.0",
+    "revision": "c1d74a27a015453e7fae10e30c98769b576aebb7",
+    "sourceHash": "sha256-qCxSJKpGbowW3TyqWhkmNYQJ6vQOEKT9YLN4U5d3dc4=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/lmw9f5j8xa13caqpmf5sp7cvsy2zjb5r-basilica-overture-0.5.0.drv",
+    "packageOutput": "/nix/store/27bkpp7g7np2ygrw1fm5rf0sdw3fcjjx-basilica-overture-0.5.0",
+    "checkDrv": "/nix/store/6ridzj96ijg47m3pzg12l3mdp4sqzyhg-basilica-Overture-current-proof.drv",
+    "checkOutput": "/nix/store/0r1v4iy3vw5m504gw461ln31bsi5f39b-basilica-Overture-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/92n1iyhfs2ln8f3iq2psby18q22p16am-basilica-Overture-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/qgpjacs4kph9cj6dsmr7a4vrv9044d7m-basilica-Overture-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-001",
+      "modification": null,
+      "name": "Overture",
+      "packageDrv": "/nix/store/lmw9f5j8xa13caqpmf5sp7cvsy2zjb5r-basilica-overture-0.5.0.drv",
+      "packageOutput": "/nix/store/27bkpp7g7np2ygrw1fm5rf0sdw3fcjjx-basilica-overture-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-qCxSJKpGbowW3TyqWhkmNYQJ6vQOEKT9YLN4U5d3dc4=",
+        "repo": "basilica-audio/Overture",
+        "revision": "c1d74a27a015453e7fae10e30c98769b576aebb7",
+        "sourceDrv": "/nix/store/8ai0sgkvl7qdhhd9zz26354ln000qriy-source.drv",
+        "sourceOut": "/nix/store/0c19l9z7gpd9ldll1n940na1s26k4sny-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "5d2a12f461ee0e2a5a3e56cd5928f0f86360cc59db7e2b51f7b3bfe3af066a64",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {},
+      "format": "VST3",
+      "name": "Overture",
+      "noticeFiles": 3231,
+      "noticeManifestSha256": "8643312c25924b3a7d53d55550bb1fe5990b86ddb25a15f3377a1d221f0a2d86",
+      "plugin": "/nix/store/27bkpp7g7np2ygrw1fm5rf0sdw3fcjjx-basilica-overture-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "01d7db6b02734db76e4fbc5222fd9f3651366cd1a869ba15dac457c2964f4a84"
+    },
+    "verificationSha256": "2488662ecbea856add660dfbd4d9f6553e903ddaf643af984ec9aebc965ce439",
+    "sourceModification": null,
+    "previousAttempt": {
+      "status": "passed",
+      "exitCode": 0,
+      "checkOutput": "/nix/store/4mk7692v4j2acam1fkffamzv6n41ww70-basilica-Overture-native-artifacts"
+    },
+    "attempt": 2
+  },
+  "Requiem": {
+    "schema": 2,
+    "name": "Requiem",
+    "identity": "BA-005",
+    "audio": null,
+    "version": "0.5.0",
+    "revision": "955419e932e7798fe49d2b8123a0dfe7d606bd1f",
+    "sourceHash": "sha256-5glcXT+7xCqsAmEpHv8Za78BOTAALzQaLVgR7VGEBf4=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/f5ddpq67a4ckxbfv6lch88n1jrmli4gx-basilica-requiem-0.5.0.drv",
+    "packageOutput": "/nix/store/hc8ip73ymby9nq6hq6jq71f51131i91i-basilica-requiem-0.5.0",
+    "checkDrv": "/nix/store/fz22lx6dyya0phiyrv0ldnsy81dgppky-basilica-Requiem-current-proof.drv",
+    "checkOutput": "/nix/store/d6rn8vfq8mpxsk54bimp7p5ly1nsyb39-basilica-Requiem-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/jhla2kd3gvw33nwzkwjjfx53ix9y2bm3-basilica-Requiem-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/iw1wg7z0nzjvp7jkrdn8jjsq2bg4792m-basilica-Requiem-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-005",
+      "modification": null,
+      "name": "Requiem",
+      "packageDrv": "/nix/store/f5ddpq67a4ckxbfv6lch88n1jrmli4gx-basilica-requiem-0.5.0.drv",
+      "packageOutput": "/nix/store/hc8ip73ymby9nq6hq6jq71f51131i91i-basilica-requiem-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-5glcXT+7xCqsAmEpHv8Za78BOTAALzQaLVgR7VGEBf4=",
+        "repo": "basilica-audio/Requiem",
+        "revision": "955419e932e7798fe49d2b8123a0dfe7d606bd1f",
+        "sourceDrv": "/nix/store/kvfxfgqmgishp32ii96v8b3w0wqn90qz-source.drv",
+        "sourceOut": "/nix/store/zgh5mjfnkqm5daxry4sdhv9h54sz132i-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "e40e99ff8da8c5b39d8f699fc0bef662bcb6f8f4022a00c255aa8b5d09c75584",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {},
+      "format": "VST3",
+      "name": "Requiem",
+      "noticeFiles": 3230,
+      "noticeManifestSha256": "26b53fc9eff61853a5cb84584b9d53da2697d3f1e2634bb05dc43158d6eddc48",
+      "plugin": "/nix/store/hc8ip73ymby9nq6hq6jq71f51131i91i-basilica-requiem-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "acd479f2bcf934b305182a00cda11f5646b96ec91d19acc6808af1da12b0658b"
+    },
+    "verificationSha256": "5d14cf4724fb59428f09e70778bcf3ec439525ee62211d61d7f09f0a25bdde99",
+    "sourceModification": null,
+    "previousAttempt": {
+      "status": "passed",
+      "exitCode": 0,
+      "checkOutput": "/nix/store/50ijqjyc2d5zhnrym6d0r9hjgrr78cyg-basilica-Requiem-native-artifacts"
+    },
+    "attempt": 2
+  },
+  "Seraph": {
+    "schema": 2,
+    "name": "Seraph",
+    "identity": "BA-006",
+    "audio": "AUDIO-007",
+    "version": "0.4.0",
+    "revision": "d851142d0b64a0a70970dc6f628956b03a3973af",
+    "sourceHash": "sha256-JGDZgRVdngUn6w+VehMvRGDZyJB1TUioMPP8RSlbO1s=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/y0z1j3jqg23d7k2b0br42wahs8a973di-basilica-seraph-0.4.0.drv",
+    "packageOutput": "/nix/store/f77453zw3v7d7zp7cdh2ibkglgh88p2m-basilica-seraph-0.4.0",
+    "checkDrv": "/nix/store/qmdb78wcaszf6176zv5w7qbx7ajlh5q6-basilica-Seraph-current-proof.drv",
+    "checkOutput": "/nix/store/510p49xhc2rj9i8r1ic0hc6bqnqzdj85-basilica-Seraph-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/6i7ddbmp646f339whgbjg587ppc3n39k-basilica-Seraph-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/axhq0n8zvij5sq3w0gzgqjdywr6kfh4j-basilica-Seraph-native-artifacts",
+      "audio": "AUDIO-007",
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        },
+        "linear": {
+          "hash": "sha256-m8zQJeZCQcHIwcGq17F2bmuZc4g7mFsxzRCUEpUrkr4=",
+          "repo": "Signalsmith-Audio/linear",
+          "revision": "5668673560146a9cfe38c25315071e3fd68c8317",
+          "sourceDrv": "/nix/store/6xb4hbpj3g20jdcrphldl0aibrryx2x8-source.drv",
+          "sourceOut": "/nix/store/368byxp42whrg32a8hlxjyd73szf2310-source",
+          "version": null
+        },
+        "stretch": {
+          "hash": "sha256-UFZsof6eclOlLqYzq4oK40waMGBEFmZAzMm67tL9pxs=",
+          "repo": "Signalsmith-Audio/signalsmith-stretch",
+          "revision": "57b93f4e9206a089a45387eaa39bdc9f310d3308",
+          "sourceDrv": "/nix/store/bq6771br8gx1yvs73gkfz4y3f64smwf9-source.drv",
+          "sourceOut": "/nix/store/cdvgbz943a0zh3r953pgbkvi0caakws4-source",
+          "version": null
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-006",
+      "modification": null,
+      "name": "Seraph",
+      "packageDrv": "/nix/store/y0z1j3jqg23d7k2b0br42wahs8a973di-basilica-seraph-0.4.0.drv",
+      "packageOutput": "/nix/store/f77453zw3v7d7zp7cdh2ibkglgh88p2m-basilica-seraph-0.4.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-JGDZgRVdngUn6w+VehMvRGDZyJB1TUioMPP8RSlbO1s=",
+        "repo": "basilica-audio/Seraph",
+        "revision": "d851142d0b64a0a70970dc6f628956b03a3973af",
+        "sourceDrv": "/nix/store/nn0xc2ha81lw6047wsqjkmm7vlcnkmsc-source.drv",
+        "sourceOut": "/nix/store/4hb1kn4i7hd59xvlgqbia502gjqk888a-source",
+        "version": "0.4.0"
+      }
+    },
+    "receiptSha256": "468303fd996f1acbfb5c174aeda3fd4936ecc1c3e0a102fb764460fc9ae3b3b0",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+      },
+      "format": "VST3",
+      "name": "Seraph",
+      "noticeFiles": 3236,
+      "noticeManifestSha256": "104c83f7757b8ce5346fd3d6dad5aebf18a86a355310837164b3b8fa1b21505e",
+      "plugin": "/nix/store/f77453zw3v7d7zp7cdh2ibkglgh88p2m-basilica-seraph-0.4.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "059ef5760501a646817504c753a8e4767e6aba9bc8f5c4cdf9e6d97a1ece190b"
+    },
+    "verificationSha256": "7f1bdd3b00b7d59f6352c792eb25eda8e2acea8d56655e270e86ea9571983ac3",
+    "sourceModification": null,
+    "attempt": 1
+  },
+  "Silentium": {
+    "schema": 2,
+    "name": "Silentium",
+    "identity": "BA-004",
+    "audio": "AUDIO-058",
+    "version": "0.5.0",
+    "revision": "574fd36431d26c1f572f7c7f9955b82293b669f3",
+    "sourceHash": "sha256-hmCWAxA13OMI0LeXD3ys+M0OTe44WW9MthAa4IMa2G0=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/i7vslaid9sgkflmiv6s8njxx2kysrdcn-basilica-silentium-0.5.0.drv",
+    "packageOutput": "/nix/store/qrnw292zc1z3ixghp0qi12anni69w6q6-basilica-silentium-0.5.0",
+    "checkDrv": "/nix/store/r1c6nfkqm9gmg1mrshk21q732falgiaf-basilica-Silentium-current-proof.drv",
+    "checkOutput": "/nix/store/g8rfq0v96n6qk5nl1pfkfnpwb5f7nb62-basilica-Silentium-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/nifzaa7v9gyc03bagafnjjg3xjqvr6ay-basilica-Silentium-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/s60bhdzc0lr0wd0fr4cwad5ajzffhyc5-basilica-Silentium-native-artifacts",
+      "audio": "AUDIO-058",
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-004",
+      "modification": null,
+      "name": "Silentium",
+      "packageDrv": "/nix/store/i7vslaid9sgkflmiv6s8njxx2kysrdcn-basilica-silentium-0.5.0.drv",
+      "packageOutput": "/nix/store/qrnw292zc1z3ixghp0qi12anni69w6q6-basilica-silentium-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-hmCWAxA13OMI0LeXD3ys+M0OTe44WW9MthAa4IMa2G0=",
+        "repo": "basilica-audio/Silentium",
+        "revision": "574fd36431d26c1f572f7c7f9955b82293b669f3",
+        "sourceDrv": "/nix/store/8ri7dj1y2pss2shsv9hz08ikz0r9gjg5-source.drv",
+        "sourceOut": "/nix/store/9dq849ib7crc2d3f6pmizbihv8lrk8iz-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "9012fbf4449dc0c9236667a01d5d4ab48b324939cf725f509ec13a0047cb75cc",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+      },
+      "format": "VST3",
+      "name": "Silentium",
+      "noticeFiles": 3232,
+      "noticeManifestSha256": "add13120c74e8daea691dfd7b5dc4872df6e40d6ddc369c725f957fb70c02d85",
+      "plugin": "/nix/store/qrnw292zc1z3ixghp0qi12anni69w6q6-basilica-silentium-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "c1d27a600a6f2ce3cb34de3747c68abab81a53a175ecd267e53480dce8743de1"
+    },
+    "verificationSha256": "35f3bf8b45f4de7f006e89779471e6f5ead421a8201d1de052af4232734a7827",
+    "sourceModification": null,
+    "previousAttempt": {
+      "status": "passed",
+      "exitCode": 0,
+      "checkOutput": "/nix/store/r5p4q3s78cajvvs7h7fiy3nlvm0y4sq9-basilica-Silentium-native-artifacts"
+    },
+    "attempt": 2
+  },
+  "Tenebrae": {
+    "schema": 2,
+    "name": "Tenebrae",
+    "identity": "BA-002",
+    "audio": null,
+    "version": "0.5.0",
+    "revision": "38b4e93b0ead817cb2ef97bc0553777fbf84aea9",
+    "sourceHash": "sha256-eAn+gciV/zHi1HGe0VW0dmfye4foYD+VU2JmmcQcbFE=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/jsikbfqj1glyavj2r1an5kyhwnimdc3b-basilica-tenebrae-0.5.0.drv",
+    "packageOutput": "/nix/store/8061ax65abj7s4grqk38rv36c3wc8qmg-basilica-tenebrae-0.5.0",
+    "checkDrv": "/nix/store/8wivks4pi39y2b3dgs9ii12plyjg9ifd-basilica-Tenebrae-current-proof.drv",
+    "checkOutput": "/nix/store/nhkbfljlj4i6jw00nvjn4xl3a6jwh8y2-basilica-Tenebrae-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/jvfvbw0nb7figs96n72vzc551y2ka8h2-basilica-Tenebrae-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/w546wz00y9l8g0xl3chvbh5zng73nn3g-basilica-Tenebrae-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-002",
+      "modification": null,
+      "name": "Tenebrae",
+      "packageDrv": "/nix/store/jsikbfqj1glyavj2r1an5kyhwnimdc3b-basilica-tenebrae-0.5.0.drv",
+      "packageOutput": "/nix/store/8061ax65abj7s4grqk38rv36c3wc8qmg-basilica-tenebrae-0.5.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-eAn+gciV/zHi1HGe0VW0dmfye4foYD+VU2JmmcQcbFE=",
+        "repo": "basilica-audio/Tenebrae",
+        "revision": "38b4e93b0ead817cb2ef97bc0553777fbf84aea9",
+        "sourceDrv": "/nix/store/sygnisv8cs2d1ds95lprjvvikj0blkrs-source.drv",
+        "sourceOut": "/nix/store/m9lbs0xzxmjfgjxj2z76d6vpmsrrz1ls-source",
+        "version": "0.5.0"
+      }
+    },
+    "receiptSha256": "c869cb0b17cd124a357156e5aca91f89a48676063d74533c691356747c4461a1",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {},
+      "format": "VST3",
+      "name": "Tenebrae",
+      "noticeFiles": 3230,
+      "noticeManifestSha256": "975866cad3812ffc82f344a52a3e57546394e27aeacc3eff129aba1279c0579f",
+      "plugin": "/nix/store/8061ax65abj7s4grqk38rv36c3wc8qmg-basilica-tenebrae-0.5.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "21686fadd3aaf3ba76949e1f31715ff2c626fff13feb98b281fed04c64df5c6b"
+    },
+    "verificationSha256": "2b9946b49a20c578546107ac3dbd5aa7a403dbcdadf3df01c0892afbfc6e0beb",
+    "sourceModification": null,
+    "previousAttempt": {
+      "status": "passed",
+      "exitCode": 0,
+      "checkOutput": "/nix/store/n6yrmv50wlvd824yaa6dvqdcs98vh0zz-basilica-Tenebrae-native-artifacts"
+    },
+    "attempt": 2
+  },
+  "Triptych": {
+    "schema": 2,
+    "name": "Triptych",
+    "identity": "BA-009",
+    "audio": null,
+    "version": "0.6.0",
+    "revision": "854e6800adb00b1126d97c64fecf40f26f55e54e",
+    "sourceHash": "sha256-lTCDvczxEJpMp2HDHDfZ9OvrS1zgp/1xucDZDQlP+tc=",
+    "format": "VST3",
+    "status": "passed",
+    "exitCode": 0,
+    "packageDrv": "/nix/store/mghgkm3pbadsvv28p3h5imx91l0kqgaj-basilica-triptych-0.6.0.drv",
+    "packageOutput": "/nix/store/dsnwalpzppgk4xw25advjs59j1zs1f2f-basilica-triptych-0.6.0",
+    "checkDrv": "/nix/store/5gsficcvg6rglzqszbqadb8bx0g8vb9r-basilica-Triptych-current-proof.drv",
+    "checkOutput": "/nix/store/sj2ww6i2r3mw045jf73hs7z1cn0sb3yv-basilica-Triptych-current-proof",
+    "binding": {
+      "architecture": "ELF64 x86-64",
+      "artifactCheckDrv": "/nix/store/sass4xd5ckc8r4fd8l0ijbj5cfdbq7jj-basilica-Triptych-native-artifacts.drv",
+      "artifactCheckOutput": "/nix/store/vi3x058x86zfzzv55mnjzjcgrkd2irgq-basilica-Triptych-native-artifacts",
+      "audio": null,
+      "dependencies": {
+        "JUCE": {
+          "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+          "repo": "juce-framework/JUCE",
+          "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+          "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+          "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+          "version": "8.0.14"
+        }
+      },
+      "format": "VST3",
+      "identity": "BA-009",
+      "modification": null,
+      "name": "Triptych",
+      "packageDrv": "/nix/store/mghgkm3pbadsvv28p3h5imx91l0kqgaj-basilica-triptych-0.6.0.drv",
+      "packageOutput": "/nix/store/dsnwalpzppgk4xw25advjs59j1zs1f2f-basilica-triptych-0.6.0",
+      "recipe": {
+        "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+        "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+        "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+        "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+        "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+        "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+        "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+        "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+      },
+      "schema": 2,
+      "source": {
+        "hash": "sha256-lTCDvczxEJpMp2HDHDfZ9OvrS1zgp/1xucDZDQlP+tc=",
+        "repo": "basilica-audio/Triptych",
+        "revision": "854e6800adb00b1126d97c64fecf40f26f55e54e",
+        "sourceDrv": "/nix/store/3lz4zaimmr9hjms54w6fi9gqbvygayz1-source.drv",
+        "sourceOut": "/nix/store/lcys0zv25f41igcvi0717yy2cgfl0w7j-source",
+        "version": "0.6.0"
+      }
+    },
+    "receiptSha256": "07b9f7338cbcebb0d6aade15b350039d3f75916c7473591eda7033da598806dd",
+    "verification": {
+      "architecture": "ELF64 x86-64",
+      "checks": [
+        "nonempty bundle",
+        "ELF",
+        "factory exports",
+        "RTLD_NOW",
+        "JUCE dlopen libraries",
+        "embedded assets",
+        "notices"
+      ],
+      "embedded": {
+        "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+        "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+      },
+      "format": "VST3",
+      "name": "Triptych",
+      "noticeFiles": 3231,
+      "noticeManifestSha256": "fdc024383bca183b94405108843da9d844e6fe828e94e02d3f59d2f6e6d3f429",
+      "plugin": "/nix/store/dsnwalpzppgk4xw25advjs59j1zs1f2f-basilica-triptych-0.6.0",
+      "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+      "sha256": "8e7d23b0a67d43175bb75a07212d24dedaae3e82ab337615ec5cb84a354db827"
+    },
+    "verificationSha256": "524d3351b08e51ddc86bed24bd474e304e80156b7999c44d7a647f9026542834",
+    "sourceModification": null,
+    "attempt": 1
+  }
+}

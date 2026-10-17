@@ -1,0 +1,67 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/jhla2kd3gvw33nwzkwjjfx53ix9y2bm3-basilica-Requiem-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/iw1wg7z0nzjvp7jkrdn8jjsq2bg4792m-basilica-Requiem-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-005",
+    "modification": null,
+    "name": "Requiem",
+    "packageDrv": "/nix/store/f5ddpq67a4ckxbfv6lch88n1jrmli4gx-basilica-requiem-0.5.0.drv",
+    "packageOutput": "/nix/store/hc8ip73ymby9nq6hq6jq71f51131i91i-basilica-requiem-0.5.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-5glcXT+7xCqsAmEpHv8Za78BOTAALzQaLVgR7VGEBf4=",
+      "repo": "basilica-audio/Requiem",
+      "revision": "955419e932e7798fe49d2b8123a0dfe7d606bd1f",
+      "sourceDrv": "/nix/store/kvfxfgqmgishp32ii96v8b3w0wqn90qz-source.drv",
+      "sourceOut": "/nix/store/zgh5mjfnkqm5daxry4sdhv9h54sz132i-source",
+      "version": "0.5.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {},
+    "format": "VST3",
+    "name": "Requiem",
+    "noticeFiles": 3230,
+    "noticeManifestSha256": "26b53fc9eff61853a5cb84584b9d53da2697d3f1e2634bb05dc43158d6eddc48",
+    "plugin": "/nix/store/hc8ip73ymby9nq6hq6jq71f51131i91i-basilica-requiem-0.5.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "acd479f2bcf934b305182a00cda11f5646b96ec91d19acc6808af1da12b0658b"
+  },
+  "verificationSha256": "5d14cf4724fb59428f09e70778bcf3ec439525ee62211d61d7f09f0a25bdde99"
+}

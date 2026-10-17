@@ -1,0 +1,74 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/6s8crxnxl2cggssrskbnr3m8plqh9m7x-basilica-Crypta-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/ssdzzjcrybkqybcz9jfsmjl6rlrrxl3f-basilica-Crypta-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-011",
+    "modification": null,
+    "name": "Crypta",
+    "packageDrv": "/nix/store/xl3rmg2jqib97zhj3g73blncvgwi2nhc-basilica-crypta-0.4.1.drv",
+    "packageOutput": "/nix/store/16x1mgd6a799pnkligvaiqa8k24l69rq-basilica-crypta-0.4.1",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-yHdV9G0Vg9u4XpcApU8QUDvMQDCKKAtovycYWIwtiz0=",
+      "repo": "basilica-audio/Crypta",
+      "revision": "d17901175287bd8cda5503bfbee9cd2e77b776d3",
+      "sourceDrv": "/nix/store/sf76akisdxjqhahnx7sifgsx51a19jyz-source.drv",
+      "sourceOut": "/nix/store/rljb9fsfiri7lxvw519d3nylah9x2va8-source",
+      "version": "0.4.1"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {
+      "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+      "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053",
+      "resources/irs/modelled_1x15_vintage.wav": "fd7de6a4fbe4e1fe6a820b657a2dc5e6693db74236ef668c23374d7eee8182e4",
+      "resources/irs/modelled_4x10_horn.wav": "b7e98317d45a340cff6853392a1fde3bcf4f446a6a7e5f7a0336dabeca1537f4",
+      "resources/irs/modelled_8x10_cone.wav": "67aa93d0e238e88b74b455c3b5322d455d61c007620ace2d2cb88b54c6a793e2",
+      "resources/irs/modelled_8x10_edge.wav": "551d27888c679e864342d70a76c0298a8dbbaf21cb33b81ed995f387bf63a1c3"
+    },
+    "format": "VST3",
+    "name": "Crypta",
+    "noticeFiles": 3236,
+    "noticeManifestSha256": "55038d8e75f3b74177e7717bffe19d1660dd9d4fcb9031ff7c109fee0150adeb",
+    "plugin": "/nix/store/16x1mgd6a799pnkligvaiqa8k24l69rq-basilica-crypta-0.4.1",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "8ae04842e70ef7fd95cc17a3beec3dc4becbaf7dbf2804ce232da266b22a8cf6"
+  },
+  "verificationSha256": "2e8533c981a4b185eecd6f437f8199e3da01553768eddc15419cc8d43d5d812e"
+}

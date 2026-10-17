@@ -1,0 +1,186 @@
+{
+  "Apotheosis": {
+    "revision": "70470a0014c8bd6c920f40548d8041292ef94907",
+    "hash": "sha256-Hi+FtSGgTqlwQFimkjy2OdRlC9ZmXuvGGB2RnOOyrbQ=",
+    "files": 162,
+    "maximumBlobBytes": 17532617,
+    "reviewed": [
+      {
+        "path": "resources/gui/knob_brass_strip_160px_128f.png",
+        "gitObject": "ba29a02bee6223d95c9b8a847f7986f530855e84",
+        "reason": "bundled AGPL GUI PNG"
+      },
+      {
+        "path": "resources/gui/knob_brass_strip_320px_128f.png",
+        "gitObject": "8741b3220b4d4ae2539cc2535f1b6a6b6a65c8f7",
+        "reason": "bundled AGPL GUI PNG"
+      }
+    ],
+    "unexpected": []
+  },
+  "Aureate": {
+    "revision": "8c510952ee785775bbfde58c653c89c7fe52d5d2",
+    "hash": "sha256-mzWYOuyW6DY8Z3PdsMbcuaN0jAq0Q5oVfDAQA8tqjao=",
+    "files": 116,
+    "maximumBlobBytes": 1932115,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Crypta": {
+    "revision": "d17901175287bd8cda5503bfbee9cd2e77b776d3",
+    "hash": "sha256-yHdV9G0Vg9u4XpcApU8QUDvMQDCKKAtovycYWIwtiz0=",
+    "files": 199,
+    "maximumBlobBytes": 1483868,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Firmament": {
+    "revision": "310296f9239462db33b8a1d4afd9cd77d7b3116a",
+    "hash": "sha256-cwkZJTXjULsB66HQ3+yhVGBIr7xqBklcklNb+aWCofs=",
+    "files": 99,
+    "maximumBlobBytes": 1921024,
+    "reviewed": [
+      {
+        "path": "tests/fixtures/v020-state.bin",
+        "gitObject": "5a85baf0a99ee9b6a7a2f41c6ab62546b8f5bc27",
+        "reason": "state fixture"
+      }
+    ],
+    "unexpected": []
+  },
+  "JUCE": {
+    "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+    "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+    "files": 4424,
+    "maximumBlobBytes": 2762317,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Lancet": {
+    "revision": "76c35f09e5e1e01e6fe0d5a78dc6aa803ecc5174",
+    "hash": "sha256-Gvd1FuF2tDNPtrTMirBrc/8DdPYr/0F7dnEa/glaQn4=",
+    "files": 100,
+    "maximumBlobBytes": 851265,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Miserere": {
+    "revision": "6ce6cc2deb616f337622e36c747a292f505ea0b7",
+    "hash": "sha256-gzAKD2fO8DzPaFRBVOYq7Apj7haEBgrTl0qsUzTJXME=",
+    "files": 121,
+    "maximumBlobBytes": 797676,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Nave": {
+    "revision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1",
+    "hash": "sha256-nsqu2xgoP6WhUWRzaL3CV7N6izq0dDnrzB7tkj+lCok=",
+    "files": 114,
+    "maximumBlobBytes": 17532617,
+    "reviewed": [
+      {
+        "path": "resources/gui/knob_brass_strip_160px_128f.png",
+        "gitObject": "ba29a02bee6223d95c9b8a847f7986f530855e84",
+        "reason": "bundled AGPL GUI PNG"
+      },
+      {
+        "path": "resources/gui/knob_brass_strip_320px_128f.png",
+        "gitObject": "8741b3220b4d4ae2539cc2535f1b6a6b6a65c8f7",
+        "reason": "bundled AGPL GUI PNG"
+      }
+    ],
+    "unexpected": []
+  },
+  "Overture": {
+    "revision": "c1d74a27a015453e7fae10e30c98769b576aebb7",
+    "hash": "sha256-qCxSJKpGbowW3TyqWhkmNYQJ6vQOEKT9YLN4U5d3dc4=",
+    "files": 105,
+    "maximumBlobBytes": 17532617,
+    "reviewed": [
+      {
+        "path": "resources/gui/knob_brass_strip_160px_128f.png",
+        "gitObject": "ba29a02bee6223d95c9b8a847f7986f530855e84",
+        "reason": "bundled AGPL GUI PNG"
+      },
+      {
+        "path": "resources/gui/knob_brass_strip_320px_128f.png",
+        "gitObject": "8741b3220b4d4ae2539cc2535f1b6a6b6a65c8f7",
+        "reason": "bundled AGPL GUI PNG"
+      }
+    ],
+    "unexpected": []
+  },
+  "Requiem": {
+    "revision": "955419e932e7798fe49d2b8123a0dfe7d606bd1f",
+    "hash": "sha256-5glcXT+7xCqsAmEpHv8Za78BOTAALzQaLVgR7VGEBf4=",
+    "files": 116,
+    "maximumBlobBytes": 2068186,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Seraph": {
+    "revision": "d851142d0b64a0a70970dc6f628956b03a3973af",
+    "hash": "sha256-JGDZgRVdngUn6w+VehMvRGDZyJB1TUioMPP8RSlbO1s=",
+    "files": 95,
+    "maximumBlobBytes": 840305,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Silentium": {
+    "revision": "574fd36431d26c1f572f7c7f9955b82293b669f3",
+    "hash": "sha256-hmCWAxA13OMI0LeXD3ys+M0OTe44WW9MthAa4IMa2G0=",
+    "files": 149,
+    "maximumBlobBytes": 15240708,
+    "reviewed": [
+      {
+        "path": "resources/gui/knob_brass_v2_strip_160px_128f.png",
+        "gitObject": "2d23869a40fd52ea9e6775fad2d359ca34a48675",
+        "reason": "bundled AGPL GUI PNG"
+      },
+      {
+        "path": "resources/gui/knob_brass_v2_strip_320px_128f.png",
+        "gitObject": "bb9f761d5b8419d278bff4ea66481812744823c4",
+        "reason": "bundled AGPL GUI PNG"
+      }
+    ],
+    "unexpected": []
+  },
+  "Tenebrae": {
+    "revision": "38b4e93b0ead817cb2ef97bc0553777fbf84aea9",
+    "hash": "sha256-eAn+gciV/zHi1HGe0VW0dmfye4foYD+VU2JmmcQcbFE=",
+    "files": 115,
+    "maximumBlobBytes": 2012357,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "Triptych": {
+    "revision": "854e6800adb00b1126d97c64fecf40f26f55e54e",
+    "hash": "sha256-lTCDvczxEJpMp2HDHDfZ9OvrS1zgp/1xucDZDQlP+tc=",
+    "files": 102,
+    "maximumBlobBytes": 926142,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "linear": {
+    "revision": "5668673560146a9cfe38c25315071e3fd68c8317",
+    "hash": "sha256-m8zQJeZCQcHIwcGq17F2bmuZc4g7mFsxzRCUEpUrkr4=",
+    "files": 26,
+    "maximumBlobBytes": 44939,
+    "reviewed": [],
+    "unexpected": []
+  },
+  "stretch": {
+    "revision": "57b93f4e9206a089a45387eaa39bdc9f310d3308",
+    "hash": "sha256-UFZsof6eclOlLqYzq4oK40waMGBEFmZAzMm67tL9pxs=",
+    "files": 26,
+    "maximumBlobBytes": 332544,
+    "reviewed": [
+      {
+        "path": "cmd/util",
+        "gitObject": "aeb4e31077a453566b58fff1c7e7e998ac824157",
+        "reason": "unused CLI-only gitlink"
+      }
+    ],
+    "unexpected": []
+  }
+}

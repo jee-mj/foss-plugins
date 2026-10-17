@@ -1,0 +1,8 @@
+{
+  "command": "python3 pkgs/basilica-native-suite/test_api.py",
+  "methods": 17,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "nix eval mutations; no per-case source builds"
+}

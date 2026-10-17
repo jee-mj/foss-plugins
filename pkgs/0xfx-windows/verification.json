@@ -1,0 +1,101 @@
+{
+  "status": "source-build-and-data-only-checks-passed-unexported",
+  "date": "2026-10-17",
+  "archive_review_verified_at_utc": "2026-10-17T07:20:27Z",
+  "target": "x86_64-w64-mingw32",
+  "build_limits": { "cores": 4, "max_jobs": 1 },
+  "source": {
+    "repository": "https://github.com/averagenative/0xFX",
+    "revision": "5b248779c96dce6e64d0ed29cfa598014dc4d3c4",
+    "nar_hash": "sha256-h5f9uGwn87hMHM4buEM/haAKiC65L5A0p15nTi6hNsc=",
+    "project_version": "1.3.0",
+    "plugin_config_version": "0.1.0",
+    "release_1_3_1_claim": false,
+    "vendored_dependency_pins": "Exact parent-pinned files; independent historical dependency revisions not established"
+  },
+  "sdl": {
+    "version": "2.30.12",
+    "repository": "https://github.com/libsdl-org/SDL",
+    "revision": "8236e01a9f758d15927624925c6043f84d8a261f",
+    "nar_hash": "sha256-9f7V15p8Cso1TVxcd7bEFGO3C3oIhQikyLh4pWXLaiA=",
+    "provenance": "Compiled from source inside the project CMake graph, including SDL2main; vendored precompiled SDL directories removed before configuration"
+  },
+  "toolchain": {
+    "nixpkgs_revision": "fd1462031fdee08f65fd0b4c6b64e22239a77870",
+    "nixpkgs_nar_hash": "sha256-n3gKTBIV4ZA5VQpUakffBe3KGu4+mhPoA34rrqS0GkA=",
+    "gcc": "15.2.0",
+    "binutils": "2.46",
+    "mingw_w64": "13.0.0",
+    "mcfgthreads": "2.3.2",
+    "cmake": "4.1.6",
+    "nsis": "3.11",
+    "python": "3.13.14",
+    "toolchain_rebuilt_in_this_attempt": false,
+    "proprietary_sdk_downloads": false,
+    "windows_api_sdk": "Locked MinGW-w64 headers and import libraries"
+  },
+  "outputs": {
+    "package": "/nix/store/144wcsr1ax813rmmsbb14f4jphzhq9f7-0xfx-windows-x86_64-source-probe",
+    "compiled": "/nix/store/sj1zxjg213m4cgwn28y76g823nms4hsv-0xfx-windows-x86_64-source-x86_64-w64-mingw32-1.3.0-source",
+    "data_only_report": "/nix/store/89r0mw9sf74nmbj4arv9zmiiyywzfrbh-0xfx-windows-data-only-artifacts"
+  },
+  "artifacts": {
+    "CLAP/0xFX.clap": { "bytes": 20437710, "sha256": "90db24415ae70696285ad6fec114ceb370f115a9a63beb367e43c65a111d91bb" },
+    "VST3/0xFX.vst3/Contents/x86_64-win/0xFX.vst3": { "bytes": 20499632, "sha256": "dd8baeebd442716d9d6930bc3098527710e122afc6c17ac9ed6a0930e06aaf79" },
+    "Applications/0xfx_gui.exe": { "bytes": 24985742, "sha256": "303c5e747659db7876ee9b2914cdcac5bf19a1565f9c0b42c537b5b48b5ebaf2" },
+    "Applications/0xfx_standalone.exe": { "bytes": 1258412, "sha256": "bd610b5cb34a6b848840a0922923663499a1034a986163ac0f91cfc7ecd94103" },
+    "0xfx-windows-x86_64.zip": { "bytes": 62363866, "sha256": "eab8e7a4980fd1f8ac8b3c47fb9b37e64643a046d9fe554c7e8cd7b929e69b55" },
+    "0xfx-source.zip": { "bytes": 155669585, "sha256": "d5b9385f776bdac919cf5a14a3db17f3e6c262cce07b8f3d10d07bf09bbb5100" },
+    "installer/0xfx-1.3.0-source-x86_64-setup.exe": { "bytes": 57338337, "sha256": "e31b7efc9d969128fd42010a942f7f9e3b662a7494e34abd468f108883bd519d" }
+  },
+  "proof": {
+    "missing_package_red": "Nix evaluation failed because pkgs/0xfx-windows did not exist before implementation",
+    "source_compilation": "All four documented targets compiled and linked; source-built static SDL2 and SDL2main",
+    "pe": "All four PEs are AMD64 PE32+; DLL characteristics and GUI/console subsystems checked; required plugin exports present and not forwarded",
+    "clap_id": "com.averagenative.0xfx",
+    "vst3_uid_storage_hex": ["584678306f63706d3030303100000000", "58467830646574693030303100000000"],
+    "missing_direct_or_delay_import_closures": [],
+    "external_sdl_or_gnu_runtime_dlls_required_by_import_tables": false,
+    "full_archive_content_checks": "passed",
+    "operator_nsis_exact_paths_and_bytes": { "status": "passed", "files": 144, "bootstrap_machine": "i386", "payload_machine": "AMD64" },
+    "independent_zip_repack": "/nix/store/bg7z1753n2d9aa6cd44sdf5nbjliljwr-0xfx-independent-repack",
+    "independent_nsis_repack": "/nix/store/w7wdsx1v58gq85x076kd1kqyzwszq9jj-0xfx-independent-installer-repack",
+    "archive_entry_paths": "/nix/store/9vr997qdf1530ryjhvdwd309lhncs4ix-0xfx-source-archive-entry-paths",
+    "archived_standalone_flake": {
+      "status": "passed",
+      "mode": "nix flake check --no-build --offline --no-write-lock-file, then offline checks attribute evaluation",
+      "source_boundary": "Fresh temporary Git checkout containing only packaging files extracted from the actual source ZIP; explicit git+file URI",
+      "original_checkout_dependency": false,
+      "lock_unchanged": true,
+      "lock_sha256": "641b32a9dde204cb914c873daf313d6d5029c6e8c271067950e4a9ef7142f4c1",
+      "checks": ["archiveLayout", "artifacts", "installerRepack", "recompile", "repack"],
+      "package_derivation": "/nix/store/zpjz5i9qxsm72px78br305fv1aa4aqy6-0xfx-windows-x86_64-source-probe.drv",
+      "verification_receipt_archived": false
+    },
+    "independent_source_recompile": "/nix/store/3ky3sfqy83ci6jmgl7y92z2viw2icc2d-0xfx-independent-source-recompile",
+    "recompile_comparison": "Raw bytes of all four PEs identical, no timestamp normalization",
+    "upstream_nsis": "Pinned x64 and ARM64 source definitions present; upstream x64 definition inspected, neither upstream installer built; upstream staging excludes console",
+    "operator_nsis": "Own staging includes both applications, CLAP/VST3, factory presets, four cabinet IRs, complete vendored source notices and supplemental license texts"
+  },
+  "attempts": [
+    { "result": "All targets linked, then evidence installation failed: cp: cannot stat 'build.ninja': No such file or directory", "log_derivation": "/nix/store/lixgksng7blsv06mhjy0hbz0l5857q59-0xfx-windows-x86_64-source-x86_64-w64-mingw32-1.3.0-source.drv", "resolution": "Preserve CMakeCache and Makefiles generator link.txt files instead" },
+    { "result": "Compilation output installed; source ZIP rejected SDL Android source symlink", "log_derivation": "/nix/store/rhpri68x89wzx5clcpf5yd53jrq1d2i5-0xfx-windows-x86_64-source-probe.drv", "resolution": "Materialize SDL internal source symlinks in the source archive" },
+    { "result": "Package and initial PE/ZIP/installer checks passed" },
+    { "result": "Expanded verification command hit the shell's 120-second timeout during independent recompilation; rerun with 240-second tool timeout passed all four checks" },
+    { "result": "Review regression test failed: missing standalone archive entry: packaging/tests/0xfx-windows.nix", "log_derivation": "/nix/store/rrwp5ib4yrmij3adz50nisj0v352s1x8-0xfx-source-archive-entry-paths.drv", "resolution": "Use an explicit destination basename for the Nix-interpolated test file" },
+    { "result": "Actual archived offline flake check exposed checks.x86_64-linux.overrideDerivation is not a derivation", "resolution": "Standalone flake filters callPackage-added helper functions, exporting only actual check derivations" },
+    { "result": "Fixed source archive passed all five artifact/reproducibility checks and isolated offline flake evaluation; binaries, source SDL compilation, manual ZIP and installer bytes unchanged" }
+  ],
+  "scope_limits": {
+    "exported": false,
+    "windows_payload_execution": "not-run",
+    "cross_produced_helper_execution": "not-run",
+    "native_asset_generation": "Upstream Python3 script converts parent-pinned PNG/ICO bytes to embedded C; no generated executable helper",
+    "daw_audio_gui_state_acceptance": "not-run",
+    "installer_execution": "not-run; static extraction only",
+    "arm64": "Documented llvm-mingw/SDL/NSIS source branches only; no ARM64 toolchain closure or artifact attempted",
+    "runtime_dynamic_audio_backends_and_device_drivers": "not exercised; import-table closure is not runtime acceptance",
+    "missing_neural_closure": "not-applicable; conventional C DSP and cabinet IR convolution",
+    "publication": "not performed"
+  }
+}

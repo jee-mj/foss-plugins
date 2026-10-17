@@ -1,0 +1,11 @@
+0xFX operator source cross-build, Windows x86-64.
+
+CLAP/0xFX.clap -> Common Files/CLAP
+VST3/0xFX.vst3 -> Common Files/VST3 (copy the entire bundle)
+Applications/0xfx_gui.exe and Applications/0xfx_standalone.exe are different applications.
+Keep Applications/presets/factory and Applications/resources/ir/bundled beside
+the executables: the GUI changes its working directory to its executable directory.
+The operator installer includes both applications; the upstream installer only
+selects the GUI. This archive is not an upstream release or signed installer.
+Preserve LICENSE, README.md and the complete Notices directory when distributing.
+No Windows payload has been run; DAW loading, audio, UI and state are untested.

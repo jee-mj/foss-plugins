@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-17",
+  "status": "source-built-and-data-inspected",
+  "repository": "cemkod/gunk",
+  "source_revision": "9cb7995ec4dbb982bf1c034f4499104422f1b0a9",
+  "source_version": "0.2.2",
+  "dependency_pins": "sources.nix contains full commits and fixed-output hashes",
+  "q_selection": {
+    "revision": "efe26114f39e4a78bd67c1456a25487d356fb910",
+    "meaning": "master resolved for this build on the receipt date, not historical upstream provenance",
+    "infra_gitlink": "62a88cab2278ac843765c986edfd4d7393ae3db2"
+  },
+  "nixpkgs_revision": "fd1462031fdee08f65fd0b4c6b64e22239a77870",
+  "host": "x86_64-linux",
+  "target": "x86_64-w64-mingw32",
+  "limits": { "cores": 4, "max_jobs": 1 },
+  "toolchain": {
+    "gcc": "15.2.0",
+    "binutils": "2.46",
+    "mingw_w64": "13.0.0",
+    "mcfgthread": "2.3.2",
+    "cmake": "4.1.6",
+    "nsis": "3.11"
+  },
+  "outputs": {
+    "manual_and_source": "/nix/store/irmjpxxyqp3wgy6gdn7yxpsdkyh8827j-gunk-windows-x86_64-source-probe",
+    "installer": "/nix/store/ng0f6fmzapdy7szckjs2bvf0181vxqj0-gunk-windows-x86_64-source-probe-installer"
+  },
+  "sha256": {
+    "gunk-windows-x86_64.zip": "2c7b2547adf06ceb40e6f7220f492fdfad85089b20ec13ce735ecc2d939cb54d",
+    "gunk-source.zip": "7de2568da0305debe4f60e583409b94d1fff254c316656aaf4e65b5bcbb7b5c5",
+    "gunk-0.2.2-windows-x86_64-setup.exe": "20cbacc426410140dd72702267be72de711fefcfd225c674eb7b4025de012d98",
+    "Notices/JUCE-component-source-notices.txt": "aa88210f0b5924227d83c90af106b349084f14efa70d3b18e8a39b46b77312d8",
+    "Notices/JUCE-component-source-index.json": "e9cd639c3b9ba9d3a5e9c0d89821c572fca073cc41df41ceca31970bf6fcaca4",
+    "JQ Gunk.vst3 PE DLL": "e526f01f714bf29f42b633f41ecfaca984db51f7504671554977c49de44e366a"
+  },
+  "pe": {
+    "machine": "0x8664",
+    "type": "PE32+ AMD64 DLL",
+    "size": 14685568,
+    "timestamp": 315532800,
+    "exports": [ "ExitDll", "GetPluginFactory", "InitDll" ],
+    "imports": [
+      "ADVAPI32.dll", "GDI32.dll", "IMM32.dll", "KERNEL32.dll", "OLEAUT32.dll",
+      "SHELL32.dll", "SHLWAPI.dll", "USER32.dll", "VERSION.dll", "WININET.dll",
+      "WINMM.dll", "WS2_32.dll", "WSOCK32.dll", "comdlg32.dll", "dxgi.dll",
+      "msvcrt.dll", "ntdll.dll", "ole32.dll"
+    ],
+    "delay_imports": [],
+    "runtime_dll_dependencies": [],
+    "manifest": "Actual native Linux plugin factory invoked by the JUCE manifest helper, then manifest copied using upstream's wrapper. SDK-supported JSON5 trailing commas retained; canonical CIDs agree. No Windows factory enumeration."
+  },
+  "installer": {
+    "kind": "unsigned operator NSIS installer, separate from manual ZIP",
+    "bootstrap_machine": "0x14c (x86 bootstrapper, x64 plugin payload)",
+    "inspection": "Static 7-Zip extraction; exact destination set and bytes for all 224 payload files plus the single known NSIS helper matched",
+    "extracted_member_count": 225,
+    "helper": {
+      "path": "$PLUGINSDIR/System.dll",
+      "sha256": "8b4c47c4cf5e76ec57dd5a050d5acd832a0d532ee875d7b44f6cdaf68f90d37c",
+      "reference": "Locked nsis 3.11 share/nsis/Plugins/x86-unicode/System.dll"
+    },
+    "path_contract": [
+      "$LOCALAPPDATA/Programs/Common/VST3/",
+      "$APPDATA/JQGunk/",
+      "$LOCALAPPDATA/Programs/JQGunk/Notices/"
+    ],
+    "negative_cases_rejected": [
+      "same basename and bytes under wrong parent",
+      "extra duplicate under wrong parent",
+      "unexpected helper",
+      "changed known helper"
+    ],
+    "execution": "not performed",
+    "scope": "current user; no admin request; per-user VST3, APPDATA factory data and LOCALAPPDATA notices"
+  },
+  "checks": {
+    "packaging_fixture": "/nix/store/zfl1sf2w8knxcf2dw9swjrsy0aha9hzz-gunk-windows-zip-contract",
+    "artifacts": "/nix/store/0asz1lszkk9sngkraiz2r84kn98gjlgq-gunk-windows-artifacts",
+    "notices": "/nix/store/p5givx24bgfb55368fqh8fj4j0j8scw3-gunk-binary-notice-closure",
+    "installer": "/nix/store/x0r7iglzvhwimknwn64ns86l4w5njxhs-gunk-nsis-data-only",
+    "independent_repack": "/nix/store/hbb8acrvv4dy7w67h962zrnfflznpm7n-gunk-independent-repack",
+    "archived_recipe_evaluation": "Packaged recipe evaluates to exactly the original package derivation; plugin drvPath also matches"
+  },
+  "repeat_proofs": [
+    {
+      "kind": "actual Windows plugin recompilation",
+      "derivation": "/nix/store/icj2favpz7r6vpgi3lrn0h3nxba4lgwj-gunk-windows-vst3-probe-x86_64-w64-mingw32-0.2.2.drv",
+      "method": "nix build --rebuild --cores 4 --max-jobs 1 selecting passthru.plugin",
+      "result": "exit 0; Nix output comparison byte-identical"
+    },
+    {
+      "kind": "manual/source ZIP and NSIS packaging rebuild",
+      "derivation": "/nix/store/rx74d301f5iir4sfzgwsl4sbmngh3016-gunk-windows-x86_64-source-probe.drv",
+      "method": "nix build --rebuild --cores 4 --max-jobs 1 selecting the package",
+      "result": "exit 0; both out and installer outputs byte-identical"
+    }
+  ],
+  "review_round_1": {
+    "status": "both findings corrected; five static checks and current packaging repeat pass",
+    "red_notice_derivation": "/nix/store/hsysff2qj8xi3zxmjxs2i86w8qcb88n9-gunk-binary-notice-closure.drv",
+    "red_notice_failure": "incomplete embedded component notices/source: juce_core",
+    "red_installer_derivation": "/nix/store/6ga6z9ymhb4j0kz3xdvsd8wlkm8xqpax-gunk-nsis-data-only.drv",
+    "red_installer_failure": "original basename validator accepted mutation: same basename and bytes under wrong parent",
+    "compiled_plugin": "Hash and derivation unchanged; no source DSP/GUI/guard changes or new compilation inputs",
+    "installer_script": "Destination paths unchanged; only accompanying notices and validation changed",
+    "archived_recipe": "Callable packaging and plugin derivations match exactly"
+  },
+  "binary_notice_closure": {
+    "destination": "Notices/JUCE-component-source-notices.txt and Notices/JUCE-component-source-index.json in both manual ZIP and operator NSIS",
+    "scope": "Every raw source/license byte of the 13 JUCE modules with actual compiled translation units, losslessly concatenated with filename separators and byte-range index; includes unused branches within those modules",
+    "representation": {
+      "format": "juce-component-source-notices-v1",
+      "indexed_records": 2026,
+      "source_bytes": 27965890,
+      "aggregate_bytes": 28336388,
+      "index_bytes": 435029,
+      "license_readme_files_verified": 31,
+      "reconstruction": "All 2026 path/offset/length/SHA256 records reconstructed byte-identical to pinned input and retained corresponding-source tree",
+      "legal_text": "Complete original notice files and inline grant/condition/disclaimer text retained contiguously; no source transcoding",
+      "source_archive": "Full original JUCE tree retained; only duplicate binary per-file notice entries replaced"
+    },
+    "modules": [
+      "juce_core", "juce_data_structures", "juce_events", "juce_graphics",
+      "juce_gui_basics", "juce_gui_extra", "juce_audio_basics", "juce_audio_devices",
+      "juce_audio_formats", "juce_audio_processors", "juce_audio_utils", "juce_dsp",
+      "juce_audio_plugin_client"
+    ],
+    "byte_verified_files": 2026,
+    "steinberg_fstring": {
+      "path": "juce_audio_processors/format_types/VST3_SDK/base/source/fstring.cpp",
+      "sha256": "1827a3f2f4dc1a81ee1497b6fa2dded25011d15a8dba6584e5f25ea8735874d8",
+      "test": "Full source byte equality plus complete BSD attribution/conditions/disclaimer clause assertions; included via juce_VST3Headers.h"
+    },
+    "other_evidence_sha256": {
+      "pnglib/LICENSE": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b",
+      "jpglib/README": "4cf9c190f184019b61c36bcc49d4a24ffeb2a838c6f1690d6c4db14cfb2d0478",
+      "zlib/zlib.h": "43ee9dbc2a8a2d29cdb5cc3ef7e7833f09db7b8c2c490c9835b7c101e7a54f75"
+    },
+    "fonts": "All pinned graphics/font-handling source notices retained; no Gunk font asset found or system font redistributed",
+    "surge": "Full source NOTICE retained in binary Notices and AppData wavetable tree",
+    "details": "NOTICE-CLOSURE.md and the full notices check JSON"
+  },
+  "compact_notice_integration": {
+    "status": "red-green verified; all five static checks, independent repack and packaging rebuild pass",
+    "red_notice_derivation": "/nix/store/q29jpzcc7dyaxlwhrvfamhk83dwg6mw4-gunk-binary-notice-closure.drv",
+    "red_notice_failure": "missing lossless binary notice aggregate",
+    "red_installer_derivation": "/nix/store/4xc6kyk2cf74sd1i7j5r1gq4rikg24bi-gunk-nsis-data-only.drv",
+    "red_installer_failure": "old 2248-file payload fails the new 224-file bounded installer assertion",
+    "manual_zip_member_count": 224,
+    "installer_payload_file_count": 224,
+    "installer_total_with_helper": 225,
+    "reviewed_collection_file_bound": 2048,
+    "largest_binary_member_bytes": 28336388,
+    "checked_binary_member_bound_bytes": 134217728,
+    "also_below_32_mib": true,
+    "compiled_plugin": "SHA256 and drvPath unchanged",
+    "source_archive_recipe": "All helpers retained; archived packaging/plugin drvPaths match originals; verification.json is not an archive recipe input"
+  },
+  "initial_source_failure": {
+    "derivation": "/nix/store/aqsvccn0mqlsjc8if392y70cpf1a5xfn-gunk-linux-vst3-probe-0.2.2.drv",
+    "diagnostic": "Source/PitchDetector.h:4:10: fatal error: aubio/aubio.h: No such file or directory",
+    "resolution": "Expose conventional aubio header namespace from pinned source; no DSP change"
+  },
+  "native_build": {
+    "derivation": "/nix/store/gd24pd6qdblics3l7b6kpslfn1p7ijxi-gunk-linux-vst3-probe-0.2.2.drv",
+    "purpose": "Upstream-required manifest generation, not a published native package"
+  },
+  "windows_execution": "none",
+  "windows_host_validation": "not tested",
+  "publication": "none; isolated recipe only"
+}

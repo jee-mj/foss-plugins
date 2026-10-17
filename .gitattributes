@@ -1,0 +1,2 @@
+# Unified-diff blank context lines require one space; preserve the verified patch bytes.
+pkgs/basilica-native-suite/nave-scalar-minimum.patch whitespace=-blank-at-eol
