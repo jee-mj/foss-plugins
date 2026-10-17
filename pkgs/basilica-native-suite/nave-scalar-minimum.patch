@@ -1,0 +1,38 @@
+From: Native Basilica packaging
+Subject: [PATCH] Nave: select the signed scalar minimum for both IR loaders
+
+Applies to Basilica Nave 0.5.0, aba56a4c15dbb5ae2edab38f9a47826ee7091ee1.
+JUCE 8.0.14's explicit jmin<int64> also considers its SIMD overload, which
+instantiates unsupported SIMDRegister<long long> on LP64 Linux. Select the
+standard scalar minimum with the same signed operand type. Preserve the cap,
+outer conversion, nonpositive guard, both loaders and all DSP/GUI behavior.
+This is a downstream source modification; upstream source remains AGPL-3.0.
+
+--- a/src/PluginProcessor.cpp
++++ b/src/PluginProcessor.cpp
+@@ -8,6 +8,7 @@
+ 
+ #include <BinaryData.h>
+ 
++#include <algorithm>
+ #include <limits>
+ 
+ namespace
+@@ -387,7 +388,7 @@
+         return false;
+ 
+     const auto numChannels = juce::jlimit (1, 2, static_cast<int> (reader->numChannels));
+-    const auto numSamples = static_cast<int> (juce::jmin<juce::int64> (reader->lengthInSamples,
++    const auto numSamples = static_cast<int> (std::min<juce::int64> (reader->lengthInSamples,
+                                                                         static_cast<juce::int64> (std::numeric_limits<int>::max())));
+ 
+     if (numSamples <= 0)
+@@ -433,7 +434,7 @@
+         return false;
+ 
+     const auto numChannels = juce::jlimit (1, 2, static_cast<int> (reader->numChannels));
+-    const auto numSamples = static_cast<int> (juce::jmin<juce::int64> (reader->lengthInSamples,
++    const auto numSamples = static_cast<int> (std::min<juce::int64> (reader->lengthInSamples,
+                                                                         static_cast<juce::int64> (std::numeric_limits<int>::max())));
+ 
+     if (numSamples <= 0)

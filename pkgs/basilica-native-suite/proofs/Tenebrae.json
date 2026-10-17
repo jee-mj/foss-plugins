@@ -1,0 +1,67 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/jvfvbw0nb7figs96n72vzc551y2ka8h2-basilica-Tenebrae-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/w546wz00y9l8g0xl3chvbh5zng73nn3g-basilica-Tenebrae-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-002",
+    "modification": null,
+    "name": "Tenebrae",
+    "packageDrv": "/nix/store/jsikbfqj1glyavj2r1an5kyhwnimdc3b-basilica-tenebrae-0.5.0.drv",
+    "packageOutput": "/nix/store/8061ax65abj7s4grqk38rv36c3wc8qmg-basilica-tenebrae-0.5.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-eAn+gciV/zHi1HGe0VW0dmfye4foYD+VU2JmmcQcbFE=",
+      "repo": "basilica-audio/Tenebrae",
+      "revision": "38b4e93b0ead817cb2ef97bc0553777fbf84aea9",
+      "sourceDrv": "/nix/store/sygnisv8cs2d1ds95lprjvvikj0blkrs-source.drv",
+      "sourceOut": "/nix/store/m9lbs0xzxmjfgjxj2z76d6vpmsrrz1ls-source",
+      "version": "0.5.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {},
+    "format": "VST3",
+    "name": "Tenebrae",
+    "noticeFiles": 3230,
+    "noticeManifestSha256": "975866cad3812ffc82f344a52a3e57546394e27aeacc3eff129aba1279c0579f",
+    "plugin": "/nix/store/8061ax65abj7s4grqk38rv36c3wc8qmg-basilica-tenebrae-0.5.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "21686fadd3aaf3ba76949e1f31715ff2c626fff13feb98b281fed04c64df5c6b"
+  },
+  "verificationSha256": "2b9946b49a20c578546107ac3dbd5aa7a403dbcdadf3df01c0892afbfc6e0beb"
+}

@@ -1,0 +1,86 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/6i7ddbmp646f339whgbjg587ppc3n39k-basilica-Seraph-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/axhq0n8zvij5sq3w0gzgqjdywr6kfh4j-basilica-Seraph-native-artifacts",
+    "audio": "AUDIO-007",
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      },
+      "linear": {
+        "hash": "sha256-m8zQJeZCQcHIwcGq17F2bmuZc4g7mFsxzRCUEpUrkr4=",
+        "repo": "Signalsmith-Audio/linear",
+        "revision": "5668673560146a9cfe38c25315071e3fd68c8317",
+        "sourceDrv": "/nix/store/6xb4hbpj3g20jdcrphldl0aibrryx2x8-source.drv",
+        "sourceOut": "/nix/store/368byxp42whrg32a8hlxjyd73szf2310-source",
+        "version": null
+      },
+      "stretch": {
+        "hash": "sha256-UFZsof6eclOlLqYzq4oK40waMGBEFmZAzMm67tL9pxs=",
+        "repo": "Signalsmith-Audio/signalsmith-stretch",
+        "revision": "57b93f4e9206a089a45387eaa39bdc9f310d3308",
+        "sourceDrv": "/nix/store/bq6771br8gx1yvs73gkfz4y3f64smwf9-source.drv",
+        "sourceOut": "/nix/store/cdvgbz943a0zh3r953pgbkvi0caakws4-source",
+        "version": null
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-006",
+    "modification": null,
+    "name": "Seraph",
+    "packageDrv": "/nix/store/y0z1j3jqg23d7k2b0br42wahs8a973di-basilica-seraph-0.4.0.drv",
+    "packageOutput": "/nix/store/f77453zw3v7d7zp7cdh2ibkglgh88p2m-basilica-seraph-0.4.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-JGDZgRVdngUn6w+VehMvRGDZyJB1TUioMPP8RSlbO1s=",
+      "repo": "basilica-audio/Seraph",
+      "revision": "d851142d0b64a0a70970dc6f628956b03a3973af",
+      "sourceDrv": "/nix/store/nn0xc2ha81lw6047wsqjkmm7vlcnkmsc-source.drv",
+      "sourceOut": "/nix/store/4hb1kn4i7hd59xvlgqbia502gjqk888a-source",
+      "version": "0.4.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {
+      "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+      "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+    },
+    "format": "VST3",
+    "name": "Seraph",
+    "noticeFiles": 3236,
+    "noticeManifestSha256": "104c83f7757b8ce5346fd3d6dad5aebf18a86a355310837164b3b8fa1b21505e",
+    "plugin": "/nix/store/f77453zw3v7d7zp7cdh2ibkglgh88p2m-basilica-seraph-0.4.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "059ef5760501a646817504c753a8e4767e6aba9bc8f5c4cdf9e6d97a1ece190b"
+  },
+  "verificationSha256": "7f1bdd3b00b7d59f6352c792eb25eda8e2acea8d56655e270e86ea9571983ac3"
+}

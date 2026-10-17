@@ -1,14 +1,24 @@
-{ callPackage }:
+{ callPackage, reevr, wolf-shaper, vaporizer2 }:
 
 let
   pluginArtifacts = callPackage ../lib/plugin-artifacts.nix { };
   juceRuntime = callPackage ../lib/juce-runtime.nix { };
 
   projucer = callPackage ./rdpiano/projucer.nix { };
+  basilicaMiserere = callPackage ./basilica-miserere { inherit pluginArtifacts juceRuntime; };
+  basilicaFamily = callPackage ./basilica-native-suite {
+    inherit pluginArtifacts juceRuntime;
+    basilica-miserere = basilicaMiserere;
+  };
 in
 rec {
+  inherit basilicaFamily;
   # The free package set: clean open-source with verified licences.
   freePackages = {
+    inherit reevr wolf-shaper vaporizer2;
+    instawidth = callPackage ./instawidth { inherit pluginArtifacts juceRuntime; };
+    sub-orbit = callPackage ./sub-orbit { inherit pluginArtifacts juceRuntime; };
+    wolf-shaper-windows = callPackage ./wolf-shaper-windows { };
     amsynth = callPackage ./amsynth { inherit pluginArtifacts; };
     modal-synth = callPackage ./modal-synth { inherit pluginArtifacts juceRuntime; };
     space-dust-synthesizer = callPackage ./space-dust-synthesizer { inherit pluginArtifacts juceRuntime; };
@@ -24,10 +34,18 @@ rec {
     toneshifteq = callPackage ./toneshifteq { inherit pluginArtifacts; };
     intersect = callPackage ./intersect { inherit pluginArtifacts juceRuntime; };
     audio-restoration-vst = callPackage ./audio-restoration-vst { inherit pluginArtifacts juceRuntime; };
-  };
+    basilica-miserere = basilicaMiserere;
+  } // basilicaFamily.candidateDefinitions;
 
   # The unfree/impure gate: experimental, missing-license, or binary-only.
   unfreePackages = {
+    # Mixed/custom copyright metadata: existing consumer opt-in policy.
+    tonetwist-windows = callPackage ./tonetwist-windows { };
+    drumcloud-windows = callPackage ./drumcloud-windows { };
+    # Experimental Windows source artifacts, not proprietary-license claims.
+    toneshifteq-windows = callPackage ./toneshifteq-windows { };
+    gunk-windows = callPackage ./gunk-windows { };
+    "0xfx-windows" = callPackage ./0xfx-windows { };
     # Experimental GPU variants share the existing explicit conditional gate.
     # MIGraphX is gated for validation maturity, not a non-free license claim.
     intersect-cuda12 = freePackages.intersect.override { provider = "cuda12"; };

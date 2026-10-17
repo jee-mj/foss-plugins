@@ -1,0 +1,63 @@
+{
+  "status": "source-cross-build-artifact-checks-passed",
+  "paths": {
+    "checkoutPaths": ["pkgs/toneshifteq-windows/default.nix", "pkgs/toneshifteq-windows/package.py", "pkgs/toneshifteq-windows/collect-notices.py", "pkgs/toneshifteq-windows/installer.nsi", "pkgs/toneshifteq-windows/LICENSE-REVIEW.md", "pkgs/toneshifteq-windows/verification.json", "tests/toneshifteq-windows.nix", "docs/toneshifteq-windows.md"],
+    "manualOutput": "/nix/store/ncqnl6165gpqkrq5bw9h681vscmcq3gj-toneshifteq-1.3.0-windows-x86_64",
+    "installerOutput": "/nix/store/2pnl90cbvkz1n41gdlmn7ppglffrjbpg-toneshifteq-1.3.0-windows-x86_64-installer",
+    "compiledOutput": "/nix/store/gxlj424lq5pdwpip0c6dv2v30vigbqah-toneshifteq-windows-bundles-x86_64-w64-mingw32-1.3.0",
+    "archivedCompiledOutput": "/nix/store/9378vp8yx51pkg950wr9cz5mnjfs2c1w-toneshifteq-windows-bundles-x86_64-w64-mingw32-1.3.0",
+    "archivedManualOutput": "/nix/store/gir173b1wggsryq4nbmsgb507g7g75ba-toneshifteq-1.3.0-windows-x86_64",
+    "archivedInstallerOutput": "/nix/store/v25q6zzgr5rxbl3l5bq5hywkbbh2xjnz-toneshifteq-1.3.0-windows-x86_64-installer",
+    "manualArchive": "/nix/store/ncqnl6165gpqkrq5bw9h681vscmcq3gj-toneshifteq-1.3.0-windows-x86_64/toneshifteq-1.3.0-windows-x86_64.zip",
+    "operatorInstaller": "/nix/store/2pnl90cbvkz1n41gdlmn7ppglffrjbpg-toneshifteq-1.3.0-windows-x86_64-installer/toneshifteq-1.3.0-windows-x86_64-setup.exe",
+    "archivedRecipe": "/nix/store/ncqnl6165gpqkrq5bw9h681vscmcq3gj-toneshifteq-1.3.0-windows-x86_64/source/packaging/pkgs/toneshifteq-windows/default.nix"
+  },
+  "source": {
+    "repository": "https://github.com/brummer10/ToneShiftEQ",
+    "version": "1.3.0",
+    "revision": "2c9798ded641988d59e6d5e79fa88feb2d9ff13c",
+    "recursiveNarHash": "sha256-y85UbyIbkFS8UDxzLg23nPQyqS/GRX1VEcVg5Rr/9Go=",
+    "libxputtyRevision": "439d5cd5fed48618f773375ae6624e91ff82ee1e"
+  },
+  "nixpkgs": {
+    "revision": "fd1462031fdee08f65fd0b4c6b64e22239a77870",
+    "narHash": "sha256-n3gKTBIV4ZA5VQpUakffBe3KGu4+mhPoA34rrqS0GkA="
+  },
+  "pins": {
+    "gcc": {"version": "15.2.0", "hash": "sha256-Q4/ZloJrDIJIWinaA6ctcdbjVBqD7HAt9Ccfb+Al0k4="},
+    "binutils": {"version": "2.46", "hash": "sha256-uMmj15bcCw6OqTXcJMXI1vNF6xd62lrGpbESLHfWIVg="},
+    "mingw": {"version": "13.0.0", "hash": "sha256-Wv6CKvXE7b9n2q9F7sYdU49J7vaxlSTeZIl8a5WCjK8="},
+    "mcfgthreads": {"version": "2.3.2", "hash": "sha256-1gD2Cu2suvxopTxGN2RYSzise6bS8lpkrXLcdm9ZBLU="},
+    "cairo": {"version": "1.18.4", "hash": "sha256-RF7YIIpuSCPeEianTKMZ02AOg/Y2n5mxQmUAZZnDLMs="},
+    "pixman": {"version": "0.46.4", "hash": "sha256-0JxE68O9W+5wIcefki/o+y+1f3Mg9V6X/5kU0jRqWRw="},
+    "zlib": {"version": "1.3.2", "hash": "sha256-uzKaCizQJ00FUZ1hxmfAYuBpkNcuEl7i36jeZPARnRY="},
+    "libpng": {"version": "1.6.58", "hash": "sha256-KOtAP1Hw90BSSRMs7P6C6lwO+X8bMsWmWCiBSuDTR3U="},
+    "sndfile": {"version": "1.2.2", "hash": "sha256-MOOX/O0UaoeMaQPW9PvvE0izVp+6IoE5VbtTx0RvMkI="}
+  },
+  "artifacts": [
+    {"path": "payload/CLAP/toneshifteq.clap", "type": "PE32+ AMD64 DLL", "sha256": "f2d8ca948045d24fb356c05ac8bb18f2d76b8f4b4397cec7595a2cd66de0d247", "exports": ["clap_entry"]},
+    {"path": "payload/VST3/Toneshifteq.vst3/Contents/x86_64-win/Toneshifteq.vst3", "type": "PE32+ AMD64 DLL in VST3 bundle", "sha256": "25e996e2e112f37966dd4dde4365a5744053d39ab63efd79a19838d49bdeb683", "exports": ["GetPluginFactory", "InitDll", "ExitDll"]},
+    {"path": "toneshifteq-1.3.0-windows-x86_64.zip", "type": "manual-copy ZIP", "sha256": "f2593e7bf8f5314477efd24fa93569eb50f93e63e5723a1d183c669fa9f50dca"},
+    {"path": "toneshifteq-1.3.0-windows-x86_64-setup.exe", "type": "unsigned operator NSIS installer, separate output", "sha256": "7fd21b353aab037d366b661f7fd7d44f134db99fa5f409d5dde0de1957a7aeaf"}
+  ],
+  "imports": ["gdi32.dll", "kernel32.dll", "msimg32.dll", "msvcrt.dll", "ntdll.dll", "shell32.dll", "user32.dll"],
+  "proof": {
+    "missingTargetRed": true,
+    "peAndBinaryIdentityChecks": "both Master/Live names and CLAP IDs / VST3 COM GUID bytes",
+    "independentRepack": "byte-identical ZIP and NSIS; shared compiled input",
+    "independentCompilation": "distinct compileSalt derivation; both DLLs byte-identical",
+    "archivedRecipe": "repository-shaped packaging layout; supplied lock selects nixpkgs; same unsalted derivation; separately salted archived compilation compares DLL/ZIP/installer bytes",
+    "round1Delta": "DLL hashes unchanged; BUILD-INFO notice updated for the delivered lock path, changing ZIP/installer hashes. verification.json is excluded from supplied artifact source.",
+    "archiveAndInstaller": "exact destinations and bytes checked by data extraction; extra-parent mutations rejected",
+    "negativePEChecks": ["missing InitDll", "missing ExitDll", "delay import", "non-system import", "wrong machine"],
+    "payloadExecution": false,
+    "maxJobs": 1,
+    "cores": 4
+  },
+  "limitations": [
+    "Optional external libsndfile compressed codecs disabled; built-in WAV/AIFF retained.",
+    "Windows LV2 and standalone explicitly unsupported.",
+    "No runtime factory enumeration, host/GUI/audio acceptance, or upstream release byte-match claimed.",
+    "Public source and relink inputs supplied; complete offline Nix bootstrap/build-tool closure not exported."
+  ]
+}

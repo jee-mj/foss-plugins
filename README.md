@@ -1,9 +1,16 @@
 # FOSS Audio Plugin Packages
 
-Reproducible Nix packages for free-software audio plugins not already
-available in [nixpkgs](https://github.com/NixOS/nixpkgs).
+Reusable Nix plugin packages and source-artifact builders, including direct
+reuse of three reviewed packages from the locked [nixpkgs](https://github.com/NixOS/nixpkgs).
 
-All packages are built for `x86_64-linux`.
+All package builders run on `x86_64-linux`, with target-specific formats.
+Windows artifact packages produce Windows x86-64 payloads and operator installers;
+0xFX keeps its installer inside `out`, while the others use a separate output.
+
+The default export set contains **32 free packages**. Explicit conditional opt-in
+adds **14 packages**, for **46 total**. These exports remain unpublished source
+work; consumer adoption requires explicit source promotion and review.
+ToneTwist and DrumCloud remain pending consumer review/acceptance.
 
 ## Discover the full audio catalog
 
@@ -12,6 +19,11 @@ source-only and not-yet-packaged plugins. Read the [catalog guide](docs/audio-ca
 and [Windows acquisition references](docs/windows-plugin-acquisition.md) for
 platform evidence, upstream downloads, usage routes and copyright-safety notes.
 Catalog inclusion is not a package export, a rights grant, or a compatibility claim.
+The [product/route registry](catalog/products.json) expands all 104 captured
+repositories plus the ten additional Basilica repositories into 165 established
+source/delivery records. Applications, firmware, unresolved targets, shared
+installers and plugin formats are not installed-plugin counts; see the
+[product catalog contract](docs/product-catalog.md).
 Missing license metadata does not block technical evaluation; consumers are
 encouraged to exercise their own judgement. AI-assisted development does not
 establish that code or bundled assets are copyright-free.
@@ -20,6 +32,7 @@ Query the catalog without building plugins:
 
 ```bash
 nix eval --json .#catalog
+nix eval --json .#productCatalog
 python3 tests/audio-catalog.py
 ```
 
@@ -45,6 +58,24 @@ not every catalog entry.
 | `toneshifteq` | Twelve-band EQ with spectrum analysis and IR matching ([build evidence](docs/toneshifteq.md)) | VST3, LV2, CLAP | [brummer10/ToneShiftEQ](https://github.com/brummer10/ToneShiftEQ) |
 | `intersect` | Slicing sampler, CPU-default optional stem inference ([build evidence](docs/acceleration/intersect-build.md)) | VST3 | [tucktuckg00se/INTERSECT](https://github.com/tucktuckg00se/INTERSECT) |
 | `audio-restoration-vst` | Vinyl restoration, CPU-default optional ONNX denoising ([build evidence](docs/acceleration/audio-restoration-vst-build.md)) | VST3 | [flarkflarkflark/AudioRestorationVST](https://github.com/flarkflarkflark/AudioRestorationVST) |
+| `instawidth` | Stereo widening ([source evidence](docs/instawidth.md)) | VST3, LV2 | [hariel1985/InstaWidth](https://github.com/hariel1985/InstaWidth) |
+| `sub-orbit` | Low-band stereo-width and sidechain-ducking effect ([source evidence](docs/sub-orbit.md)) | VST3 | [echoeslabmusic/Sub-Orbit](https://github.com/echoeslabmusic/Sub-Orbit) |
+| `reevr` | REEV-R convolution reverb, locked nixpkgs reuse | VST3, LV2 | [tiagolr/reevr](https://github.com/tiagolr/reevr) |
+| `wolf-shaper` | Native waveshaper, locked nixpkgs reuse | VST2, LV2, DSSI, standalone | [wolf-plugins/wolf-shaper](https://github.com/wolf-plugins/wolf-shaper) |
+| `vaporizer2` | Wavetable synthesizer, locked nixpkgs reuse | VST3, LV2, CLAP | [VASTDynamics/Vaporizer2](https://github.com/VASTDynamics/Vaporizer2) |
+| `wolf-shaper-windows` | Windows source-built artifact package ([evidence](docs/wolf-shaper-windows.md)) | Windows VST3, CLAP; ZIP and NSIS | [wolf-plugins/wolf-shaper](https://github.com/wolf-plugins/wolf-shaper) |
+
+See [locked nixpkgs reuse and integration verification](docs/nixpkgs-audio.md)
+for exact versions, observed formats, provenance and cached-build results.
+Wolf Shaper's Windows artifact package has real `out` and `installer` outputs:
+
+```bash
+nix build --no-link .#wolf-shaper-windows .#wolf-shaper-windows.installer
+```
+
+Their payloads live under `payload/VST3` and `payload/CLAP`, with no Linux
+`lib` output or plugin directory. Keep these artifacts out of Linux plugin
+search paths; transfer the ZIP or installer to the intended Windows host.
 
 The [full-set acceleration matrix](docs/acceleration-matrix.md) distinguishes
 assessed source capabilities, CPU build/load checks and experimental GPU routes.
@@ -77,6 +108,44 @@ package.
 nix build --no-link .#downspout
 ```
 
+### Basilica family: experimental native source definitions
+
+All thirteen individual aliases below are portable, source-audited experimental
+Linux VST3 recipes. Miserere reuses its existing reviewed recipe object.
+Source definitions and catalog discovery records are distinct from build receipts:
+an export does not establish DAW, GUI or audio acceptance.
+
+| Public identity | Package alias | Version | Requested target format |
+| --- | --- | --- | --- |
+| BA-001 | `basilica-overture` | 0.5.0 | Linux x86-64 VST3 |
+| BA-002 | `basilica-tenebrae` | 0.5.0 | Linux x86-64 VST3 |
+| BA-003 | `basilica-nave` | 0.5.0 | Linux x86-64 VST3 |
+| BA-004 / AUDIO-058 | `basilica-silentium` | 0.5.0 | Linux x86-64 VST3 |
+| BA-005 | `basilica-requiem` | 0.5.0 | Linux x86-64 VST3 |
+| BA-006 / AUDIO-007 | `basilica-seraph` | 0.4.0 | Linux x86-64 VST3 |
+| BA-007 | `basilica-aureate` | 0.5.0 | Linux x86-64 VST3 |
+| BA-008 | `basilica-firmament` | 0.4.0 | Linux x86-64 VST3 |
+| BA-009 | `basilica-triptych` | 0.6.0 | Linux x86-64 VST3 |
+| BA-010 | `basilica-apotheosis` | 0.6.1 | Linux x86-64 VST3 |
+| BA-011 | `basilica-crypta` | 0.4.1 | Linux x86-64 VST3 |
+| BA-012 | `basilica-lancet` | 0.5.0 | Linux x86-64 VST3 |
+| BA-013 / AUDIO-003 | `basilica-miserere` | 0.7.0 | Linux x86-64 VST3 |
+
+`pkgs/default.nix` exposes the helper API as `basilicaFamily`, merging its
+`candidateDefinitions` into the free package set. `candidateChecks` supplies the
+family checks; the root retains the existing Miserere artifact check and adds
+the other twelve as `checks.x86_64-linux.basilica-<name>`.
+
+The helper's receipt-bound `namedPackages`, `checks` and `aggregate` have a
+stricter meaning: only the captured matching profile is verified. On locked
+nixpkgs `fd146203…`, all thirteen receipts match; alternate public profile
+`f5c082a4…` exposes the same thirteen source definitions/check definitions but
+zero verified packages/checks and no aggregate. No receipt is transferred between
+profiles. The verified aggregate stays helper-only, with complete license
+metadata; it is absent from top-level exports and module package names to avoid
+co-installing it alongside its members. Nave retains its disclosed scalar
+compatibility patch. See the [family API and source-profile evidence](docs/basilica-native-suite.md).
+
 ### Conditional and unfree packages
 
 Packages excluded from pure evaluation that require explicit opt-in.  They are
@@ -86,7 +155,7 @@ the reason it is gated:
 | Category | Meaning |
 | --- | --- |
 | `licensing-uncertainty` | Missing or ambiguous upstream license |
-| `experimental` | Runtime dependencies (e.g. local LLM) that require consumer review |
+| `experimental` | Experimental runtime dependencies or target-specific source-artifact routes requiring consumer review |
 | `blocked-pending-upstream` | Source available but license file missing or unverified |
 | `binary-only-manual-approval` | Proprietary freeware, must be downloaded manually |
 
@@ -101,6 +170,36 @@ the reason it is gated:
 | `intersect-cuda12` | INTERSECT with ORT CUDA 12 runtime | VST3 | [INTERSECT evidence](docs/acceleration/intersect-build.md) | `experimental` |
 | `intersect-migraphx` | INTERSECT with experimental AMD MIGraphX runtime | VST3 | [INTERSECT evidence](docs/acceleration/intersect-build.md) | `experimental` |
 | `audio-restoration-vst-cuda` | Restoration with optional ORT CUDA runtime | VST3 | [Restoration evidence](docs/acceleration/audio-restoration-vst-build.md) | `experimental` |
+| `tonetwist-windows` | Six-product Windows source artifact suite; mixed source notices, review pending | Windows VST3, CLAP; ZIP and NSIS | [ToneTwist review](docs/tonetwist-windows.md) | `licensing-uncertainty` |
+| `drumcloud-windows` | Windows source artifact package; custom copyright terms, review pending | Windows VST3, CLAP; ZIP and NSIS | [DrumCloud review](docs/drumcloud-windows.md) | `licensing-uncertainty` |
+| `toneshifteq-windows` | Approved source-artifact packaging; Master/Live in two bundles | Windows VST3, CLAP; ZIP and separate NSIS output | [ToneShiftEQ evidence](docs/toneshifteq-windows.md) | `experimental` |
+| `gunk-windows` | Approved JQ Gunk source-artifact packaging | Windows VST3; manual/source ZIPs and separate NSIS output | [Gunk evidence](docs/gunk-windows.md) | `experimental` |
+| `0xfx-windows` | Approved source-artifact packaging; plugins plus GUI and console applications | Windows VST3, CLAP, GUI, console; ZIPs and in-output NSIS installer | [0xFX evidence](docs/0xfx-windows.md) | `experimental` |
+
+These two Windows packages use the existing consumer opt-in policy for their
+mixed/custom copyright metadata. This is not a technical feasibility gate or
+completed parent acceptance. Their installers are actual separate outputs:
+
+```bash
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#tonetwist-windows.installer
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#drumcloud-windows.installer
+```
+
+ToneShiftEQ, Gunk and 0xFX use that same explicit gate as experimental Windows
+source-artifact routes, not as proprietary-license assertions. Packaging approval
+and static artifact receipts are not Windows runtime or host acceptance. Their
+archived source recipes remain callable with their supplied locks. The linked
+isolated-build notes predate this root export registration.
+
+```bash
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#toneshifteq-windows.installer
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link .#gunk-windows.installer
+NIXPKGS_ALLOW_UNFREE=1 nix build --impure --no-link --print-out-paths .#0xfx-windows
+```
+
+For 0xFX, take `installer/0xfx-1.3.0-source-x86_64-setup.exe` beneath the printed
+`out` directory. There is no `.#0xfx-windows.installer` selector. All three
+artifact packages keep payloads outside Linux plugin directories.
 
 The GPU variants use the existing explicit conditional gate. MIGraphX's placement
 here is about validation maturity, **not** a claim that ROCm/MIGraphX is proprietary.

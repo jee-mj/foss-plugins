@@ -1,0 +1,67 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/f9gs7laxn7yy3iplkikggc5vl12qvvg9-basilica-Lancet-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/vkvb305f4ssdhw3xgiq5nya3f520q9wk-basilica-Lancet-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-012",
+    "modification": null,
+    "name": "Lancet",
+    "packageDrv": "/nix/store/bgl94ni0rcp00yphvng6l9i2hr85mfap-basilica-lancet-0.5.0.drv",
+    "packageOutput": "/nix/store/46rngsy9bwca6fxrp38bggi58fj88ilc-basilica-lancet-0.5.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-Gvd1FuF2tDNPtrTMirBrc/8DdPYr/0F7dnEa/glaQn4=",
+      "repo": "basilica-audio/Lancet",
+      "revision": "76c35f09e5e1e01e6fe0d5a78dc6aa803ecc5174",
+      "sourceDrv": "/nix/store/n5g0j6h4i14zvkj986w5wjzcpkdl94wf-source.drv",
+      "sourceOut": "/nix/store/vjk1p7xnjz1rbbkgpx44znksvyzh3n6y-source",
+      "version": "0.5.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {},
+    "format": "VST3",
+    "name": "Lancet",
+    "noticeFiles": 3230,
+    "noticeManifestSha256": "4ecfdf17b4223e9043120670ddaed887e86658e3d2075cb52259bec3af7b047a",
+    "plugin": "/nix/store/46rngsy9bwca6fxrp38bggi58fj88ilc-basilica-lancet-0.5.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "2e3c2ddae277bdc7af71880aebf1742a9cc76a028259c1c6c83b9dddfa8f006c"
+  },
+  "verificationSha256": "d049204fdaba1d4e1b9c4d42a434539f531df484e96a15f0954efcc7eaeacf7d"
+}

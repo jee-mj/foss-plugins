@@ -1,0 +1,93 @@
+{
+  "scope": "ToneTwist Windows review-fix round 1",
+  "source_revision": "5fac29094050eecf665479921e6ebbd3595b2281",
+  "dpf_revision": "29addec6f6e072162d0269fe8f1341b333c69e42",
+  "pugl_revision": "e33b2f6b0cea6d6263990aa9abe6a69fdfba5973",
+  "nixpkgs_revision": "fd1462031fdee08f65fd0b4c6b64e22239a77870",
+  "cores": 4,
+  "max_jobs": 1,
+  "commands_run_from_git_root": {
+    "red_and_green": "nix build --impure --no-write-lock-file --no-link --print-out-paths --cores 4 --max-jobs 1 --expr 'let f = builtins.getFlake (\"git+file://\" + builtins.getEnv \"PWD\"); p = import f.inputs.nixpkgs { system = \"x86_64-linux\"; }; in p.callPackage (f.outPath + \"/tests/tonetwist-windows.nix\") {}'",
+    "source_repeat_build": "nix build --rebuild --impure --no-write-lock-file --no-link --print-out-paths --cores 4 --max-jobs 1 --expr 'let f = builtins.getFlake (\"git+file://\" + builtins.getEnv \"PWD\"); p = import f.inputs.nixpkgs { system = \"x86_64-linux\"; }; in (p.callPackage (f.outPath + \"/pkgs/tonetwist-windows\") {}).plugin'"
+  },
+  "red": {
+    "derivation": "/nix/store/fl76qv0v9wxm7sxnq4izqy6wjcmdas7f-tonetwist-windows-artifacts.drv",
+    "result": "failed as expected before correction",
+    "failures": [
+      "accepted PE mutation: delay-import-directory",
+      "accepted PE mutation: InitDll",
+      "accepted PE mutation: ExitDll",
+      "missing complete attributed CLAP MIT notice"
+    ]
+  },
+  "green": {
+    "derivation": "/nix/store/643bq8vz8n3m54pd7lffwqr90dslnlqw-tonetwist-windows-artifacts.drv",
+    "report": "/nix/store/bazh8ywyg7rpyaxfn1wzjzl8binl43vj-tonetwist-windows-artifacts",
+    "result": "passed",
+    "checks": [
+      "all six products / twelve PE32+ AMD64 DLLs",
+      "all VST3 GetPluginFactory, InitDll, ExitDll exports; all CLAP clap_entry exports",
+      "no delay-import directory or parsed delay imports; ordinary imports Windows-system-only",
+      "zero plugin PE timestamps and no embedded Authenticode signatures",
+      "exact complete attributed CLAP MIT notice hash in payload and identical source notice",
+      "delay-import and missing InitDll/ExitDll mutations rejected",
+      "missing product bundle mutation rejected",
+      "exact ZIP payload paths and bytes",
+      "exact extracted NSIS paths and SHA-256, including notice and pinned helper",
+      "all extra-parent installer path mutations rejected",
+      "independent ZIP and NSIS packaging realizations byte-identical"
+    ]
+  },
+  "outputs": {
+    "manual": "/nix/store/0m4yn5gicgcy8y2haiz3nn3g30226r0c-tonetwist-unstable-5fac290-windows-x86_64",
+    "installer": "/nix/store/pi63rq0cn9hm4gcaw7d38cfl3jjvpxcg-tonetwist-unstable-5fac290-windows-x86_64-installer",
+    "compiled_bundles": "/nix/store/z6nlfxdayrjkwv4gjfbj49yp6zq286qn-tonetwist-windows-bundles-x86_64-w64-mingw32-unstable-5fac290",
+    "compiled_bundles_derivation": "/nix/store/sqy10mm97drq5ld3jr6b4w9s3kk4wq78-tonetwist-windows-bundles-x86_64-w64-mingw32-unstable-5fac290.drv"
+  },
+  "sha256": {
+    "tonetwist-unstable-5fac290-windows-x86_64.zip": "86184e2c483018c62e14fb11b3164b8ee12cf206a16ef670bd2850f4094ae9bc",
+    "tonetwist-unstable-5fac290-windows-x86_64-setup.exe": "725a140e624efd3736a6f5aa050af658c2883ebbed9eb07782984b5527fc22d1",
+    "LICENSE-CLAP": "50bf21def6095d5e50999675203ae1cd03a6333859bf5fa7c2238909b04dd7d3"
+  },
+  "plugin_sha256": {
+    "metaltone": {
+      "vst3": "0270df6641ccfdd59cbb68a223176aa6dbd9d1bbac95c736916fae9800b0b8b8",
+      "clap": "ef22fc0a55bc1bee07f200dd5fab56d38505765d24c61f631588acc01d1d8382"
+    },
+    "collisiondrive": {
+      "vst3": "b6c44544b4631d5c4d0fd9658dd8147c3ce0f961f7ae3a32de2000dc0d468782",
+      "clap": "bad3d5b3dd79dd3c3364f42d0b13bf4b62b1f2da9cacf74433ef799d2b803c73"
+    },
+    "rumor": {
+      "vst3": "8198d41afa7f85e442a14f7480324aef05ac200ffea909647ec84bbc6c80e362",
+      "clap": "e8f6df6008b7fd32000df42ac86dc7c0be8663f0dc2e0410833029793f86246b"
+    },
+    "tubescreamer": {
+      "vst3": "803fa2a520d4eb55b00adc961cdcb4a6af049073cafaf728c3c0b5f0972fe87f",
+      "clap": "db4a6a9cd11878d5d033c3f8a86d0eccb26e731dbedd278a738a75c2d4fb42f6"
+    },
+    "valvecaster": {
+      "vst3": "23631e5e6ed884c5a291b78e69815a78cb2b23992512c811e904d8c7de148017",
+      "clap": "dce55b75ecf276ac59452f627e44db824e16d12361de57d0b2e7932ef1844644"
+    },
+    "boobtube": {
+      "vst3": "7411d7f65e547914dcd42d0afe862fc47b1aec27379f84e6983e87fe3aac4813",
+      "clap": "0abfad71c9ef7108c06ce7a17a89ef721becaea99772fab3be90bd57e76fd510"
+    }
+  },
+  "clap_notice_provenance": {
+    "upstream_license": "https://github.com/free-audio/clap/blob/84ad6fe9739d3070ed0eb05c24be303a899ab813/LICENSE",
+    "upstream_tag": "1.0.0",
+    "additional_attribution": "DPF 29addec6f6e072162d0269fe8f1341b333c69e42 LICENSING.md: 2014-2022 Alexandre Bique",
+    "identity": "byte-identical to the verified Wolf Shaper and DrumCloud LICENSE-CLAP"
+  },
+  "proof_scope": {
+    "source_repeat_build": "new compiled-bundles derivation forcibly rebuilt and matched its original output; graphics/toolchain dependencies reused",
+    "previous_compiled_bundles": "/nix/store/y58wk96l946h0hlwh3yvmrjfsl5yvb6s-tonetwist-windows-bundles-x86_64-w64-mingw32-unstable-5fac290",
+    "previous_binary_comparison": "recursive diff of old/new CLAP directories and old/new VST3 directories both exited 0; all twelve plugin binary hashes unchanged",
+    "changed": "complete attributed CLAP notice and corrected review text; package/store output paths and distributable ZIP/EXE hashes; stricter PE checks",
+    "unchanged": "plugin source, dependency/toolchain pins, compiled plugin bytes, system DLL import sets, unsigned status, conditional suite-license classification",
+    "runtime_execution": "none; no host scanning, GUI/audio processing or installer runtime behavior tested",
+    "reproducibility": "local source repeat-build and separate packaging comparison, not cross-machine proof"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/r0ffiirag0k8qz6ggq1aqsq0hj4iqa97-basilica-Firmament-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/vfphj7mn7ns2mpp6vbhx5f1npim4vy53-basilica-Firmament-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-008",
+    "modification": null,
+    "name": "Firmament",
+    "packageDrv": "/nix/store/kdx1klqbp4nfvl84mcvvhkjqmig1hl02-basilica-firmament-0.4.0.drv",
+    "packageOutput": "/nix/store/8k37mfn7jj2b80hqdx4hggi9890vm5n2-basilica-firmament-0.4.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-cwkZJTXjULsB66HQ3+yhVGBIr7xqBklcklNb+aWCofs=",
+      "repo": "basilica-audio/Firmament",
+      "revision": "310296f9239462db33b8a1d4afd9cd77d7b3116a",
+      "sourceDrv": "/nix/store/1hfqsl98r1kr08hrxzd15wnxjcngjx6w-source.drv",
+      "sourceOut": "/nix/store/w2hr1nv7kp3x2dqngk52jh3w89zab003-source",
+      "version": "0.4.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {
+      "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+      "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+    },
+    "format": "VST3",
+    "name": "Firmament",
+    "noticeFiles": 3231,
+    "noticeManifestSha256": "62589c76a7196f7a484a8f2744f55a5187e6af83fb93c9f3fd88a0a15b612400",
+    "plugin": "/nix/store/8k37mfn7jj2b80hqdx4hggi9890vm5n2-basilica-firmament-0.4.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "db955628638bee747ff36d5e68076e609032f9d8d1b3ec141aa0b3076bb48158"
+  },
+  "verificationSha256": "6ddf280a468ac5c27cbca5df9913bb629620a42ba5c7347747b1e4a2b7c824ac"
+}

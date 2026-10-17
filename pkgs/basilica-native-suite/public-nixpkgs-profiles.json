@@ -1,0 +1,16 @@
+{
+  "verified-fd146": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "fd1462031fdee08f65fd0b4c6b64e22239a77870",
+    "narHash": "sha256-n3gKTBIV4ZA5VQpUakffBe3KGu4+mhPoA34rrqS0GkA="
+  },
+  "alternate-f5c082": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "f5c082a40f7571c266e74e80ae2e68aadd8a9fc7",
+    "narHash": "sha256-cRrWlIjVRJ6BHDr9caUdXsZ3owzWIKYHpNmGPHBInIU="
+  }
+}

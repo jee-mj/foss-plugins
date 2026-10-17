@@ -1,0 +1,98 @@
+{
+  "buildExitCode": 0,
+  "checks": [
+    {
+      "drvPath": "/nix/store/11bwl3hk8asajmpcfh6xd1cnqdzw7rsj-basilica-Lancet-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/4j5sxmyz21x5n6xgy0qnyqyh3llknj5r-basilica-Lancet-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/5gsficcvg6rglzqszbqadb8bx0g8vb9r-basilica-Triptych-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/sj2ww6i2r3mw045jf73hs7z1cn0sb3yv-basilica-Triptych-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/6l3nv1h01gdzzqn4ivy7sxd2mlyf7g5x-basilica-Aureate-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/hkyz5ryzqpk7zjpm2qcplgg7gnph8rjm-basilica-Aureate-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/6ridzj96ijg47m3pzg12l3mdp4sqzyhg-basilica-Overture-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/0r1v4iy3vw5m504gw461ln31bsi5f39b-basilica-Overture-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/8wivks4pi39y2b3dgs9ii12plyjg9ifd-basilica-Tenebrae-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/nhkbfljlj4i6jw00nvjn4xl3a6jwh8y2-basilica-Tenebrae-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/db4cd3b56mbpiydd7gvcvx7yi5lf2cs2-basilica-Miserere-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/q00fysc5vx55nk12vmhf81xgna3mxc8f-basilica-Miserere-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/fz22lx6dyya0phiyrv0ldnsy81dgppky-basilica-Requiem-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/d6rn8vfq8mpxsk54bimp7p5ly1nsyb39-basilica-Requiem-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/kvyls6hzhi9lqbayrvzcafh4rq31sdj3-basilica-Crypta-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/5c2gmd7ky7qydv7m413p4irvsrjadc1j-basilica-Crypta-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/qmdb78wcaszf6176zv5w7qbx7ajlh5q6-basilica-Seraph-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/510p49xhc2rj9i8r1ic0hc6bqnqzdj85-basilica-Seraph-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/r1c6nfkqm9gmg1mrshk21q732falgiaf-basilica-Silentium-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/g8rfq0v96n6qk5nl1pfkfnpwb5f7nb62-basilica-Silentium-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/vzbf5x0c3lk5x66cb66kg1sb1f45hmhr-basilica-Nave-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/mqm4hbrx1g871nv5sr00yrb8zgy0k9va-basilica-Nave-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/w100baypfv9w0aav3g4600a57nyrr70d-basilica-Firmament-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/gps0faizf4xx8a1izqzhj68fzrslr0ic-basilica-Firmament-current-proof"
+      }
+    },
+    {
+      "drvPath": "/nix/store/xs1vwx2578rrln96fyfnix9wcxnsnrkb-basilica-Apotheosis-current-proof.drv",
+      "outputs": {
+        "out": "/nix/store/7wzwx92ji8xczm7z0h0s8ww4slhavl3r-basilica-Apotheosis-current-proof"
+      }
+    }
+  ],
+  "command": [
+    "nix",
+    "build",
+    "--impure",
+    "--no-link",
+    "--no-write-lock-file",
+    "--json",
+    "--max-jobs",
+    "1",
+    "--cores",
+    "4",
+    "--expr",
+    "let f = builtins.getFlake \"git+file://REPOSITORY\";\n      p = import f.inputs.nixpkgs {system=\"x86_64-linux\";};\n      c = p.callPackage (f.outPath + \"/pkgs/basilica-native-suite/candidates.nix\") {};\n    in builtins.attrValues c.checks"
+  ],
+  "scope": "unsigned observed local sandbox receipts; no result-dependent candidates"
+}

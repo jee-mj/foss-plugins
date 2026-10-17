@@ -1,0 +1,70 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/h54dbzdw04jkg0937118qxbhmf6c8b49-basilica-Apotheosis-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/k32jxzksg8ciy7yjhkj5xmrp7vj3z4h8-basilica-Apotheosis-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-010",
+    "modification": null,
+    "name": "Apotheosis",
+    "packageDrv": "/nix/store/3vdh9a28mpxyk8f081z7956zp3chmmj3-basilica-apotheosis-0.6.1.drv",
+    "packageOutput": "/nix/store/w0bsjwz0v2dwcs1xb9mz117c3qwwr9i9-basilica-apotheosis-0.6.1",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-Hi+FtSGgTqlwQFimkjy2OdRlC9ZmXuvGGB2RnOOyrbQ=",
+      "repo": "basilica-audio/Apotheosis",
+      "revision": "70470a0014c8bd6c920f40548d8041292ef94907",
+      "sourceDrv": "/nix/store/zr57rj8jry39lwy0jq6202w6p6kkq3mx-source.drv",
+      "sourceOut": "/nix/store/an6gcqzgbl66hsgmp55jl4xb1z0srwzc-source",
+      "version": "0.6.1"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {
+      "resources/fonts/EBGaramond-Regular.ttf": "59d25e5b452a683c09d086dff4d0e3b633a276ffd4dab3d73e5a9db0a5b27c65",
+      "resources/fonts/EBGaramond-SemiBold.ttf": "ac82d5792ff4d1a9d02aaacaa2f6e2139126faa3d884ecda84828a9bf1979053"
+    },
+    "format": "VST3",
+    "name": "Apotheosis",
+    "noticeFiles": 3234,
+    "noticeManifestSha256": "d247ff1b50cb2a8ad92a5d8b8fc1c37b0e03e7e4ede22789fa22263be27e243e",
+    "plugin": "/nix/store/w0bsjwz0v2dwcs1xb9mz117c3qwwr9i9-basilica-apotheosis-0.6.1",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "146af26b87b6feff05eed7fe5cbeb96d55a6a233d824cedd141fd99d778f8838"
+  },
+  "verificationSha256": "502591cf6a1482059e9507819123a6e9126da5fbe36b3bc35e86db46345a2f28"
+}

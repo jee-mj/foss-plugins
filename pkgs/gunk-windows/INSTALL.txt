@@ -1,0 +1,33 @@
+JQ Gunk 0.2.2 — operator source build for Windows x86-64
+=====================================================
+Requires Windows 10 or later and an x64 VST3 DAW. Host behavior is untested.
+
+MANUAL ZIP
+Copy the ENTIRE VST3/JQ Gunk.vst3 directory, including Contents and Resources,
+to C:\Program Files\Common Files\VST3 (administrator rights), or to a per-user
+VST3 directory that your DAW supports, e.g.:
+  %LOCALAPPDATA%\Programs\Common\VST3
+Copy the CONTENTS of AppData/JQGunk to:
+  %APPDATA%\JQGunk
+This supplies Factory Presets and Wavetables. They are not embedded: upstream's
+original installation text incorrectly says factory presets are built in.
+Keep the Notices directory and accompanying gunk-source.zip.
+Rescan the VST3 directory in your DAW. This is an audio effect, not a MIDI synth.
+The GCC, C++ and threading runtimes are statically linked; this build does not
+need the upstream Ubuntu bundle's libwinpthread-1.dll.
+
+OPTIONAL OPERATOR NSIS INSTALLER
+The separately supplied setup.exe is an operator-created, unsigned installer,
+not an upstream installer. It installs the same bundle to the per-user VST3
+directory above and data to the current user's %APPDATA%\JQGunk, without admin
+rights. Add that VST3 search directory in your DAW if necessary.
+It also installs notices under %LOCALAPPDATA%\Programs\JQGunk\Notices.
+It does not run the plugin, a DAW, a driver or a bridge.
+
+UNINSTALL
+Remove only the installed JQ Gunk.vst3 directory and the operator notices.
+Factory data may be removed manually from %APPDATA%\JQGunk; preserve any custom
+presets or wavetables you wish to keep. There is no automatic data deletion.
+
+No Windows runtime/DAW validation is claimed. The build and checks run on Linux
+and inspect the PE and archives as data only.

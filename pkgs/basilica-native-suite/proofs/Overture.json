@@ -1,0 +1,67 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/92n1iyhfs2ln8f3iq2psby18q22p16am-basilica-Overture-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/qgpjacs4kph9cj6dsmr7a4vrv9044d7m-basilica-Overture-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-001",
+    "modification": null,
+    "name": "Overture",
+    "packageDrv": "/nix/store/lmw9f5j8xa13caqpmf5sp7cvsy2zjb5r-basilica-overture-0.5.0.drv",
+    "packageOutput": "/nix/store/27bkpp7g7np2ygrw1fm5rf0sdw3fcjjx-basilica-overture-0.5.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-qCxSJKpGbowW3TyqWhkmNYQJ6vQOEKT9YLN4U5d3dc4=",
+      "repo": "basilica-audio/Overture",
+      "revision": "c1d74a27a015453e7fae10e30c98769b576aebb7",
+      "sourceDrv": "/nix/store/8ai0sgkvl7qdhhd9zz26354ln000qriy-source.drv",
+      "sourceOut": "/nix/store/0c19l9z7gpd9ldll1n940na1s26k4sny-source",
+      "version": "0.5.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": null,
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {},
+    "format": "VST3",
+    "name": "Overture",
+    "noticeFiles": 3231,
+    "noticeManifestSha256": "8643312c25924b3a7d53d55550bb1fe5990b86ddb25a15f3377a1d221f0a2d86",
+    "plugin": "/nix/store/27bkpp7g7np2ygrw1fm5rf0sdw3fcjjx-basilica-overture-0.5.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "01d7db6b02734db76e4fbc5222fd9f3651366cd1a869ba15dac457c2964f4a84"
+  },
+  "verificationSha256": "2488662ecbea856add660dfbd4d9f6553e903ddaf643af984ec9aebc965ce439"
+}

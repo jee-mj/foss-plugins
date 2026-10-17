@@ -1,0 +1,113 @@
+{
+  "binding": {
+    "architecture": "ELF64 x86-64",
+    "artifactCheckDrv": "/nix/store/w727cch7fm4s2h1mqxp8n1iaz9pzf66s-basilica-Nave-native-artifacts.drv",
+    "artifactCheckOutput": "/nix/store/7vryayi6jjdi80h6z1l1nb9m8v9k6z4p-basilica-Nave-native-artifacts",
+    "audio": null,
+    "dependencies": {
+      "JUCE": {
+        "hash": "sha256-oXFYfFqySW2XtM1e5/ifxAp9qSIVLzY1WAUKE3EscoQ=",
+        "repo": "juce-framework/JUCE",
+        "revision": "2cdfca8feb300fb424002ba2c2751569e5bacb64",
+        "sourceDrv": "/nix/store/i16rlbx6jkfbjxdh99n5gkxrci4lqdd0-source.drv",
+        "sourceOut": "/nix/store/0n9z5vnmmyjyziy4r4k8r9j30kvs2hjy-source",
+        "version": "8.0.14"
+      }
+    },
+    "format": "VST3",
+    "identity": "BA-003",
+    "modification": {
+      "compatibilityDrv": "/nix/store/ijibyafsksld77kn3wy29fb77kdw9hwf-basilica-nave-scalar-compatibility.drv",
+      "compatibilityOutput": "/nix/store/64wcr7lhzcrqm7zh90x59czf61k4vi00-basilica-nave-scalar-compatibility",
+      "noticeSha256": "91c7a2ddc6da5887b0e41bf537511409a2628c9edbe4b3ad5521c10656ac5e0f",
+      "patchSha256": "734ec2e76fbbeddca476115e2bb8945b72287e78002b58b68e19264bb7203cca"
+    },
+    "name": "Nave",
+    "packageDrv": "/nix/store/qbjvsbnlrxzvnaklsgs6qk5ypp6q0arz-basilica-nave-0.5.0.drv",
+    "packageOutput": "/nix/store/15lb99fi646gfh1sjwhcb709ly988naw-basilica-nave-0.5.0",
+    "recipe": {
+      "adapter": "caf5b2ba2d5e74c8da4d83571cd87b23fd44865584280a4073d6ca0a0c84c924",
+      "artifactHelper": "f0450034ae76268508e9a25be692bbffc8449b7a17d5d1d8a0ed95137e6576fd",
+      "artifactTest": "beaa9500445e65c361650f5f7d8d756d0573d1a150d3c538f7c58915bcd5d1bd",
+      "package": "cd4dd9c95af7004bdf07e7980e1cb562f05d5c20376b787fdc147508f4eaee44",
+      "receiptCheck": "e0eca391f9d4e20ba3841927e8c512ae7d460d0b4e70dc7ca7809d75a19a650f",
+      "receiptWriter": "5ba9483fbd6a79a7904004264c951330789acfce5f1297d81c8ff6215ee3de7c",
+      "runtimeHelper": "b161352eec0da23231a04db18d402382209e6f7fbc240015ca6b9e2de741aa8c",
+      "verifier": "e75117ed0191d0ba20efd1d06f5ba2bd4700f732aaf554cf6004157b7bf21c6c"
+    },
+    "schema": 2,
+    "source": {
+      "hash": "sha256-nsqu2xgoP6WhUWRzaL3CV7N6izq0dDnrzB7tkj+lCok=",
+      "repo": "basilica-audio/Nave",
+      "revision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1",
+      "sourceDrv": "/nix/store/cdahxn844x0fd8d3j31xxzh71llij54p-source.drv",
+      "sourceOut": "/nix/store/k331d2avhp8qkh2aibsh7fj5yys1h1c6-source",
+      "version": "0.5.0"
+    }
+  },
+  "exitCode": 0,
+  "schema": 2,
+  "sourceModification": {
+    "assets": {
+      "docs/assets/icon-256.png": "46e544c14e509274058c621eef91cb0e69a5884a6b3cf54b998bc70c274139ee",
+      "presets/factory/darkVintage.json": "a29698878d7aacbded78f429d3ed3b70085b63048644e584518e529d7770f2cd",
+      "presets/factory/default.json": "280df889f9ced330264b0feddfd2a6af1de8d5ecd3f272ee38c4f7ec71c1ff0c",
+      "presets/factory/evenBlend.json": "eaed37fb8e6f70e61db0ec10bee17c5d2c26d7df01a0d98396dff1a85e794614",
+      "presets/factory/liveStage.json": "814ada1741961a92a0b810ebbd9318af7f318c4cfff0542fecdcabd8013eec3e",
+      "presets/factory/micMorph.json": "91afd44cc8d9938b1b9f8ad71bbfb7b6278aebd1917c2b59119955b245414932",
+      "presets/factory/parallelCabBlendedDry.json": "6140e845ae9470702d38b7ea48fd813c19bd90aa584f1b32f5a7bb747dc7ee63",
+      "presets/factory/pushedBackInTheRoom.json": "3551764ce5e8283cac41588facc11b6ddeafa3c347639dcd621e5e1b34fb02a7",
+      "presets/factory/tameTheFizz.json": "4c3ddf6e3a9b91f9cad7e985bb52d5de50c25c6f4c48d70ae2400c92a2d2ec3d",
+      "presets/factory/tightStack.json": "b225c6929fb65160e660f610f31d8561646efe9e4ebc83b7524589ffc2d14f97",
+      "presets/factory/touchOfRoomMic.json": "c6dbcdb28ef53e736f9639dd656876f2440dace3a5091dde4bd90da14a52a0ce",
+      "resources/gui/faceplate_nave_1800x1200.png": "bcd0e5ae9d26c6e888e16c6bed1b9a15929695dc0ec18bbe9189997d5dd877ed",
+      "resources/gui/faceplate_nave_900x600.png": "8f26b0e2974904b8e22ef668fe9a0c81522040d11f0d2c4e2db2bd0cd207945c",
+      "resources/gui/knob_brass_strip_160px_128f.png": "e00a2647b6dbb5bef0d4a843b253f62f5eab9c56e9e019cafa0cf2f0f7817046",
+      "resources/gui/knob_brass_strip_320px_128f.png": "49e522e7ab9c2f74ffae9b563c0b8931ff6d22a2f64d90f9f73c45cd7e1565f6",
+      "resources/i18n/de.txt": "fede5f164db5400b2446435475492d61b9c825542a5a638b31a88723a51a043c"
+    },
+    "compatibility": {
+      "checks": [
+        "zero-fuzz patch application",
+        "exact minimal source delta",
+        "both actual source calls",
+        "signed minimum/zero/maximum/negative/ties",
+        "deduced JUCE scalar equivalence"
+      ],
+      "compileExitCode": 0,
+      "modifiedSha256": "b71cb561da8b012925f2d77826d49f85e33329af02583dc4ed49b893571ac3e1",
+      "operandType": "juce::int64 (signed long long)",
+      "originalSha256": "cf7aa55061e70fab47d7f8d2b7c9e88cfdb8e0f552c7a931d58a148c0f8513f0",
+      "patchSha256": "734ec2e76fbbeddca476115e2bb8945b72287e78002b58b68e19264bb7203cca",
+      "patchedCalls": 2,
+      "runtimeExitCode": 0,
+      "scalarBoundaryCases": 14,
+      "simdEnabled": true,
+      "sourceClampCases": 6,
+      "sourceRevision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1"
+    },
+    "noticeSha256": "91c7a2ddc6da5887b0e41bf537511409a2628c9edbe4b3ad5521c10656ac5e0f",
+    "patchSha256": "734ec2e76fbbeddca476115e2bb8945b72287e78002b58b68e19264bb7203cca"
+  },
+  "verification": {
+    "architecture": "ELF64 x86-64",
+    "checks": [
+      "nonempty bundle",
+      "ELF",
+      "factory exports",
+      "RTLD_NOW",
+      "JUCE dlopen libraries",
+      "embedded assets",
+      "notices"
+    ],
+    "embedded": {},
+    "format": "VST3",
+    "name": "Nave",
+    "noticeFiles": 3233,
+    "noticeManifestSha256": "bfa518210604a86f816ff180230710c9d7964e33359e394e9cd146fa03dccc38",
+    "plugin": "/nix/store/15lb99fi646gfh1sjwhcb709ly988naw-basilica-nave-0.5.0",
+    "scope": "experimental local Linux; no factory invocation, GUI, audio instance or host acceptance",
+    "sha256": "0ed78253f744febd294fda5e1f656fdb5d4a9db9f901d4bebf253f557a20c898"
+  },
+  "verificationSha256": "e2901361ae840beb8413e1534c70cab1580ed1319efa52d2eaaee4a6905e79dc"
+}

@@ -104,6 +104,10 @@ class AudioCatalogTests(unittest.TestCase):
                     self.assertTrue(entry["verification"].get("evidence"))
                 if distribution["status"] == "packaged":
                     self.assertTrue(distribution["nix_attribute"])
+                    if self.catalog["schema_version"] == 2:
+                        self.assertIn(distribution.get("delivery_scope"),
+                                      ("native-plugin", "windows-artifacts"),
+                                      "distribution.delivery_scope is required for schema-2 packaged entries")
 
     def test_basilica_aliases_do_not_create_duplicate_records(self):
         self.assertEqual(

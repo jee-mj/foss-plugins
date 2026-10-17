@@ -1,0 +1,110 @@
+{
+  "Overture": {
+    "name": "Overture",
+    "version": "0.5.0",
+    "revision": "c1d74a27a015453e7fae10e30c98769b576aebb7",
+    "identity": "BA-001",
+    "audio": null,
+    "hash": "sha256-qCxSJKpGbowW3TyqWhkmNYQJ6vQOEKT9YLN4U5d3dc4="
+  },
+  "Tenebrae": {
+    "name": "Tenebrae",
+    "version": "0.5.0",
+    "revision": "38b4e93b0ead817cb2ef97bc0553777fbf84aea9",
+    "identity": "BA-002",
+    "audio": null,
+    "hash": "sha256-eAn+gciV/zHi1HGe0VW0dmfye4foYD+VU2JmmcQcbFE="
+  },
+  "Nave": {
+    "name": "Nave",
+    "version": "0.5.0",
+    "revision": "aba56a4c15dbb5ae2edab38f9a47826ee7091ee1",
+    "identity": "BA-003",
+    "audio": null,
+    "hash": "sha256-nsqu2xgoP6WhUWRzaL3CV7N6izq0dDnrzB7tkj+lCok="
+  },
+  "Silentium": {
+    "name": "Silentium",
+    "version": "0.5.0",
+    "revision": "574fd36431d26c1f572f7c7f9955b82293b669f3",
+    "identity": "BA-004",
+    "audio": "AUDIO-058",
+    "hash": "sha256-hmCWAxA13OMI0LeXD3ys+M0OTe44WW9MthAa4IMa2G0="
+  },
+  "Requiem": {
+    "name": "Requiem",
+    "version": "0.5.0",
+    "revision": "955419e932e7798fe49d2b8123a0dfe7d606bd1f",
+    "identity": "BA-005",
+    "audio": null,
+    "hash": "sha256-5glcXT+7xCqsAmEpHv8Za78BOTAALzQaLVgR7VGEBf4="
+  },
+  "Seraph": {
+    "name": "Seraph",
+    "version": "0.4.0",
+    "revision": "d851142d0b64a0a70970dc6f628956b03a3973af",
+    "identity": "BA-006",
+    "audio": "AUDIO-007",
+    "hash": "sha256-JGDZgRVdngUn6w+VehMvRGDZyJB1TUioMPP8RSlbO1s="
+  },
+  "Aureate": {
+    "name": "Aureate",
+    "version": "0.5.0",
+    "revision": "8c510952ee785775bbfde58c653c89c7fe52d5d2",
+    "identity": "BA-007",
+    "audio": null,
+    "hash": "sha256-mzWYOuyW6DY8Z3PdsMbcuaN0jAq0Q5oVfDAQA8tqjao="
+  },
+  "Firmament": {
+    "name": "Firmament",
+    "version": "0.4.0",
+    "revision": "310296f9239462db33b8a1d4afd9cd77d7b3116a",
+    "identity": "BA-008",
+    "audio": null,
+    "hash": "sha256-cwkZJTXjULsB66HQ3+yhVGBIr7xqBklcklNb+aWCofs="
+  },
+  "Triptych": {
+    "name": "Triptych",
+    "version": "0.6.0",
+    "revision": "854e6800adb00b1126d97c64fecf40f26f55e54e",
+    "identity": "BA-009",
+    "audio": null,
+    "hash": "sha256-lTCDvczxEJpMp2HDHDfZ9OvrS1zgp/1xucDZDQlP+tc="
+  },
+  "Apotheosis": {
+    "name": "Apotheosis",
+    "version": "0.6.1",
+    "revision": "70470a0014c8bd6c920f40548d8041292ef94907",
+    "identity": "BA-010",
+    "audio": null,
+    "hash": "sha256-Hi+FtSGgTqlwQFimkjy2OdRlC9ZmXuvGGB2RnOOyrbQ="
+  },
+  "Crypta": {
+    "name": "Crypta",
+    "version": "0.4.1",
+    "revision": "d17901175287bd8cda5503bfbee9cd2e77b776d3",
+    "identity": "BA-011",
+    "audio": null,
+    "hash": "sha256-yHdV9G0Vg9u4XpcApU8QUDvMQDCKKAtovycYWIwtiz0="
+  },
+  "Lancet": {
+    "name": "Lancet",
+    "version": "0.5.0",
+    "revision": "76c35f09e5e1e01e6fe0d5a78dc6aa803ecc5174",
+    "identity": "BA-012",
+    "audio": null,
+    "hash": "sha256-Gvd1FuF2tDNPtrTMirBrc/8DdPYr/0F7dnEa/glaQn4="
+  },
+  "linear": {
+    "name": "linear",
+    "repo": "Signalsmith-Audio/linear",
+    "revision": "5668673560146a9cfe38c25315071e3fd68c8317",
+    "hash": "sha256-m8zQJeZCQcHIwcGq17F2bmuZc4g7mFsxzRCUEpUrkr4="
+  },
+  "stretch": {
+    "name": "stretch",
+    "repo": "Signalsmith-Audio/signalsmith-stretch",
+    "revision": "57b93f4e9206a089a45387eaa39bdc9f310d3308",
+    "hash": "sha256-UFZsof6eclOlLqYzq4oK40waMGBEFmZAzMm67tL9pxs="
+  }
+}
